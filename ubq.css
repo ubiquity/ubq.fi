@@ -129,11 +129,11 @@ body.Active #Info ol li {
   border-radius: 3px;
   height: auto;
   padding: 0;
-  opacity: 0.25;
+  /* opacity: 0.25; */
   opacity: 1;
   filter: drop-shadow(0 0 16px #fff);
   color: #fff;
-  transition: opacity;
+  /* transition: 1s all cubic-bezier(0,1,1,1); */
 }
 body.Active #Info ol a {
   user-select: none;
@@ -297,6 +297,7 @@ background > #cell {
   margin: 2px auto;
   background-color: #ffffff10;
   border-radius: 3px;
+  overflow: hidden;
 }
 #Info {
   user-select: none;
