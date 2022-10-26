@@ -16,9 +16,60 @@ if (!window.location.hash) {
 //
 //
 //
+function parseJwt(token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+}
+
 async function success() {
-    console.log(window.location.hash);
-    document.write(window.location.hash);
+    const jwt = parseJwt(window.location.hash)
+    console.log(jwt);
+
+
+
+    // {
+    //     "aud": string,
+    //     "exp": number,
+    //     "sub": string,
+    //     "email": string,
+    //     "phone": string,
+    //     "app_metadata": {
+    //         "provider": string,
+    //         "providers": [
+    //             "github"
+    //         ]
+    //     },
+    //     "user_metadata": {
+    //         "avatar_url": string,
+    //         "email": string,
+    //         "email_verified": boolean,
+    //         "full_name": string,
+    //         "iss": string,
+    //         "name": string,
+    //         "preferred_username": string,
+    //         "provider_id": string,
+    //         "sub": string,
+    //         "user_name": string,
+    //     },
+    //     "role": string,
+    //     "session_id": string,
+    // }
+
+    const user_name = jwt.user_metadata.user_name
+    console.log({ user_name });
+
+    // fetch("https://api.github.com/user", {
+    //     headers: {
+    //         Authorization: "Bearer OAUTH-TOKEN"
+    //     }
+    // })
+    // curl -H "Authorization: Bearer OAUTH-TOKEN" https://api.github.com/user
+    // document.write(window.location.hash);
 }
 
 async function register() {
