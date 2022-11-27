@@ -1,7 +1,8 @@
 {
   "license": "MIT",
   "scripts": {
-    "start": "static ."
+    "start": "static .",
+    "c": "git add . && yes | auto-commit && git push"
   },
   "dependencies": {
     "node-static": "^0.7.11"
