@@ -1161,6 +1161,11 @@ body.social main#Spreads {
 #Spreads > footer {
 	height: calc(50% + 1px);
 	background-color: #000;
+	font-size: 12px;
+    font-weight: 400;
+    text-rendering: unset;
+    color: #bfbfbf;
+    letter-spacing: 2px;
 }
 
 @media (orientation: portrait) {
