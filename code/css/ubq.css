@@ -189,26 +189,32 @@ body .center > div {
 	padding: calc((128px) / 3);
 	opacity: 0;
 }
-background > #cell {
+body background > #cell {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
 	width: 100%;
 	height: 100%;
 	-webkit-mask-image: radial-gradient(
+		#00000040 0%,
+		#00000080 50%,
+		#000000ff 100%
+	);
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-image: url(/image/grid-1.png);
+	background-repeat: repeat;
+	opacity: 0.5;
+}
+body.Active background > #cell {
+	-webkit-mask-image: radial-gradient(
 		#00000000 0,
 		#00000020 50%,
 		#00000030 75%,
 		#00000080 100%
 	);
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-image: url(/image/grid-1.png);
-	background-repeat: repeat;
-	position: fixed;
+	opacity: 1;
 }
 #UI {
 	text-transform: uppercase;
@@ -479,7 +485,7 @@ body.Active .spin > div.after > div {
 }
 body.Active .spin > div.before > div {
 	animation: rotation-b 64s linear 0s infinite;
-	-webkit-mask-image: linear-gradient(to right, transparent, #000, transpare);
+	-webkit-mask-image: linear-gradient(to right, transparent, #000, transparent);
 }
 .spin > div > div {
 	border-radius: 50%;
@@ -506,6 +512,7 @@ body.Active .spin #aP {
 }
 .spin {
 	transition: 1s all cubic-bezier(0.25, 0, 0, 1);
+	opacity: 0.5;
 	border-radius: 50%;
 	position: relative;
 	width: 160px;
@@ -1130,7 +1137,7 @@ body.social main#Spreads {
 	background: 0 0;
 }
 #Logo div.before > div {
-	border-color: #ffffff00 #ffffff10 #ffffff00 #ffffff10;
+	border-color: #ffffff00 #ffffff80 #ffffff00 #ffffff80;
 }
 #Earn > article > div > p {
 	max-width: 1280px;
