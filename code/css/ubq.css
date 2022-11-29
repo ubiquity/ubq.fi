@@ -1203,6 +1203,29 @@ body.Active #UI > ul > li:nth-child(1) {
 footer ul {
 	padding: 0;
 }
-footer #footer-message{
-	margin-bottom: 48px
+footer #footer-message {
+	margin-bottom: 48px;
+}
+
+footer a div {
+	text-align: center;
+}
+
+footer a svg {
+	height: 24px;
+	width: 24px;
+	fill: #bfbfbf;
+}
+footer a {
+	opacity: 0;
+}
+footer a:hover {
+	opacity: 1;
+	color: #00ffff;
+}
+footer a:hover span {
+	color: #00ffff;
+}
+footer a:hover svg {
+	fill: #0ff;
 }
