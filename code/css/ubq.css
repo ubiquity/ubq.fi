@@ -1095,7 +1095,7 @@ body.social main#Spreads {
 }
 #Spreads > footer > article div a {
 	display: inline-block;
-	padding: 48px;
+	padding: 24px 48px;
 	opacity: 0.5;
 	letter-spacing: 2px;
 	text-transform: uppercase;
@@ -1162,10 +1162,10 @@ body.social main#Spreads {
 	height: calc(50% + 1px);
 	background-color: #000;
 	font-size: 12px;
-    font-weight: 400;
-    text-rendering: unset;
-    color: #bfbfbf;
-    letter-spacing: 2px;
+	font-weight: 400;
+	text-rendering: unset;
+	color: #bfbfbf;
+	letter-spacing: 2px;
 }
 
 @media (orientation: portrait) {
@@ -1198,4 +1198,11 @@ body.Active #UI > ul > li {
 }
 body.Active #UI > ul > li:nth-child(1) {
 	opacity: 1;
+}
+
+footer ul {
+	padding: 0;
+}
+footer #footer-message{
+	margin-bottom: 48px
 }
