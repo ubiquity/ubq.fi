@@ -728,18 +728,17 @@ p {
 #Partners ul li {
 	display: inline-block;
 	margin: 24px;
+	opacity: 0.75;
+}
+#Partners ul li:hover {
+	opacity: 1;
 }
 #Partners ul li div {
-	height: 12.5vw;
-	background: grey;
-	width: 25vw;
-	border-radius: 4px;
 }
+#Partners ul li svg,
 #Partners ul li img {
-	object-fit: scale-down;
-	width: 100%;
-	height: 100%;
-	filter: grayscale(1) contrast(1.5);
+	height: 96px;
+	width: 192px;
 }
 #Partners ul li p {
 	text-align: center;
@@ -1058,7 +1057,8 @@ body.social main#Spreads {
 	box-sizing: inherit;
 	padding: 0 24px;
 }
-#Partners > article > div > img {
+#Partners > article > div > img,
+#Partners > article > div > svg {
 	width: 100vw;
 }
 #Spreads > footer > article div p {
