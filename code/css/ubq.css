@@ -1229,3 +1229,10 @@ footer a:hover span {
 footer a:hover svg {
 	fill: #0ff;
 }
+
+body #UI > ul > li {
+	pointer-events: none;
+}
+body.Active #UI > ul > li {
+	pointer-events: unset;
+}
