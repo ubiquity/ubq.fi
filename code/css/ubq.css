@@ -356,14 +356,18 @@ body.Active background > #cell {
   }
 }
 @media (max-width: 640px) {
+  footer li a {
+    width: calc(50vw);
+  }
+  #Info {
+    text-align: left;
+  }
 
-	#Info{ text-align: left;}
-
-	body.Active #Info ol li{
-		display: block;
-		/* text-align: right; */
-		padding: 0px 16px;
-	}
+  body.Active #Info ol li {
+    display: block;
+    /* text-align: right; */
+    padding: 0px 16px;
+  }
 
   #extended {
     display: none;
@@ -1048,7 +1052,7 @@ body.social main#Spreads {
 }
 #UI ul li a {
   opacity: 0.5;
-  padding:  20px;
+  padding: 20px;
 }
 #UI ul li a:hover {
   opacity: 1;
@@ -1271,6 +1275,6 @@ body.Active #UI > ul > li {
   visibility: visible;
 }
 
-#UI > ul > li > ul > li > a{
-	padding: 20px
+#UI > ul > li > ul > li > a {
+  padding: 20px;
 }
