@@ -269,8 +269,8 @@ body.Active background > #cell {
   fill: #0ff;
 }
 #Info > ol {
-  padding: 0;
-  padding-right: calc(100% / 12);
+  /* padding: 0; */
+  padding: 0px calc(100% / 12);
   text-transform: uppercase;
 }
 #Info > header > h1 {
@@ -278,21 +278,24 @@ body.Active background > #cell {
   line-height: 1;
   display: inline-block;
   vertical-align: middle;
-  margin: 10px 10px 0;
-  padding-top: 10px;
+  margin: 0;
+  /* padding-top: 15px; */
   color: #ffffffbf;
 }
 #Info > header > aside {
   font-size: 12px;
-  margin: 10px 20px 20px;
+  margin: 6px 0 0;
   letter-spacing: 0.25px;
   line-height: 1.25;
+}
+#Info > header > aside:last-child {
+  /* margin-top: 0; */
 }
 #Info > header {
   position: relative;
   overflow: hidden;
-  padding: 0;
-  padding-right: calc(100% / 12);
+  padding: 10px calc(100% / 12);
+  /* padding-right: calc(100% / 12); */
 }
 #Info > div > aside > span {
   font-size: 12px;
@@ -353,6 +356,15 @@ body.Active background > #cell {
   }
 }
 @media (max-width: 640px) {
+
+	#Info{ text-align: left;}
+
+	body.Active #Info ol li{
+		display: block;
+		/* text-align: right; */
+		padding: 0px 16px;
+	}
+
   #extended {
     display: none;
   }
@@ -554,10 +566,10 @@ body.Active #Logo {
     width: 100%;
   }
   #Info > header {
-    padding: 0;
+    /* padding: 15px 0; */
   }
   #Info > ol {
-    padding: 0;
+    background-color: #ffffff10;
   }
 }
 #bytecode {
