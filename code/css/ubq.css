@@ -882,8 +882,8 @@ p {
 }
 #UI ul a {
   display: block;
-  border: 1px solid transparent;
-  border-radius: 3px;
+  /* border: 1px solid transparent; */
+  /* border-radius: 3px; */
   flex-direction: row;
 }
 #UI ul {
@@ -1036,7 +1036,7 @@ body.social main#Spreads {
 }
 #UI ul li a {
   opacity: 0.5;
-  padding: 40px 20px;
+  padding:  20px;
 }
 #UI ul li a:hover {
   opacity: 1;
@@ -1194,6 +1194,7 @@ body #UI > ul > li {
 }
 body #UI > ul > li:nth-child(1) {
   opacity: 1;
+  margin-top: 8px;
 }
 body.Active #UI > ul > li {
   opacity: 1;
@@ -1235,11 +1236,13 @@ footer a:hover svg {
 
 body #UI > ul > li {
   pointer-events: none;
+  margin-top: 20px;
 }
 body.Active #UI > ul > li {
   pointer-events: unset;
   /* position: relative; */
-  /* vertical-align: top; */
+  /* vertical-align: middle; */
+  /* margin-top: 20px; */
 }
 
 /*  */
@@ -1254,4 +1257,8 @@ body.Active #UI > ul > li {
 }
 #UI > ul > li:hover > ul {
   visibility: visible;
+}
+
+#UI > ul > li > ul > li > a{
+	padding: 20px
 }
