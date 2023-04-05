@@ -3,6 +3,7 @@
 		BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
 		sans-serif;
 }
+
 :root {
 	--page-init: 8s all cubic-bezier(0, 1, 1, 1);
 	--elu-blu: #06061a;
@@ -10,47 +11,58 @@
 	--elu-blu-50: #06061a80;
 	--elu-blu-75: #06061abf;
 }
+
 svg {
 	stroke: none;
 }
+
 section#Hero {
 	position: absolute;
 	top: 0;
 	pointer-events: none;
 }
+
 ol {
 	padding: 0;
 	list-style: none;
 }
+
 li {
 	font-family: "Proxima Nova", Avenir, DIN;
 	display: inline-block;
 	/* text-align: left; */
 }
+
 aside,
 h1 {
 	font-family: "Proxima Nova", Avenir, DIN;
 }
-h1 > span.Active {
+
+h1>span.Active {
 	opacity: 1;
 }
-h1 > span {
+
+h1>span {
 	opacity: 0;
 	will-change: opacity, filter;
 }
-body.Active h1 > span {
+
+body.Active h1>span {
 	transition: var(--page-init);
 }
+
 h1 {
 	text-transform: uppercase;
 	letter-spacing: 4px;
 	text-rendering: geometricPrecision;
 	font-weight: 400;
 }
-body.Active foreground > span {
+
+body.Active foreground>span {
 	transition: var(--page-init);
 }
-foreground > span {
+
+foreground>span {
 	font-weight: 100;
 	text-rendering: optimizeSpeed;
 	font-family: monospace;
@@ -67,10 +79,12 @@ foreground > span {
 	font-family: DIN;
 	-webkit-mask-image: linear-gradient(to top right, transparent 50%, #000 100%);
 }
+
 foreground {
 	height: 100vh;
 	display: none;
 }
+
 div#sine-holder {
 	padding: 0;
 	position: absolute;
@@ -78,6 +92,7 @@ div#sine-holder {
 	width: 100%;
 	height: 100%;
 }
+
 .spin::after {
 	content: "> Press to Start";
 	font-size: 12px;
@@ -96,36 +111,42 @@ div#sine-holder {
 	filter: drop-shadow(0 0 16px #fff);
 	top: calc(100% + 12px);
 }
+
 body.Active .spin::after {
 	content: none;
 }
+
 canvas#sine {
 	height: 100%;
-	-webkit-mask-image: linear-gradient(
-		90deg,
-		#00000000 0,
-		#00000020 25%,
-		#00000000 50%,
-		#00000020 75%,
-		#00000000 100%
-	);
+	-webkit-mask-image: linear-gradient(90deg,
+			#00000000 0,
+			#00000020 25%,
+			#00000000 50%,
+			#00000020 75%,
+			#00000000 100%);
 	display: none;
 }
+
 body.Active canvas#sine {
 	display: unset;
 }
+
 body {
 	background-color: var(--elu-blu);
 }
+
 body.Active section#Hero {
 	pointer-events: all;
 }
-body.Active foreground > span {
+
+body.Active foreground>span {
 	opacity: 1;
 }
+
 body.Active div#headshot {
 	opacity: 0.0625;
 }
+
 #Back {
 	overflow: hidden;
 	height: 100vh;
@@ -133,6 +154,7 @@ body.Active div#headshot {
 	width: calc(200vw / 3);
 	margin-right: 0;
 }
+
 body.Active #Info ol li {
 	display: inline-block;
 	height: 48px;
@@ -147,6 +169,7 @@ body.Active #Info ol li {
 	color: #fff;
 	/* transition: 1s all cubic-bezier(0,1,1,1); */
 }
+
 body.Active #Info ol a {
 	user-select: none;
 	display: table-cell;
@@ -156,21 +179,26 @@ body.Active #Info ol a {
 	display: block;
 	opacity: 0.66;
 }
+
 body.Active #Info ol a:hover {
 	opacity: 1;
 	color: #0ff;
 }
+
 body.Active #Info {
 	opacity: 1;
 }
-body.Active .center > div.logo {
+
+body.Active .center>div.logo {
 	opacity: 0.375;
 	padding: 18.75vw;
 }
-body.Active .center > div {
+
+body.Active .center>div {
 	opacity: 1;
 }
-body .center > div.logo {
+
+body .center>div.logo {
 	opacity: 1;
 	position: absolute;
 	padding: 32px;
@@ -179,7 +207,8 @@ body .center > div.logo {
 	height: 100%;
 	width: 100%;
 }
-body .center > div {
+
+body .center>div {
 	font-size: calc((2 * 128px) / 3);
 	font-weight: 100;
 	text-rendering: geometricPrecision;
@@ -189,17 +218,16 @@ body .center > div {
 	padding: calc((128px) / 3);
 	opacity: 0;
 }
-body background > #cell {
+
+body background>#cell {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
 	width: 100%;
 	height: 100%;
-	-webkit-mask-image: radial-gradient(
-		#00000040 0%,
-		#00000080 50%,
-		#000000ff 100%
-	);
+	-webkit-mask-image: radial-gradient(#00000040 0%,
+			#00000080 50%,
+			#000000ff 100%);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -207,15 +235,15 @@ body background > #cell {
 	background-repeat: repeat;
 	opacity: 0.5;
 }
-body.Active background > #cell {
-	-webkit-mask-image: radial-gradient(
-		#00000000 0,
-		#00000020 50%,
-		#00000030 75%,
-		#00000080 100%
-	);
+
+body.Active background>#cell {
+	-webkit-mask-image: radial-gradient(#00000000 0,
+			#00000020 50%,
+			#00000030 75%,
+			#00000080 100%);
 	opacity: 1;
 }
+
 #UI {
 	text-transform: uppercase;
 	width: 100vw;
@@ -223,7 +251,8 @@ body.Active background > #cell {
 	position: absolute;
 	text-align: center;
 }
-#Spreads > :first-child aside {
+
+#Spreads> :first-child aside {
 	position: relative;
 	top: auto;
 	right: auto;
@@ -233,19 +262,23 @@ body.Active background > #cell {
 	margin: 0 auto;
 	width: auto;
 }
+
 #Logo svg.Active {
 	fill-opacity: 0.75;
 }
-#Logo > article > div {
+
+#Logo>article>div {
 	display: table;
 	vertical-align: middle;
 }
+
 #Logo {
 	overflow: hidden;
 	max-width: 100vw;
 	max-height: 100vh;
 	opacity: 1;
 }
+
 #Info svg#logo {
 	height: 60px;
 	display: inline-block;
@@ -254,10 +287,12 @@ body.Active background > #cell {
 	margin: 6px auto 0;
 	padding-top: 10px;
 }
+
 #Info svg {
 	height: 20px;
 	width: 40px;
 }
+
 #Info ol li span {
 	font-size: 12px;
 	text-rendering: geometricPrecision;
@@ -265,15 +300,18 @@ body.Active background > #cell {
 	letter-spacing: 2px;
 	display: inline-block;
 }
+
 #Info a:hover svg {
 	fill: #0ff;
 }
-#Info > ol {
+
+#Info>ol {
 	padding: 0;
 	padding-right: calc(100% / 12);
 	text-transform: uppercase;
 }
-#Info > header > h1 {
+
+#Info>header>h1 {
 	font-size: 30px;
 	line-height: 1;
 	display: inline-block;
@@ -282,29 +320,34 @@ body.Active background > #cell {
 	padding-top: 10px;
 	color: #ffffffbf;
 }
-#Info > header > aside {
+
+#Info>header>aside {
 	font-size: 12px;
 	margin: 10px 20px 20px;
 	letter-spacing: 0.25px;
 	line-height: 1.25;
 }
-#Info > header {
+
+#Info>header {
 	position: relative;
 	overflow: hidden;
 	padding: 0;
 	padding-right: calc(100% / 12);
 }
-#Info > div > aside > span {
+
+#Info>div>aside>span {
 	font-size: 12px;
 	text-transform: uppercase;
 	font-weight: 300;
 }
-#Info > * > .Active {
+
+#Info>*>.Active {
 	opacity: 1;
 	transform: translateY(0);
 	filter: blur(0);
 }
-#Info > * > * {
+
+#Info>*>* {
 	vertical-align: middle;
 	opacity: 0;
 	transition: 2s all cubic-bezier(0, 1, 1, 1);
@@ -314,7 +357,8 @@ body.Active background > #cell {
 	line-height: 1;
 	padding: 2px;
 }
-#Info > * {
+
+#Info>* {
 	transition: 1s all cubic-bezier(0, 1, 1, 1);
 	will-change: background;
 	margin: 2px auto;
@@ -322,6 +366,7 @@ body.Active background > #cell {
 	border-radius: 3px;
 	overflow: hidden;
 }
+
 #Info {
 	user-select: none;
 	opacity: 0;
@@ -331,6 +376,7 @@ body.Active background > #cell {
 	width: 75%;
 	left: 0;
 }
+
 #headshot {
 	background-position: center;
 	background-repeat: no-repeat;
@@ -343,84 +389,102 @@ body.Active background > #cell {
 	opacity: 0.125;
 	filter: grayscale(1);
 }
+
 @media (orientation: portrait) {
 	#headshot {
 		background-size: 250%;
 		background-position: 75% 50%;
 	}
+
 	video {
 		display: none;
 	}
 }
+
 @media (max-width: 640px) {
 	#extended {
 		display: none;
 	}
 }
+
 @media (inverted-colors) {
+
 	background,
 	svg {
 		filter: invert(100%);
 	}
 }
+
 @keyframes rotation-b {
 	from {
 		transform: rotate(0);
 	}
+
 	to {
 		transform: rotate(-360deg);
 	}
 }
+
 @keyframes rotation-a {
 	from {
 		transform: rotate(0) scale(0.9375, 0.9375);
 	}
+
 	to {
 		transform: rotate(360deg) scale(0.9375, 0.9375);
 	}
 }
+
 @keyframes rotation {
 	0% {
 		opacity: 0;
 		width: 240px;
 		transform: rotate(0);
 	}
+
 	50% {
 		opacity: 1;
 	}
+
 	100% {
 		opacity: 0;
 		width: 380px;
 		transform: rotate(360deg);
 	}
 }
+
 @keyframes grid-dance {
 	0% {
 		filter: invert(1) drop-shadow(24px 24px 0 rgba(128, 255, 255, 0.75));
 	}
+
 	25% {
 		filter: invert(1) drop-shadow(12px 12px 0 rgba(128, 255, 255, 0.75));
 	}
+
 	50% {
 		filter: invert(1) drop-shadow(0 0 0 rgba(128, 255, 255, 0.75));
 	}
+
 	75% {
 		filter: invert(1) drop-shadow(12px 12px 0 rgba(128, 255, 255, 0.75));
 	}
+
 	100% {
 		filter: invert(1) drop-shadow(24px 24px 0 rgba(128, 255, 255, 0.75));
 	}
 }
+
 @font-face {
 	font-family: DIN;
 	src: url(/fonts/DIN/DINNextLTW04-Regular.eot);
-	src: url(/fonts/DIN/DINNextLTW04-Regular.eot#iefix)
-			format("embedded-opentype"),
+	src: url(/fonts/DIN/DINNextLTW04-Regular.eot#iefix) format("embedded-opentype"),
 		url(/fonts/DIN/DINNextLTW04-Regular.woff) format("woff"),
 		url(/fonts/DIN/DINNextLTW04-Regular.ttf) format("truetype");
 	font-weight: 400;
 	font-style: normal;
 }
+
 @font-face {
 	font-family: DIN;
 	src: url(/fonts/DIN/DINNextLTW04-Medium.eot);
@@ -430,6 +494,7 @@ body.Active background > #cell {
 	font-weight: 500;
 	font-style: normal;
 }
+
 @font-face {
 	font-family: DIN;
 	src: url(/fonts/DIN/DINNextLTW04-Light.eot);
@@ -439,6 +504,7 @@ body.Active background > #cell {
 	font-weight: 300;
 	font-style: normal;
 }
+
 @font-face {
 	font-family: DIN;
 	src: url(/fonts/DIN/DINNextLTW04-Italic.eot);
@@ -448,6 +514,7 @@ body.Active background > #cell {
 	font-weight: 400;
 	font-style: italic;
 }
+
 @font-face {
 	font-family: DIN;
 	src: url(/fonts/DIN/DINNextLTW04-Bold.eot);
@@ -457,17 +524,20 @@ body.Active background > #cell {
 	font-weight: 700;
 	font-style: normal;
 }
+
 .spin:hover {
 	opacity: 1;
 }
-.spin > div.before > div {
+
+.spin>div.before>div {
 	border-width: 1px;
 	border-style: outset;
 	border-left-color: transparent;
 	border-right-color: transparent;
 	animation: rotation-b 16s linear 0s infinite;
 }
-.spin > div.after > div {
+
+.spin>div.after>div {
 	border-width: 1px;
 	border-style: double;
 	border-top-color: transparent;
@@ -476,22 +546,27 @@ body.Active background > #cell {
 	opacity: 0.25;
 	animation: rotation-a 16s linear 0s infinite;
 }
-body.Active .spin > div.after > div,
-body.Active .spin > div.before > div {
+
+body.Active .spin>div.after>div,
+body.Active .spin>div.before>div {
 	border-width: 2vw;
 }
-body.Active .spin > div.after > div {
+
+body.Active .spin>div.after>div {
 	animation: rotation-a 64s linear 0s infinite;
 }
-body.Active .spin > div.before > div {
+
+body.Active .spin>div.before>div {
 	animation: rotation-b 64s linear 0s infinite;
 	-webkit-mask-image: linear-gradient(to right, transparent, #000, transparent);
 }
-.spin > div > div {
+
+.spin>div>div {
 	border-radius: 50%;
 	height: 100%;
 }
-.spin > div {
+
+.spin>div {
 	vertical-align: middle;
 	display: table;
 	position: absolute;
@@ -499,17 +574,21 @@ body.Active .spin > div.before > div {
 	height: 100%;
 	width: 100%;
 }
-body.Active .spin > div > div {
+
+body.Active .spin>div>div {
 	color: #ffffff40;
 }
+
 body.Active .spin #aP {
 	fill: transparent;
 }
+
 .spin #aP {
 	height: 100%;
 	width: 100%;
 	margin: 0;
 }
+
 .spin {
 	transition: 1s all cubic-bezier(0.25, 0, 0, 1);
 	opacity: 0.5;
@@ -520,46 +599,57 @@ body.Active .spin #aP {
 	text-align: center;
 	cursor: pointer;
 }
+
 body.Active .spin {
 	width: 66vh;
 	height: 66vh;
 }
+
 @keyframes logo-ani {
 	0% {
 		opacity: 1;
 	}
+
 	100% {
 		opacity: 0.125;
 	}
 }
+
 body.Active #Logo {
 	animation: logo-ani 0.2s;
 	opacity: 1;
 }
+
 .logo:hover #aP {
 	filter: drop-shadow(0 0 16px #fff);
 }
-.blur > svg {
+
+.blur>svg {
 	fill: #80ffff;
 	fill-opacity: 1;
 }
+
 .blur {
 	position: absolute;
 	color: transparent;
 	text-shadow: 0 0 calc((4 * 128px)) #80ffff;
 }
+
 @media screen and (orientation: portrait) {
 	#Info {
 		margin: 0;
 		width: 100%;
 	}
-	#Info > header {
+
+	#Info>header {
 		padding: 0;
 	}
-	#Info > ol {
+
+	#Info>ol {
 		padding: 0;
 	}
 }
+
 #bytecode {
 	font-family: monospace;
 	color: #80ffff;
@@ -568,34 +658,37 @@ body.Active #Logo {
 	text-rendering: optimizeSpeed;
 	word-break: break-all;
 	line-height: 1;
-	-webkit-mask-image: radial-gradient(
-		#00000000 0,
-		#00000000 50%,
-		#00000010 100%
-	);
+	-webkit-mask-image: radial-gradient(#00000000 0,
+			#00000000 50%,
+			#00000010 100%);
 	opacity: 0;
 	display: none;
 	vertical-align: middle;
 	text-align: left;
 }
+
 body.Active #bytecode.Active {
 	animation: bytecode-ani 2s;
 	opacity: 1;
 	display: table-cell;
 }
+
 @keyframes bytecode-ani {
 	0% {
 		opacity: 0;
 	}
+
 	100% {
 		opacity: 1;
 	}
 }
-background > video.Active {
+
+background>video.Active {
 	opacity: 0.75;
 	transition: 1s opacity ease-in-out;
 }
-background > video {
+
+background>video {
 	position: absolute;
 	top: 0;
 	right: calc(200% / 12);
@@ -605,24 +698,30 @@ background > video {
 	object-fit: cover;
 	opacity: 0;
 }
-#UI #logo > div#logo-text {
+
+#UI #logo>div#logo-text {
 	font-size: 20px;
 	letter-spacing: 5px;
 }
-#Spreads > * {
+
+#Spreads>* {
 	opacity: 0.25;
 	transition: 0.25s opacity ease;
 }
-#Spreads > .Active {
+
+#Spreads>.Active {
 	opacity: 1;
 }
-#Spreads > :first-child {
+
+#Spreads> :first-child {
 	opacity: 1;
 }
-#Overview > article > div a {
+
+#Overview>article>div a {
 	color: #0ff;
 }
-#Overview > article > div {
+
+#Overview>article>div {
 	border: 1px solid #ffffff20;
 	max-width: 1280px;
 	width: 100%;
@@ -630,14 +729,17 @@ background > video {
 	background: #00000080;
 	margin: 24px auto;
 }
-#Overview > article > div > div {
+
+#Overview>article>div>div {
 	display: inline-block;
 	width: 50%;
 	vertical-align: middle;
 }
+
 #Overview img {
 	width: 50%;
 }
+
 h2,
 h3 {
 	text-rendering: optimizeLegibility;
@@ -654,6 +756,7 @@ h3 {
 	letter-spacing: 0.3px;
 	box-sizing: inherit;
 }
+
 p {
 	color: #bfbfbf;
 	text-rendering: optimizeLegibility;
@@ -670,93 +773,251 @@ p {
 	line-height: 31px;
 	margin-top: 17px;
 }
-#Overview > article > div > div:nth-child(odd) {
+
+#Overview>article>div>div:nth-child(odd) {
 	padding: 5% 0 5% 10%;
 	width: calc(200% / 3);
 }
-#Overview > article > div > div:nth-child(even) {
+
+#Overview>article>div>div:nth-child(even) {
 	width: calc(100% / 3);
 }
+
 #farm-landscape,
 #farm-portrait {
 	display: none;
 	height: 100%;
 	width: 100%;
 }
+
 @media screen and (orientation: portrait) {
-	#Intro > article > div > div.circle {
+	#Intro>article>div>div.circle {
 		width: 100%;
 		width: 100%;
 		max-width: 1280px;
 		text-align: center;
 	}
+
 	#farm-portrait {
 		display: inline-block;
 		height: 100%;
 		width: 100%;
 	}
-	#UI > ul > li {
+
+	#UI>ul>li {
 		display: none;
 	}
-	#UI > ul > li:nth-child(1) {
+
+	#UI ul {
+		position: fixed;
+		width: 100%;
+	}
+
+	/* #UI ul li div {
+		letter-spacing: 2px;
+		padding: 15px 20px !important;
+		-ms-flex-pack: justify;
+		-ms-flex-align: center;
+		line-height: 1.25;
+	} */
+
+	#UI>ul>li:nth-child(1) {
 		display: unset;
+		margin: 6px;
+	}
+
+	/*---------------------
+	HAMBURGER MENU
+	----------------------*/
+	.hamburger-menu {
+		height: 31px;
+		cursor: pointer;
+		z-index: 9998;
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+		padding: 0;
+		margin-right: 40px;
+	}
+
+	.bar,
+	.bar:after,
+	.bar:before {
+		width: 30px;
+		height: 3px;
+	}
+
+	.bar {
+		position: relative;
+		transform: translateY(10px);
+		background: #83838c;
+		transition: all 0ms 300ms;
+	}
+
+	.bar.animate {
+		background: rgba(255, 255, 255, 0);
+	}
+
+	.bar:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 10px;
+		background: #83838c;
+		transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+	}
+
+	.bar:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 10px;
+		background: #83838c;
+		transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+	}
+
+	.bar.animate:after {
+		top: 0;
+		transform: rotate(45deg);
+		transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+	}
+
+	.bar.animate:before {
+		bottom: 0;
+		transform: rotate(-45deg);
+		transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+	}
+
+	/*---------------------
+	Mobiles Menu 
+	----------------------*/
+	/*---------------------
+	Mobiles Menu - Design 
+	----------------------*/
+	.mobile-menu ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	.mobile-menu li {
+		font-size: 20px;
+		line-height: 30px;
+		margin: 0;
+		overflow: hidden;
+		position: relative;
+		text-align: center;
+		text-transform: uppercase;
+		padding-left: 15px;
+		width: 100%;
+	}
+
+	.mobile-menu li:first-child {
+		margin-top: 100px;
+	}
+
+	.mobile-menu li:hover {
+		background: #171751;
+	}
+
+	.mobile-menu li a {
+		text-decoration: none;
+	}
+
+	/*---------------------
+	Mobiles Menu - Slide IN 
+	----------------------*/
+	.mobile-menu {
+		top: -100%;
+		width: 100%;
+		background: #06062a;
+		color: #fff;
+		position: fixed;
+		z-index: 9997;
+		overflow-y: auto;
+		-webkit-transform: translate3d(0, 0, 205px);
+		-moz-transform: translate3d(0, 0, 205px);
+		transform: translate3d(0, 0, 205px);
+		-webkit-transition: all 500ms ease-in-out;
+		-moz-transition: all 500ms ease-in-out;
+		transition: all 500ms ease-in-out;
+	}
+
+	.mobile-menu.active {
+		top: 0;
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+		-webkit-transition: all 500ms ease-in-out;
+		-moz-transition: all 500ms ease-in-out;
+		transition: all 500ms ease-in-out;
 	}
 }
+
 @media screen and (orientation: landscape) {
-	#Intro > article > div > div {
+	#Intro>article>div>div {
 		width: 50%;
 		display: table-cell;
 	}
+
 	#farm-landscape {
 		display: unset;
 		max-width: 1280px;
 	}
 }
+
 #Partners {
 	height: unset;
 	padding: 10% 0;
 }
-#Partners > article > div:nth-child(1) {
+
+#Partners>article>div:nth-child(1) {
 	max-width: 1280px;
 	margin: 24px auto;
 	width: 75%;
 }
+
 #Partners ul {
 	padding: 0;
 	max-width: 1000px;
 }
+
 #Partners ul li {
 	display: inline-block;
 	margin: 24px;
 	opacity: 0.75;
 }
+
 #Partners ul li:hover {
 	opacity: 1;
 }
-#Partners ul li div {
-}
+
+#Partners ul li div {}
+
 #Partners ul li svg,
 #Partners ul li img {
 	height: 96px;
 	width: 192px;
 }
+
 #Partners ul li p {
 	text-align: center;
 	line-height: 1;
 }
+
 #Intro div.circle svg {
 	margin: 16.5%;
 	fill: #0ff;
 }
-#Intro > article > div > div.circle > div > div > div > div > div {
+
+#Intro>article>div>div.circle>div>div>div>div>div {
 	background: #000;
 	padding: 0 6.81875%;
 }
+
 #Intro .circle {
 	max-width: 640px;
 	max-height: 640px;
 	width: calc(100% / 3);
 }
+
 #Intro .circle div {
 	border-radius: 50%;
 	background: linear-gradient(315deg, #0ff, #00ffff20, transparent);
@@ -765,16 +1026,20 @@ p {
 	min-height: 160px;
 	min-width: 160px;
 }
-#Intro > article > div > div.circle > div > div {
+
+#Intro>article>div>div.circle>div>div {
 	background-color: #000;
 }
+
 #media * {
 	color: #000;
 }
+
 #media a {
 	cursor: pointer;
 }
-#media a > div {
+
+#media a>div {
 	text-align: center;
 	display: inline-block;
 	border-radius: 3px;
@@ -790,34 +1055,42 @@ p {
 	position: relative;
 	padding: 8px 0;
 }
-#media a > div:hover * {
+
+#media a>div:hover * {
 	opacity: 1;
 }
+
 #media .image {
 	height: 192px;
 	padding: 0;
 	background-size: cover;
 	background-position: 50% 12.5%;
 }
+
 #media .image aside {
 	padding: 0;
 }
-#media .image > div svg {
+
+#media .image>div svg {
 	padding: 0;
 }
-#media a > div:hover {
+
+#media a>div:hover {
 	opacity: 0.75;
 }
-#media a > div > div {
+
+#media a>div>div {
 	background: rgba(255, 255, 255, 0.875);
 	vertical-align: middle;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 }
-#media a > div > div > * {
+
+#media a>div>div>* {
 	margin: 4px;
 }
+
 #media aside {
 	color: #000;
 	opacity: 1;
@@ -825,10 +1098,12 @@ p {
 	vertical-align: middle;
 	list-style: 1;
 }
+
 #media div a div * {
 	opacity: 0;
 	transition: 125ms opacity ease-in-out;
 }
+
 #UI #media h3 {
 	font-family: DIN;
 	text-align: center;
@@ -841,37 +1116,44 @@ p {
 	border-right: 0;
 	text-transform: uppercase;
 }
+
 #media img {
 	float: left;
 }
+
 #media svg {
 	height: 24px;
 	width: 24px;
 	fill: #000;
 	vertical-align: middle;
 }
+
 #media ul li {
 	padding: 3px 0;
 	display: inline-block;
 }
-#UI #contact section > * {
+
+#UI #contact section>* {
 	display: block;
 	width: 100%;
 	font-family: DIN;
 	margin: 2px auto;
 }
+
 #UI #social svg {
 	height: 24px;
 	margin: 8px;
 	fill: #fff;
 	stroke: transparent;
 }
+
 #UI #contact svg {
 	height: 24px;
 	margin: 8px;
 	fill: #fff;
 	stroke: transparent;
 }
+
 #UI #blog svg {
 	height: 24px;
 	margin: 0;
@@ -879,12 +1161,14 @@ p {
 	stroke: transparent;
 	vertical-align: middle;
 }
+
 #UI ul a {
 	display: block;
 	border: 1px solid transparent;
 	border-radius: 3px;
 	flex-direction: row;
 }
+
 #UI ul {
 	list-style: none;
 	padding: 0;
@@ -895,7 +1179,8 @@ p {
 	align-items: center;
 	overflow: hidden;
 }
-#UI > div {
+
+#UI>div {
 	max-width: calc(640px + 96px);
 	transform: translateX(100%);
 	transition: 0.25s all cubic-bezier(0, 1, 1, 1);
@@ -918,10 +1203,12 @@ p {
 	overflow-y: hidden;
 	overflow-x: hidden;
 }
-#UI div > div > ul {
+
+#UI div>div>ul {
 	padding: 48px 0;
 }
-#UI div > div > * {
+
+#UI div>div>* {
 	text-rendering: optimizeSpeed;
 	font-weight: 100;
 	color: #fff;
@@ -931,12 +1218,14 @@ p {
 	border-bottom-right-radius: 0;
 	border-right: 0;
 }
-#UI > div > div {
+
+#UI>div>div {
 	vertical-align: middle;
 	display: table-cell;
 	overflow: hidden;
 	padding: 24px;
 }
+
 body.bio #cell,
 body.blog #cell,
 body.contact #cell,
@@ -945,6 +1234,7 @@ body.social #cell {
 	visibility: initial;
 	background-color: #000;
 }
+
 body.bio #UI #bio,
 body.media #UI #media {
 	transform: translateX(100%);
@@ -956,6 +1246,7 @@ body.media #UI #media {
 	-webkit-overflow-scrolling: touch;
 	display: block;
 }
+
 body.bio #UI #bio,
 body.blog #UI #blog,
 body.contact #UI #contact,
@@ -965,6 +1256,7 @@ body.social #UI #social {
 	opacity: 1;
 	pointer-events: all;
 }
+
 body.bio #UI,
 body.blog #UI,
 body.contact #UI,
@@ -972,6 +1264,7 @@ body.media #UI,
 body.social #UI {
 	pointer-events: all;
 }
+
 body.bio main#Spreads,
 body.blog main#Spreads,
 body.contact main#Spreads,
@@ -979,22 +1272,23 @@ body.media main#Spreads,
 body.social main#Spreads {
 	opacity: 0.25;
 }
+
 #bio {
-	background: linear-gradient(
-		0deg,
-		#00000040,
-		#00000080,
-		#00000080,
-		#00000080,
-		#00000040
-	);
+	background: linear-gradient(0deg,
+			#00000040,
+			#00000080,
+			#00000080,
+			#00000080,
+			#00000040);
 }
+
 #bio p {
 	margin: 8px auto;
 	max-width: 640px;
 	text-align: left;
 	text-transform: initial;
 }
+
 #bio ul a {
 	display: inline;
 	border: none;
@@ -1003,21 +1297,24 @@ body.social main#Spreads {
 }
 
 @media (orientation: landscape) {
-	#UI > div > div {
+	#UI>div>div {
 		padding-left: env(safe-area-inset-left);
 		padding-right: env(safe-area-inset-right);
 	}
 }
+
 #UI #logo {
 	display: block;
 }
-#UI #logo > div {
+
+#UI #logo>div {
 	display: inline-block;
 	vertical-align: middle;
 	padding: 4px;
 	text-rendering: geometricPrecision;
 }
-#UI #logo-icon > svg {
+
+#UI #logo-icon>svg {
 	height: 36px;
 	display: block;
 	margin: 0;
@@ -1025,6 +1322,7 @@ body.social main#Spreads {
 	padding: 0;
 	margin-right: 10px;
 }
+
 #UI ul li div {
 	letter-spacing: 2px;
 	padding: 40px 20px;
@@ -1032,21 +1330,26 @@ body.social main#Spreads {
 	-ms-flex-align: center;
 	line-height: 1.25;
 }
+
 #UI ul li a {
 	opacity: 0.5;
 }
+
 #UI ul li a:hover {
 	opacity: 1;
 }
-#Intro > article > div > div {
+
+#Intro>article>div>div {
 	vertical-align: middle;
 	padding: 24px;
 }
-#Intro > article > div:nth-child(1) img {
+
+#Intro>article>div:nth-child(1) img {
 	object-position: center;
 	object-fit: fill;
 }
-#Intro > article > div:nth-child(2) p {
+
+#Intro>article>div:nth-child(2) p {
 	text-rendering: optimizeLegibility;
 	letter-spacing: 0.3px;
 	font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
@@ -1057,11 +1360,13 @@ body.social main#Spreads {
 	box-sizing: inherit;
 	padding: 0 24px;
 }
-#Partners > article > div > img,
-#Partners > article > div > svg {
+
+#Partners>article>div>img,
+#Partners>article>div>svg {
 	width: 100vw;
 }
-#Spreads > footer > article div p {
+
+#Spreads>footer>article div p {
 	text-rendering: optimizeLegibility;
 	font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
 		BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
@@ -1073,13 +1378,15 @@ body.social main#Spreads {
 	letter-spacing: 0.4px;
 	box-sizing: inherit;
 }
-#Spreads > footer > article > div a span {
+
+#Spreads>footer>article>div a span {
 	font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
 		BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
 		sans-serif;
 	text-transform: uppercase;
 }
-#Spreads > footer > article div h4 {
+
+#Spreads>footer>article div h4 {
 	text-rendering: optimizeLegibility;
 	font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
 		BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
@@ -1093,17 +1400,20 @@ body.social main#Spreads {
 	box-sizing: inherit;
 	margin: 20px auto;
 }
-#Spreads > footer > article div a {
+
+#Spreads>footer>article div a {
 	display: inline-block;
 	padding: 24px 48px;
 	opacity: 0.5;
 	letter-spacing: 2px;
 	text-transform: uppercase;
 }
-#Spreads > footer > article div a:hover {
+
+#Spreads>footer>article div a:hover {
 	opacity: 1;
 }
-#Intro > article > div:first-child img {
+
+#Intro>article>div:first-child img {
 	width: 100%;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
@@ -1114,12 +1424,14 @@ body.social main#Spreads {
 	-ms-flex-align: center;
 	align-items: center;
 }
-#Intro > article {
+
+#Intro>article {
 	position: relative;
 	width: 100%;
 	height: 100%;
 }
-#Intro > article > div {
+
+#Intro>article>div {
 	max-width: 1280px;
 	width: 100%;
 	display: table-cell;
@@ -1127,38 +1439,46 @@ body.social main#Spreads {
 	text-align: center;
 	display: inline-block;
 }
+
 #Intro {
 	height: 50%;
 	overflow: hidden;
 	background-color: #000;
 	background-image: url(/image/grid-25.png);
 }
-#Spreads > section#Overview {
+
+#Spreads>section#Overview {
 	background: 0 0;
 }
-#Logo div.before > div {
+
+#Logo div.before>div {
 	border-color: #ffffff00 #ffffff80 #ffffff00 #ffffff80;
 }
-#Earn > article > div > p {
+
+#Earn>article>div>p {
 	max-width: 1280px;
 	text-align: center;
 	margin: 24px auto 0;
 }
-#Earn > article > div > div {
+
+#Earn>article>div>div {
 	/* max-height: 100vh; */
 	position: relative;
 	width: 75vw;
 }
+
 #Earn h2 {
 	max-width: 1280px;
 	margin: 0 auto 48px;
 	text-align: center;
 }
-#Spreads > #Earn {
+
+#Spreads>#Earn {
 	height: unset;
 	padding: 48px 0;
 }
-#Spreads > footer {
+
+#Spreads>footer {
 	height: calc(50% + 1px);
 	background-color: #000;
 	font-size: 12px;
@@ -1169,40 +1489,48 @@ body.social main#Spreads {
 }
 
 @media (orientation: portrait) {
-	#UI > div {
+	#UI>div {
 		min-width: calc(100vw - 48px);
 	}
-	#Spreads > footer > article div a {
-		padding: 24px; /* text-align: center; */
+
+	#Spreads>footer>article div a {
+		padding: 24px;
+		/* text-align: center; */
 	}
-	#Overview > article > div > div:nth-child(even),
-	#Overview > article > div > div:nth-child(odd) {
+
+	#Overview>article>div>div:nth-child(even),
+	#Overview>article>div>div:nth-child(odd) {
 		display: block;
 		width: 100%;
 	}
-	#Overview > article > div > div:nth-child(even) {
+
+	#Overview>article>div>div:nth-child(even) {
 		margin: 0 auto 24px;
 	}
 }
 
-body #UI > ul > li {
+body #UI>ul>li {
 	opacity: 0;
 	overflow: hidden;
 }
-body #UI > ul > li:nth-child(1) {
+
+body #UI>ul>li:nth-child(1) {
 	opacity: 1;
 }
-body.Active #UI > ul > li {
+
+body.Active #UI>ul>li {
 	opacity: 1;
 	transition: 0.5s opacity ease-in-out;
 }
-body.Active #UI > ul > li:nth-child(1) {
+
+body.Active #UI>ul>li:nth-child(1) {
 	opacity: 1;
 }
 
 footer ul {
 	padding: 0;
 }
+
 footer #footer-message {
 	margin-bottom: 48px;
 }
@@ -1216,23 +1544,28 @@ footer a svg {
 	width: 24px;
 	fill: #bfbfbf;
 }
+
 footer a {
 	opacity: 0;
 }
+
 footer a:hover {
 	opacity: 1;
 	color: #00ffff;
 }
+
 footer a:hover span {
 	color: #00ffff;
 }
+
 footer a:hover svg {
 	fill: #0ff;
 }
 
-body #UI > ul > li {
+body #UI>ul>li {
 	pointer-events: none;
 }
-body.Active #UI > ul > li {
+
+body.Active #UI>ul>li {
 	pointer-events: unset;
 }
