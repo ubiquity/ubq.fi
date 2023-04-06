@@ -401,18 +401,4 @@
   //         // nv.slc.grid.style.transform = `scale(${1-(force*.125)})`;
   //     }
   // });
-
-  // HAMBURGEER
-
-  document.querySelector(".hamburger-menu").addEventListener('click', (e) =>
-  {
-    document.querySelector(".bar").classList.toggle("animate");
-    document.querySelector(".mobile-menu").classList.toggle("active");
-    return false;
-  });
-  document.querySelector(".has-children").on('click', function ()
-  {
-    this.children('ul').slideToggle('slow', 'swing');
-    document.querySelector(".icon-arrow").classList.toggle("open");
-  });
 })();
