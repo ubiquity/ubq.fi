@@ -347,4 +347,8 @@
   //         // nv.slc.grid.style.transform = `scale(${1-(force*.125)})`;
   //     }
   // });
+  const menuItems = document.getElementById(`menu`)?.children;
+  for (const menuItem of menuItems) {
+    menuItem?.addEventListener("click", (e) => e.stopPropagation(), false)
+  }
 })();
