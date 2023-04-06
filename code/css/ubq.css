@@ -877,6 +877,8 @@ p {
 	.mobile-menu {
 		overflow: visible;
 		width: 100% !important;
+		/* Fixes text flashing on load, issue still remains in uad.ubq.fi */
+		opacity: 0;
 	}
 
 	/*---------------------
