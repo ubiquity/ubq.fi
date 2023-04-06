@@ -790,6 +790,10 @@ p {
 	width: 100%;
 }
 
+#UI input[type=checkbox] {
+	display: none;
+}
+
 @media screen and (orientation: portrait) {
 	#Intro>article>div>div.circle {
 		width: 100%;
@@ -890,7 +894,7 @@ p {
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		appearance: none;
-		margin: 40px;
+		margin: 52px;
 		/* position: absolute;
 		right: 16px;
 		bottom: 48px; */
@@ -951,15 +955,27 @@ p {
 		opacity: 0;
 		transition: opacity .33s cubic-bezier(0, 1, 1, 1);
 		pointer-events: none;
-		background: radial-gradient(#000, #101010);
-		-webkit-mask-image: linear-gradient(-90deg, #000, #000, #000, #000, #00000000);
+		background: #000;
 		max-width: unset;
-		width: 75vw
+		width: 100vw;
 	}
 
 	#UI input[type=checkbox]:checked+.mobile-menu {
 		opacity: 1;
 		pointer-events: unset
+	}
+
+	#menu {
+		/* position: sticky; */
+		height: 100vh;
+		top: 600;
+		/* right: 0; */
+		margin: 0;
+		/* left: 0; */
+		width: 100%;
+		/* justify-content: start; */
+		display: flex;
+		align-items: start !important;
 	}
 }
 
