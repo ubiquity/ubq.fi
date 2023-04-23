@@ -1216,7 +1216,7 @@ p {
 
 	/* fix for safari */
 	position: absolute;
-	height: 100vh;
+	height: 40vh;
 }
 
 #UI>div {
