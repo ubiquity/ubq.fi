@@ -78,6 +78,7 @@ foreground>span {
 	overflow: hidden;
 	font-family: DIN;
 	-webkit-mask-image: linear-gradient(to top right, transparent 50%, #000 100%);
+	mask-image: linear-gradient(to top right, transparent 50%, #000 100%);
 }
 
 foreground {
@@ -119,6 +120,12 @@ body.Active .spin::after {
 canvas#sine {
 	height: 100%;
 	-webkit-mask-image: linear-gradient(90deg,
+			#00000000 0,
+			#00000020 25%,
+			#00000000 50%,
+			#00000020 75%,
+			#00000000 100%);
+	mask-image: linear-gradient(90deg,
 			#00000000 0,
 			#00000020 25%,
 			#00000000 50%,
@@ -228,6 +235,9 @@ body background>#cell {
 	-webkit-mask-image: radial-gradient(#00000040 0%,
 			#00000080 50%,
 			#000000ff 100%);
+	mask-image: radial-gradient(#00000040 0%,
+			#00000080 50%,
+			#000000ff 100%);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -238,6 +248,10 @@ body background>#cell {
 
 body.Active background>#cell {
 	-webkit-mask-image: radial-gradient(#00000000 0,
+			#00000020 50%,
+			#00000030 75%,
+			#00000080 100%);
+	mask-image: radial-gradient(#00000000 0,
 			#00000020 50%,
 			#00000030 75%,
 			#00000080 100%);
@@ -564,6 +578,7 @@ body.Active .spin>div.after>div {
 body.Active .spin>div.before>div {
 	animation: rotation-b 64s linear 0s infinite;
 	-webkit-mask-image: linear-gradient(to right, transparent, #000, transparent);
+	mask-image: linear-gradient(to right, transparent, #000, transparent);
 }
 
 .spin>div>div {
@@ -664,6 +679,9 @@ body.Active #Logo {
 	word-break: break-all;
 	line-height: 1;
 	-webkit-mask-image: radial-gradient(#00000000 0,
+			#00000000 50%,
+			#00000010 100%);
+	mask-image: radial-gradient(#00000000 0,
 			#00000000 50%,
 			#00000010 100%);
 	opacity: 0;
@@ -864,10 +882,6 @@ p {
 		margin-top: 100px;
 	}
 
-	.mobile-menu li:hover {
-		/* background: #171751; */
-	}
-
 	.mobile-menu li a {
 		text-decoration: none;
 	}
@@ -1023,8 +1037,6 @@ p {
 #Partners ul li:hover {
 	opacity: 1;
 }
-
-#Partners ul li div {}
 
 #Partners ul li svg,
 #Partners ul li img {
