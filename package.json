@@ -9,7 +9,8 @@
     "node": ">=v20.3.0"
   },
   "scripts": {
-    "start": "static static",
+    "start": "tsx server.ts",
+    "build": "tsx esbuild.ts",
     "format": "run-s format:prettier format:lint",
     "format:lint": "eslint --fix .",
     "format:prettier": "prettier --write ."
