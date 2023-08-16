@@ -1,5 +1,9 @@
 {
+  "trailingComma": "es5",
   "tabWidth": 2,
-  "useTabs": false,
-  "htmlWhitespaceSensitivity": "strict"
+  "semi": true,
+  "singleQuote": false,
+  "printWidth": 160,
+  "htmlWhitespaceSensitivity": "strict",
+  "plugins": []
 }

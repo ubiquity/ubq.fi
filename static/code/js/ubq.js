@@ -199,11 +199,8 @@
         });
       }
     }
-
-
   };
   Logo.addEventListener("click", logoClick);
-
 
   UI.addEventListener("click", function () {
     nv.fnc.note(800, { reverb: 1 / 8 });

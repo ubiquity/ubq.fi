@@ -1,7 +1,5 @@
 * {
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
-    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 :root {
   --page-init: 8s all cubic-bezier(0, 1, 1, 1);
@@ -101,14 +99,7 @@ body.Active .spin::after {
 }
 canvas#sine {
   height: 100%;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    #00000000 0,
-    #00000020 25%,
-    #00000000 50%,
-    #00000020 75%,
-    #00000000 100%
-  );
+  -webkit-mask-image: linear-gradient(90deg, #00000000 0, #00000020 25%, #00000000 50%, #00000020 75%, #00000000 100%);
   display: none;
 }
 body.Active canvas#sine {
@@ -195,11 +186,7 @@ body background > #cell {
   text-align: center;
   width: 100%;
   height: 100%;
-  -webkit-mask-image: radial-gradient(
-    #00000040 0%,
-    #00000080 50%,
-    #000000ff 100%
-  );
+  -webkit-mask-image: radial-gradient(#00000040 0%, #00000080 50%, #000000ff 100%);
   position: fixed;
   top: 0;
   left: 0;
@@ -208,12 +195,7 @@ body background > #cell {
   opacity: 0.5;
 }
 body.Active background > #cell {
-  -webkit-mask-image: radial-gradient(
-    #00000000 0,
-    #00000020 50%,
-    #00000030 75%,
-    #00000080 100%
-  );
+  -webkit-mask-image: radial-gradient(#00000000 0, #00000020 50%, #00000030 75%, #00000080 100%);
   opacity: 1;
 }
 #UI {
@@ -430,9 +412,7 @@ body.Active background > #cell {
 @font-face {
   font-family: DIN;
   src: url(/fonts/DIN/DINNextLTW04-Regular.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Regular.eot#iefix)
-      format("embedded-opentype"),
-    url(/fonts/DIN/DINNextLTW04-Regular.woff) format("woff"),
+  src: url(/fonts/DIN/DINNextLTW04-Regular.eot#iefix) format("embedded-opentype"), url(/fonts/DIN/DINNextLTW04-Regular.woff) format("woff"),
     url(/fonts/DIN/DINNextLTW04-Regular.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -440,8 +420,7 @@ body.Active background > #cell {
 @font-face {
   font-family: DIN;
   src: url(/fonts/DIN/DINNextLTW04-Medium.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Medium.eot#iefix) format("embedded-opentype"),
-    url(/fonts/DIN/DINNextLTW04-Medium.woff) format("woff"),
+  src: url(/fonts/DIN/DINNextLTW04-Medium.eot#iefix) format("embedded-opentype"), url(/fonts/DIN/DINNextLTW04-Medium.woff) format("woff"),
     url(/fonts/DIN/DINNextLTW04-Medium.ttf) format("truetype");
   font-weight: 500;
   font-style: normal;
@@ -449,8 +428,7 @@ body.Active background > #cell {
 @font-face {
   font-family: DIN;
   src: url(/fonts/DIN/DINNextLTW04-Light.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Light.eot#iefix) format("embedded-opentype"),
-    url(/fonts/DIN/DINNextLTW04-Light.woff) format("woff"),
+  src: url(/fonts/DIN/DINNextLTW04-Light.eot#iefix) format("embedded-opentype"), url(/fonts/DIN/DINNextLTW04-Light.woff) format("woff"),
     url(/fonts/DIN/DINNextLTW04-Light.ttf) format("truetype");
   font-weight: 300;
   font-style: normal;
@@ -458,8 +436,7 @@ body.Active background > #cell {
 @font-face {
   font-family: DIN;
   src: url(/fonts/DIN/DINNextLTW04-Italic.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Italic.eot#iefix) format("embedded-opentype"),
-    url(/fonts/DIN/DINNextLTW04-Italic.woff) format("woff"),
+  src: url(/fonts/DIN/DINNextLTW04-Italic.eot#iefix) format("embedded-opentype"), url(/fonts/DIN/DINNextLTW04-Italic.woff) format("woff"),
     url(/fonts/DIN/DINNextLTW04-Italic.ttf) format("truetype");
   font-weight: 400;
   font-style: italic;
@@ -467,8 +444,7 @@ body.Active background > #cell {
 @font-face {
   font-family: DIN;
   src: url(/fonts/DIN/DINNextLTW04-Bold.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Bold.eot#iefix) format("embedded-opentype"),
-    url(/fonts/DIN/DINNextLTW04-Bold.woff) format("woff"),
+  src: url(/fonts/DIN/DINNextLTW04-Bold.eot#iefix) format("embedded-opentype"), url(/fonts/DIN/DINNextLTW04-Bold.woff) format("woff"),
     url(/fonts/DIN/DINNextLTW04-Bold.ttf) format("truetype");
   font-weight: 700;
   font-style: normal;
@@ -584,11 +560,7 @@ body.Active #Logo {
   text-rendering: optimizeSpeed;
   word-break: break-all;
   line-height: 1;
-  -webkit-mask-image: radial-gradient(
-    #00000000 0,
-    #00000000 50%,
-    #00000010 100%
-  );
+  -webkit-mask-image: radial-gradient(#00000000 0, #00000000 50%, #00000010 100%);
   opacity: 0;
   display: none;
   vertical-align: middle;
@@ -658,9 +630,7 @@ h2,
 h3 {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
-    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   text-align: left;
   color: #fff;
   line-height: 1;
@@ -675,9 +645,7 @@ p {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0.3px;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
-    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   text-align: left;
   box-sizing: inherit;
   margin: 0;
@@ -998,14 +966,7 @@ body.social main#Spreads {
   opacity: 0.25;
 }
 #bio {
-  background: linear-gradient(
-    0deg,
-    #00000040,
-    #00000080,
-    #00000080,
-    #00000080,
-    #00000040
-  );
+  background: linear-gradient(0deg, #00000040, #00000080, #00000080, #00000080, #00000040);
 }
 #bio p {
   margin: 8px auto;
@@ -1068,9 +1029,7 @@ body.social main#Spreads {
 #Intro > article > div:nth-child(2) p {
   text-rendering: optimizeLegibility;
   letter-spacing: 0.3px;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
-    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color: #bfbfbf;
   font-size: 20px;
   box-sizing: inherit;
@@ -1082,9 +1041,7 @@ body.social main#Spreads {
 }
 #Spreads > footer > article div p {
   text-rendering: optimizeLegibility;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
-    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #fff;
   font-size: 20px;
@@ -1093,16 +1050,12 @@ body.social main#Spreads {
   box-sizing: inherit;
 }
 #Spreads > footer > article > div a span {
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
-    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
 #Spreads > footer > article div h4 {
   text-rendering: optimizeLegibility;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
-    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #fff;
   font-weight: 500;
