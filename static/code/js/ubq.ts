@@ -46,7 +46,7 @@ function outer(o) {
   };
   return inner(o);
 }
-function cascade(this: HTMLElement, elements, speed, classname, foreach) {
+function cascade({ self, elements, speed, classname, foreach }: { self: HTMLElement; elements; speed; classname; foreach }) {
   if (!elements) return false;
   if (!classname) classname = "Active";
   if (!speed) speed = 1000 / 16;
@@ -81,7 +81,7 @@ function cascade(this: HTMLElement, elements, speed, classname, foreach) {
       });
     }
   }
-  return this;
+  return self;
 }
 
 window.onhashchange = function change() {
@@ -123,11 +123,16 @@ const logoClick = function () {
     // enter_sound();
     note(900);
     document.body.className = "Active";
-    cascade(Info);
-    cascade(Info.children, null, null, function (e) {
-      e.addEventListener("mouseenter", chip_note);
+    cascade({ self: Info });
+    cascade({
+      self: Info.children,
+      elements: null,
+      speed: null,
+      classname: function (e) {
+        e.addEventListener("mouseenter", chip_note);
+      },
     });
-    cascade(Info.getElementsByTagName("h1")[0], null, null, chip_note);
+    cascade({ self: Info.getElementsByTagName("h1")[0], elements: null, speed: null, classname: chip_note });
   }
   logo_state = !logo_state;
 

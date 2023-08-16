@@ -6,8 +6,8 @@ export interface EthereumIsh {
   networkVersion: string;
   selectedAddress: string;
 
-  on(event: "close" | "accountsChanged" | "chainChanged" | "networkChanged", callback: (payload: any) => void): void;
-  once(event: "close" | "accountsChanged" | "chainChanged" | "networkChanged", callback: (payload: any) => void): void;
+  on(event: "close" | "accountsChanged" | "chainChanged" | "networkChanged", callback: (payload: unknown) => void): void;
+  once(event: "close" | "accountsChanged" | "chainChanged" | "networkChanged", callback: (payload: unknown) => void): void;
 }
 
 declare global {

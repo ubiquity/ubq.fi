@@ -7,5 +7,6 @@ async function server() {
     servedir: "static",
     port: 8080,
   });
+  console.log(`Server running on http://${host}:${port}`);
 }
-server();
+void server();
