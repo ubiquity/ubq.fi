@@ -1,5 +1,7 @@
-*{
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+* {
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
+    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif;
 }
 :root {
   --page-init: 8s all cubic-bezier(0, 1, 1, 1);
@@ -99,7 +101,14 @@ body.Active .spin::after {
 }
 canvas#sine {
   height: 100%;
-  -webkit-mask-image: linear-gradient(90deg, #00000000 0, #00000020 25%, #00000000 50%, #00000020 75%, #00000000 100%);
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    #00000000 0,
+    #00000020 25%,
+    #00000000 50%,
+    #00000020 75%,
+    #00000000 100%
+  );
   display: none;
 }
 body.Active canvas#sine {
@@ -180,21 +189,32 @@ body .center > div {
   padding: calc((128px) / 3);
   opacity: 0;
 }
-background > #cell {
+body background > #cell {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   width: 100%;
   height: 100%;
-  -webkit-mask-image: radial-gradient(#00000000 0, #00000020 50%, #00000030 75%, #00000080 100%);
-  height: 100%;
-  width: 100%;
-  position: absolute;
+  -webkit-mask-image: radial-gradient(
+    #00000040 0%,
+    #00000080 50%,
+    #000000ff 100%
+  );
+  position: fixed;
   top: 0;
   left: 0;
   background-image: url(/image/grid-1.png);
   background-repeat: repeat;
-  position: fixed;
+  opacity: 0.5;
+}
+body.Active background > #cell {
+  -webkit-mask-image: radial-gradient(
+    #00000000 0,
+    #00000020 50%,
+    #00000030 75%,
+    #00000080 100%
+  );
+  opacity: 1;
 }
 #UI {
   text-transform: uppercase;
@@ -249,8 +269,8 @@ background > #cell {
   fill: #0ff;
 }
 #Info > ol {
-  padding: 0;
-  padding-right: calc(100% / 12);
+  /* padding: 0; */
+  padding: 0px calc(100% / 12);
   text-transform: uppercase;
 }
 #Info > header > h1 {
@@ -258,21 +278,24 @@ background > #cell {
   line-height: 1;
   display: inline-block;
   vertical-align: middle;
-  margin: 10px 10px 0;
-  padding-top: 10px;
+  margin: 0;
+  /* padding-top: 15px; */
   color: #ffffffbf;
 }
 #Info > header > aside {
   font-size: 12px;
-  margin: 10px 20px 20px;
+  margin: 6px 0 0;
   letter-spacing: 0.25px;
   line-height: 1.25;
+}
+#Info > header > aside:last-child {
+  /* margin-top: 0; */
 }
 #Info > header {
   position: relative;
   overflow: hidden;
-  padding: 0;
-  padding-right: calc(100% / 12);
+  padding: 10px calc(100% / 12);
+  /* padding-right: calc(100% / 12); */
 }
 #Info > div > aside > span {
   font-size: 12px;
@@ -333,6 +356,19 @@ background > #cell {
   }
 }
 @media (max-width: 640px) {
+  footer li a {
+    width: calc(50vw);
+  }
+  #Info {
+    text-align: left;
+  }
+
+  body.Active #Info ol li {
+    display: block;
+    /* text-align: right; */
+    padding: 0px 16px;
+  }
+
   #extended {
     display: none;
   }
@@ -394,7 +430,9 @@ background > #cell {
 @font-face {
   font-family: DIN;
   src: url(/fonts/DIN/DINNextLTW04-Regular.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Regular.eot#iefix) format("embedded-opentype"), url(/fonts/DIN/DINNextLTW04-Regular.woff) format("woff"),
+  src: url(/fonts/DIN/DINNextLTW04-Regular.eot#iefix)
+      format("embedded-opentype"),
+    url(/fonts/DIN/DINNextLTW04-Regular.woff) format("woff"),
     url(/fonts/DIN/DINNextLTW04-Regular.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -402,7 +440,8 @@ background > #cell {
 @font-face {
   font-family: DIN;
   src: url(/fonts/DIN/DINNextLTW04-Medium.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Medium.eot#iefix) format("embedded-opentype"), url(/fonts/DIN/DINNextLTW04-Medium.woff) format("woff"),
+  src: url(/fonts/DIN/DINNextLTW04-Medium.eot#iefix) format("embedded-opentype"),
+    url(/fonts/DIN/DINNextLTW04-Medium.woff) format("woff"),
     url(/fonts/DIN/DINNextLTW04-Medium.ttf) format("truetype");
   font-weight: 500;
   font-style: normal;
@@ -410,7 +449,8 @@ background > #cell {
 @font-face {
   font-family: DIN;
   src: url(/fonts/DIN/DINNextLTW04-Light.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Light.eot#iefix) format("embedded-opentype"), url(/fonts/DIN/DINNextLTW04-Light.woff) format("woff"),
+  src: url(/fonts/DIN/DINNextLTW04-Light.eot#iefix) format("embedded-opentype"),
+    url(/fonts/DIN/DINNextLTW04-Light.woff) format("woff"),
     url(/fonts/DIN/DINNextLTW04-Light.ttf) format("truetype");
   font-weight: 300;
   font-style: normal;
@@ -418,7 +458,8 @@ background > #cell {
 @font-face {
   font-family: DIN;
   src: url(/fonts/DIN/DINNextLTW04-Italic.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Italic.eot#iefix) format("embedded-opentype"), url(/fonts/DIN/DINNextLTW04-Italic.woff) format("woff"),
+  src: url(/fonts/DIN/DINNextLTW04-Italic.eot#iefix) format("embedded-opentype"),
+    url(/fonts/DIN/DINNextLTW04-Italic.woff) format("woff"),
     url(/fonts/DIN/DINNextLTW04-Italic.ttf) format("truetype");
   font-weight: 400;
   font-style: italic;
@@ -426,7 +467,8 @@ background > #cell {
 @font-face {
   font-family: DIN;
   src: url(/fonts/DIN/DINNextLTW04-Bold.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Bold.eot#iefix) format("embedded-opentype"), url(/fonts/DIN/DINNextLTW04-Bold.woff) format("woff"),
+  src: url(/fonts/DIN/DINNextLTW04-Bold.eot#iefix) format("embedded-opentype"),
+    url(/fonts/DIN/DINNextLTW04-Bold.woff) format("woff"),
     url(/fonts/DIN/DINNextLTW04-Bold.ttf) format("truetype");
   font-weight: 700;
   font-style: normal;
@@ -459,7 +501,7 @@ body.Active .spin > div.after > div {
 }
 body.Active .spin > div.before > div {
   animation: rotation-b 64s linear 0s infinite;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000, transpare);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000, transparent);
 }
 .spin > div > div {
   border-radius: 50%;
@@ -486,6 +528,7 @@ body.Active .spin #aP {
 }
 .spin {
   transition: 1s all cubic-bezier(0.25, 0, 0, 1);
+  opacity: 0.5;
   border-radius: 50%;
   position: relative;
   width: 160px;
@@ -527,10 +570,10 @@ body.Active #Logo {
     width: 100%;
   }
   #Info > header {
-    padding: 0;
+    /* padding: 15px 0; */
   }
   #Info > ol {
-    padding: 0;
+    background-color: #ffffff10;
   }
 }
 #bytecode {
@@ -541,7 +584,11 @@ body.Active #Logo {
   text-rendering: optimizeSpeed;
   word-break: break-all;
   line-height: 1;
-  -webkit-mask-image: radial-gradient(#00000000 0, #00000000 50%, #00000010 100%);
+  -webkit-mask-image: radial-gradient(
+    #00000000 0,
+    #00000000 50%,
+    #00000010 100%
+  );
   opacity: 0;
   display: none;
   vertical-align: middle;
@@ -611,7 +658,9 @@ h2,
 h3 {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
+    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif;
   text-align: left;
   color: #fff;
   line-height: 1;
@@ -626,7 +675,9 @@ p {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0.3px;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
+    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif;
   text-align: left;
   box-sizing: inherit;
   margin: 0;
@@ -688,23 +739,23 @@ p {
 }
 #Partners ul {
   padding: 0;
-  max-width: 1280px;
+  max-width: 1000px;
 }
 #Partners ul li {
   display: inline-block;
   margin: 24px;
+  opacity: 0.75;
+}
+#Partners ul li:hover {
+  opacity: 1;
 }
 #Partners ul li div {
-  height: 12.5vw;
-  background: grey;
-  width: 25vw;
-  border-radius: 4px;
 }
+#Partners ul li svg,
 #Partners ul li img {
-  object-fit: scale-down;
-  width: 100%;
-  height: 100%;
-  filter: grayscale(1) contrast(1.5);
+  height: 96px;
+  width: 192px;
+  max-width: 25vw;
 }
 #Partners ul li p {
   text-align: center;
@@ -847,8 +898,8 @@ p {
 }
 #UI ul a {
   display: block;
-  border: 1px solid transparent;
-  border-radius: 3px;
+  /* border: 1px solid transparent; */
+  /* border-radius: 3px; */
   flex-direction: row;
 }
 #UI ul {
@@ -858,8 +909,9 @@ p {
   flex-direction: row;
   display: flex;
   max-width: 1280px;
-  align-items: center;
+  align-items: top;
   overflow: hidden;
+  /* vertical-align: top; */
 }
 #UI > div {
   max-width: calc(640px + 96px);
@@ -946,7 +998,14 @@ body.social main#Spreads {
   opacity: 0.25;
 }
 #bio {
-  background: linear-gradient(0deg, #00000040, #00000080, #00000080, #00000080, #00000040);
+  background: linear-gradient(
+    0deg,
+    #00000040,
+    #00000080,
+    #00000080,
+    #00000080,
+    #00000040
+  );
 }
 #bio p {
   margin: 8px auto;
@@ -986,13 +1045,14 @@ body.social main#Spreads {
 }
 #UI ul li div {
   letter-spacing: 2px;
-  padding: 40px 20px;
+  /* padding: 40px 20px; */
   -ms-flex-pack: justify;
   -ms-flex-align: center;
   line-height: 1.25;
 }
 #UI ul li a {
   opacity: 0.5;
+  padding: 20px;
 }
 #UI ul li a:hover {
   opacity: 1;
@@ -1008,18 +1068,23 @@ body.social main#Spreads {
 #Intro > article > div:nth-child(2) p {
   text-rendering: optimizeLegibility;
   letter-spacing: 0.3px;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
+    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif;
   color: #bfbfbf;
   font-size: 20px;
   box-sizing: inherit;
   padding: 0 24px;
 }
-#Partners > article > div > img {
+#Partners > article > div > img,
+#Partners > article > div > svg {
   width: 100vw;
 }
 #Spreads > footer > article div p {
   text-rendering: optimizeLegibility;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
+    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif;
   text-align: center;
   color: #fff;
   font-size: 20px;
@@ -1028,12 +1093,16 @@ body.social main#Spreads {
   box-sizing: inherit;
 }
 #Spreads > footer > article > div a span {
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
+    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif;
   text-transform: uppercase;
 }
 #Spreads > footer > article div h4 {
   text-rendering: optimizeLegibility;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
+    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
+    sans-serif;
   text-align: center;
   color: #fff;
   font-weight: 500;
@@ -1045,7 +1114,7 @@ body.social main#Spreads {
 }
 #Spreads > footer > article div a {
   display: inline-block;
-  padding: 48px;
+  padding: 24px 48px;
   opacity: 0.5;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -1087,7 +1156,7 @@ body.social main#Spreads {
   background: 0 0;
 }
 #Logo div.before > div {
-  border-color: #ffffff00 #ffffff10 #ffffff00 #ffffff10;
+  border-color: #ffffff00 #ffffff80 #ffffff00 #ffffff80;
 }
 #Earn > article > div > p {
   max-width: 1280px;
@@ -1111,6 +1180,11 @@ body.social main#Spreads {
 #Spreads > footer {
   height: calc(50% + 1px);
   background-color: #000;
+  font-size: 12px;
+  font-weight: 400;
+  text-rendering: unset;
+  color: #bfbfbf;
+  letter-spacing: 2px;
 }
 
 @media (orientation: portrait) {
@@ -1128,4 +1202,79 @@ body.social main#Spreads {
   #Overview > article > div > div:nth-child(even) {
     margin: 0 auto 24px;
   }
+}
+
+body #UI > ul > li {
+  opacity: 0;
+  overflow: hidden;
+}
+body #UI > ul > li:nth-child(1) {
+  opacity: 1;
+  margin-top: 8px;
+}
+body.Active #UI > ul > li {
+  opacity: 1;
+  transition: 0.5s opacity ease-in-out;
+}
+body.Active #UI > ul > li:nth-child(1) {
+  opacity: 1;
+}
+
+footer ul {
+  padding: 0;
+}
+footer #footer-message {
+  margin-bottom: 48px;
+}
+
+footer a div {
+  text-align: center;
+}
+
+footer a svg {
+  height: 24px;
+  width: 24px;
+  fill: #bfbfbf;
+}
+footer a {
+  opacity: 0;
+}
+footer a:hover {
+  opacity: 1;
+  color: #00ffff;
+}
+footer a:hover span {
+  color: #00ffff;
+}
+footer a:hover svg {
+  fill: #0ff;
+}
+
+body #UI > ul > li {
+  pointer-events: none;
+  margin-top: 20px;
+}
+body.Active #UI > ul > li {
+  pointer-events: unset;
+  /* position: relative; */
+  /* vertical-align: middle; */
+  /* margin-top: 20px; */
+}
+
+/*  */
+#UI > ul > li > ul {
+  visibility: hidden;
+  display: block;
+}
+#UI > ul > li > ul > li {
+  display: block;
+}
+#UI > ul > li:hover {
+}
+#UI > ul > li:hover > ul {
+  visibility: visible;
+}
+
+#UI > ul > li > ul > li > a {
+  padding: 20px;
 }
