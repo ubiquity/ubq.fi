@@ -46,7 +46,7 @@ function outer(o) {
   };
   return inner(o);
 }
-function cascade(this: any, elements, speed, classname, foreach) {
+function cascade(this: HTMLElement, elements, speed, classname, foreach) {
   if (!elements) return false;
   if (!classname) classname = "Active";
   if (!speed) speed = 1000 / 16;
@@ -84,7 +84,6 @@ function cascade(this: any, elements, speed, classname, foreach) {
   return this;
 }
 
-const media = false;
 window.onhashchange = function change() {
   const hash = location.hash.split("#").pop();
 
@@ -97,13 +96,13 @@ window.onhashchange = function change() {
 const forget = function (inputs) {
   const targets = inputs;
   if (targets.length) {
-    var x = targets.length;
+    let x = targets.length;
     while (x--) {
       let y = targets[x].children.length;
       while (y--) targets[x].children[y].className = "";
     }
   } else {
-    var x = targets.children.length;
+    let x = targets.children.length;
     while (x--) {
       targets.children[x].className = "";
     }
@@ -163,7 +162,7 @@ while (x--) {
     });
 }
 
-let context;
+let context: AudioContext;
 if (window.AudioContext) {
   context = new AudioContext();
 } else if (window.webkitAudioContext) {
@@ -171,7 +170,7 @@ if (window.AudioContext) {
 } else {
   context = {};
 }
-function note(frequency, meta, callback?) {
+function note(frequency: number | number[], meta?, callback?) {
   if (!meta) meta = {};
   const undef = void 0;
   if (meta.type == undef) meta.type = "sine";
@@ -181,8 +180,7 @@ function note(frequency, meta, callback?) {
   if (meta.reverb == undef) meta.reverb = 0.25;
   // console.log(JSON.stringify(meta, null, '\t'));
   if (typeof frequency !== "number") {
-    var x = frequency.length;
-    const sustain = [];
+    let x = frequency.length;
     while (x--) {
       if (x) note(frequency[x], meta);
       else return note(frequency[x], meta, callback);
@@ -208,13 +206,13 @@ function note(frequency, meta, callback?) {
     );
   if (callback) {
     if (meta.chord) {
-      var x = meta.chord.length;
+      let x = meta.chord.length;
       while (x--) meta.chord[x]();
     }
     callback();
   }
 }
-const enter_sound = function () {
+function enterSound() {
   play(
     [
       950,
@@ -232,7 +230,7 @@ const enter_sound = function () {
       // sustain: .25
     }
   );
-};
+}
 
 const notes = [
   [16.35, 17.32, 18.35, 19.45, 20.6, 21.83, 23.12, 24.5, 25.96, 27.5, 29.14, 30.87],
