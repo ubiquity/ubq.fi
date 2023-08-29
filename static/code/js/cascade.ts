@@ -2,9 +2,28 @@ import { isArrayLike } from "./is-array-like";
 import { outer } from "./outer";
 import { textCascader } from "./text-cascader";
 
-export function cascade({ self, elements, speed, classname, foreach }: { self: HTMLElement; elements: any; speed: any; classname: any; foreach: any; }) {
-  if (!elements) return false;
-  if (!classname) classname = "Active";
+export function cascade({
+  self,
+  elements,
+  speed,
+  classname: className,
+  foreach,
+}: {
+  self?: Element;
+  elements?: HTMLCollection | HTMLElement;
+  speed?: number;
+  classname?: string;
+  foreach?: (element: HTMLElement) => void;
+}) {
+
+  console.trace(className);
+
+  if (!elements) {
+    return false;
+  }
+  if (!className) {
+    className = "Active";
+  }
   if (!speed) speed = 1000 / 16;
   if (!isArrayLike(elements)) elements = [elements];
   let x = -1;
@@ -17,20 +36,22 @@ export function cascade({ self, elements, speed, classname, foreach }: { self: H
       while (++y < yy) {
         if (!elements[x][y].children.length) textCascader(elements[x][y]);
         outer({
-          q: elements[x][y].children,
+          query: elements[x][y].children,
           amount: elements[x][y].children.length,
-          classname: classname,
+          className: className,
           speed: speed,
           index: -1,
           foreach: foreach,
         });
       }
     } else {
-      if (!elements[x].children.length) textCascader(elements[x]);
+      if (!elements[x].children.length) {
+        textCascader(elements[x]);
+      }
       outer({
-        q: elements[x].children,
+        query: elements[x].children,
         amount: elements[x].children.length,
-        classname: classname,
+        className: className,
         speed: speed,
         index: -1,
         foreach: foreach,

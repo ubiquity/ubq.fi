@@ -23,7 +23,6 @@ ol {
 li {
   font-family: "Proxima Nova", Avenir, DIN;
   display: inline-block;
-  /* text-align: left; */
 }
 aside,
 h1 {
@@ -75,6 +74,7 @@ div#sine-holder {
   right: 0;
   width: 100%;
   height: 100%;
+  top: 0;
 }
 .spin::after {
   content: "> Press to Start";
@@ -132,11 +132,9 @@ body.Active #Info ol li {
   border-radius: 3px;
   height: auto;
   padding: 0;
-  /* opacity: 0.25; */
   opacity: 1;
   filter: drop-shadow(0 0 16px #fff);
   color: #fff;
-  /* transition: 1s all cubic-bezier(0,1,1,1); */
 }
 body.Active #Info ol a {
   user-select: none;
@@ -186,7 +184,7 @@ body background > #cell {
   text-align: center;
   width: 100%;
   height: 100%;
-  -webkit-mask-image: radial-gradient(#00000040 0%, #00000080 50%, #000000ff 100%);
+  -webkit-mask-image: radial-gradient(#00000040 0, #00000080 50%, #000000ff 100%);
   position: fixed;
   top: 0;
   left: 0;
@@ -251,8 +249,7 @@ body.Active background > #cell {
   fill: #0ff;
 }
 #Info > ol {
-  /* padding: 0; */
-  padding: 0px calc(100% / 12);
+  padding: 0 calc(100% / 12);
   text-transform: uppercase;
 }
 #Info > header > h1 {
@@ -261,7 +258,6 @@ body.Active background > #cell {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  /* padding-top: 15px; */
   color: #ffffffbf;
 }
 #Info > header > aside {
@@ -270,14 +266,10 @@ body.Active background > #cell {
   letter-spacing: 0.25px;
   line-height: 1.25;
 }
-#Info > header > aside:last-child {
-  /* margin-top: 0; */
-}
 #Info > header {
   position: relative;
   overflow: hidden;
   padding: 10px calc(100% / 12);
-  /* padding-right: calc(100% / 12); */
 }
 #Info > div > aside > span {
   font-size: 12px;
@@ -344,13 +336,10 @@ body.Active background > #cell {
   #Info {
     text-align: left;
   }
-
   body.Active #Info ol li {
     display: block;
-    /* text-align: right; */
-    padding: 0px 16px;
+    padding: 0 16px;
   }
-
   #extended {
     display: none;
   }
@@ -545,9 +534,6 @@ body.Active #Logo {
     margin: 0;
     width: 100%;
   }
-  #Info > header {
-    /* padding: 15px 0; */
-  }
   #Info > ol {
     background-color: #ffffff10;
   }
@@ -717,10 +703,8 @@ p {
 #Partners ul li:hover {
   opacity: 1;
 }
-#Partners ul li div {
-}
-#Partners ul li svg,
-#Partners ul li img {
+#Partners ul li img,
+#Partners ul li svg {
   height: 96px;
   width: 192px;
   max-width: 25vw;
@@ -866,8 +850,6 @@ p {
 }
 #UI ul a {
   display: block;
-  /* border: 1px solid transparent; */
-  /* border-radius: 3px; */
   flex-direction: row;
 }
 #UI ul {
@@ -879,7 +861,6 @@ p {
   max-width: 1280px;
   align-items: top;
   overflow: hidden;
-  /* vertical-align: top; */
 }
 #UI > div {
   max-width: calc(640px + 96px);
@@ -980,7 +961,6 @@ body.social main#Spreads {
   border-radius: initial;
   text-decoration: underline;
 }
-
 @media (orientation: landscape) {
   #UI > div > div {
     padding-left: env(safe-area-inset-left);
@@ -1006,7 +986,6 @@ body.social main#Spreads {
 }
 #UI ul li div {
   letter-spacing: 2px;
-  /* padding: 40px 20px; */
   -ms-flex-pack: justify;
   -ms-flex-align: center;
   line-height: 1.25;
@@ -1117,7 +1096,6 @@ body.social main#Spreads {
   margin: 24px auto 0;
 }
 #Earn > article > div > div {
-  /* max-height: 100vh; */
   position: relative;
   width: 75vw;
 }
@@ -1139,13 +1117,12 @@ body.social main#Spreads {
   color: #bfbfbf;
   letter-spacing: 2px;
 }
-
 @media (orientation: portrait) {
   #UI > div {
     min-width: calc(100vw - 48px);
   }
   #Spreads > footer > article div a {
-    padding: 24px; /* text-align: center; */
+    padding: 24px;
   }
   #Overview > article > div > div:nth-child(even),
   #Overview > article > div > div:nth-child(odd) {
@@ -1156,7 +1133,6 @@ body.social main#Spreads {
     margin: 0 auto 24px;
   }
 }
-
 body #UI > ul > li {
   opacity: 0;
   overflow: hidden;
@@ -1172,18 +1148,15 @@ body.Active #UI > ul > li {
 body.Active #UI > ul > li:nth-child(1) {
   opacity: 1;
 }
-
 footer ul {
   padding: 0;
 }
 footer #footer-message {
   margin-bottom: 48px;
 }
-
 footer a div {
   text-align: center;
 }
-
 footer a svg {
   height: 24px;
   width: 24px;
@@ -1194,27 +1167,21 @@ footer a {
 }
 footer a:hover {
   opacity: 1;
-  color: #00ffff;
+  color: #0ff;
 }
 footer a:hover span {
-  color: #00ffff;
+  color: #0ff;
 }
 footer a:hover svg {
   fill: #0ff;
 }
-
 body #UI > ul > li {
   pointer-events: none;
   margin-top: 20px;
 }
 body.Active #UI > ul > li {
   pointer-events: unset;
-  /* position: relative; */
-  /* vertical-align: middle; */
-  /* margin-top: 20px; */
 }
-
-/*  */
 #UI > ul > li > ul {
   visibility: hidden;
   display: block;
@@ -1222,12 +1189,9 @@ body.Active #UI > ul > li {
 #UI > ul > li > ul > li {
   display: block;
 }
-#UI > ul > li:hover {
-}
 #UI > ul > li:hover > ul {
   visibility: visible;
 }
-
 #UI > ul > li > ul > li > a {
   padding: 20px;
 }

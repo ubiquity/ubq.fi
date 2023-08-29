@@ -1,10 +1,13 @@
 import { cascade } from "./cascade";
+import { cascadeClassName } from "./cascade-class-name";
 import { chip_note } from "./chip-note";
 import { forget } from "./forget";
 import { note } from "./note";
 import { getLogoState, logo_state, setLogoState } from "./ubq";
 
 export const logoClick = function () {
+  const Info = document.getElementById("Info");
+  if (!Info) return;
   location.hash = "";
   // click_sound();
   if (logo_state) {
@@ -15,20 +18,27 @@ export const logoClick = function () {
     forget(Info.children);
     forget(Info.getElementsByTagName("h1")[0]);
   } else {
-    // enter_sound();
     note(900);
     document.body.className = "Active";
-    cascade({ self: Info });
-    cascade({
-      self: Info.children,
-      elements: null,
-      speed: null,
-      classname: function (e) {
-        e.addEventListener("mouseenter", chip_note);
-      },
-    });
-    cascade({ self: Info.getElementsByTagName("h1")[0], elements: null, speed: null, classname: chip_note });
+    cascadeClassName(Info);
+    // cascadeClassName(Info.children);
+    // cascadeClassName(Info.getElementsByTagName("h1")[0]);
+
+    // cascade({
+    //   self: Info,
+    // });
+    // cascade({
+    //   self: Array.from(Info.children) as Element[],
+    //   forEach: function (e) {
+    //     e.addEventListener("mouseenter", chip_note);
+    //   },
+    // });
+    // cascade({
+    //   self: Info.getElementsByTagName("h1")[0],
+    //   forEach: chip_note,
+    // });
   }
+
   setLogoState(!getLogoState());
 
   // enable video streaming

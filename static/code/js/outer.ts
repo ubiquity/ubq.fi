@@ -1,4 +1,4 @@
-export function outer(o) {
+export function outer(o: { query?: any; amount?: any; className?: string; speed: any; index?: number; foreach: any }) {
   const inner = function (i) {
     if (i.amount == ++i.index) {
       return clearTimeout(inner);
