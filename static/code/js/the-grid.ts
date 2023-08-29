@@ -40,7 +40,7 @@ export function grid(node = document.body) {
         vec2 tileNumber = floor(gl_FragCoord.xy / 24.0);
 
         float period = rand(tileNumber) * 9.0 + 1.0; // Random value in the range [1, 10]
-        float phase = fract(u_time / period / 8.0); // Animation four times slower
+        float phase = fract(u_time / period / 8.0); // Animation eight times slower
         float opacity = (1.0 - abs(phase * 2.0 - 1.0)) * 0.125; // Limit maximum opacity to 0.25
 
         vec4 backgroundColor = vec4(color, opacity);
