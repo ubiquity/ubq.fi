@@ -38,13 +38,6 @@ while (x--) {
 }
 
 import { grid } from "./the-grid";
-grid(document.getElementById("grid-dynamic"));
-
-document.addEventListener("DOMContentLoaded", function () {
-  const button = document.getElementById("hamburger-button");
-  const menu = document.getElementById("menu");
-
-  button.addEventListener("click", function () {
-    menu.classList.toggle("open");
-  });
-});
+if (!window.location.origin.includes("localhost") && !window.location.origin.includes("127.0.0.1")) {
+  grid(document.getElementById("grid-dynamic"));
+}
