@@ -19,10 +19,10 @@ export function setLogoState(newState: boolean) {
 export function getLogoState() {
   return logo_state;
 }
-
-Logo.addEventListener("click", logoClick);
-
-UI.addEventListener("click", function () {
+const Logo = document.getElementById("Logo");
+Logo?.addEventListener("click", logoClick);
+const UI = document.getElementById("UI");
+UI?.addEventListener("click", function () {
   note(800, { reverb: 1 / 8 });
   // note(800);
   location.hash = "";
@@ -36,3 +36,6 @@ while (x--) {
       e.stopPropagation();
     });
 }
+
+import { grid } from "./the-grid";
+grid(document.getElementById("grid-dynamic"));
