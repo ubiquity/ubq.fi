@@ -18,7 +18,7 @@ export const logoClick = function () {
   } else {
     note(900);
     document.body.className = "Active";
-    cascadeClassName(Info);
+    void cascadeClassName(Info);
   }
 
   setLogoState(!getLogoState());

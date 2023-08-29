@@ -308,14 +308,14 @@ body.Active #grid-dynamic {
 }
 #Info > * > .Active {
   opacity: 1;
-  transform: translateY(0);
+  /* transform: translateY(0); */
   filter: blur(0);
 }
 #Info > * > * {
   vertical-align: middle;
   opacity: 0;
   transition: 2s all cubic-bezier(0, 1, 1, 1);
-  transform: translateY(-100%);
+  /* transform: translateY(-100%); */
   filter: blur(8px);
   text-rendering: geometricPrecision;
   line-height: 1;
@@ -516,6 +516,7 @@ h3 {
   font-size: 23px;
   letter-spacing: 0.3px;
   box-sizing: inherit;
+  margin-top: 23px;
 }
 p {
   color: #bfbfbf;
@@ -1039,3 +1040,5 @@ body.Active #UI > ul > li {
 #UI > ul > li > ul > li > a {
   padding: 20px;
 }
+
+body.Active #Info ol li a>span { opacity: 0; }
