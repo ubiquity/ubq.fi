@@ -268,7 +268,7 @@ body.Active #grid-dynamic {
   font-size: 12px;
   text-rendering: geometricPrecision;
   vertical-align: MIDDLE;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   display: inline-block;
 }
 #Info a:hover svg {
@@ -290,7 +290,7 @@ body.Active #grid-dynamic {
 #Info > header > aside {
   font-size: 12px;
   /* margin: 0px 0 0; */
-  /* letter-spacing: 0.25px; */
+  letter-spacing: 0.25px;
   line-height: 1.25;
   /* color: #bfbfbf; */
   /* margin: 0 2px 0 18px; */
@@ -311,7 +311,7 @@ body.Active #grid-dynamic {
   /* transform: translateY(-100%); */
   /* filter: blur(8px); */
   /* display: flex; */
-  letter-spacing: -3px;
+  /* letter-spacing: -3px; */
 }
 #Info * {
   /* vertical-align: middle; */
@@ -321,7 +321,7 @@ body.Active #grid-dynamic {
   filter: blur(8px);
   text-rendering: geometricPrecision;
   line-height: 1;
-  padding: 2px;
+  /* padding: 2px; */
   /* letter-spacing: 2px; */
   /* color: #bfbfbf; */
 }
@@ -521,6 +521,7 @@ h3 {
   letter-spacing: 0.3px;
   box-sizing: inherit;
   margin-top: 23px;
+  line-height: 1.25;
 }
 p {
   color: #bfbfbf;
@@ -729,6 +730,9 @@ p {
   max-width: 1280px;
   align-items: top;
   overflow: hidden;
+  /* background: linear-gradient(180deg, #000000ff, #000000ff, #000000ff, #00000000); */
+  /* backdrop-filter: blur(12px); */
+  /* -webkit-backdrop-filter: blur(12px); */
 }
 #UI > div {
   max-width: calc(640px + 96px);
@@ -1066,6 +1070,7 @@ body.Active #Info ol li a > span {
   font-size: 40px;
   letter-spacing: 2px;
   text-align: left;
+  line-height: 1.25;
 }
 
 header > aside::before {
@@ -1095,4 +1100,13 @@ header > aside::before {
 }
 #Spreads > #Intro {
   margin-top: 100vh;
+}
+
+
+#UI > ul > li:nth-child(1){
+  /* background: linear-gradient(0deg, #00000040, #00000080, #00000080, #00000080, #00000040); */
+}
+
+#Info svg {
+  margin-right:4px
 }
