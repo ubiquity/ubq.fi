@@ -3,7 +3,7 @@
 }
 :root {
   --page-init: 8s all cubic-bezier(0, 1, 1, 1);
-  --elu-blu: #06061aFF;
+  --elu-blu: #06061aff;
   --elu-blu-25: #06061a40;
   --elu-blu-50: #06061a80;
   --elu-blu-75: #06061abf;
@@ -210,11 +210,7 @@ body #grid-dynamic {
   /* text-align: center; */
   width: 100%;
   height: 100%;
-  -webkit-mask-image: radial-gradient(
-    #00000040 0,
-    #00000080 50%,
-    #000000ff 100%
-  );
+  -webkit-mask-image: radial-gradient(#00000040 0, #00000080 50%, #000000ff 100%);
   /* position: fixed; */
   /* top: 0; */
   /* left: 0; */
@@ -265,8 +261,8 @@ body.Active #grid-dynamic {
   padding-top: 10px;
 }
 #Info svg {
-  height: 20px;
-  width: 40px;
+  height: 24px;
+  width: 24px;
 }
 #Info ol li span {
   font-size: 12px;
@@ -946,10 +942,16 @@ body.social main#Spreads {
   display: inline-block;
 }
 #Intro {
-  height: 50%;
-  overflow: hidden;
-  background-color: #000;
+  /* height: 50%; */
+  /* overflow: hidden; */
+  /* background-color: #000; */
   background-image: url(../../image/grid-25.png);
+  /* background-color: transparent; */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #ffffff10;
+  border-right: 0;
+  border-left: 0;
 }
 #Spreads > section#Overview {
   background: 0 0;
@@ -977,12 +979,16 @@ body.social main#Spreads {
 }
 #Spreads > footer {
   height: calc(50% + 1px);
-  background-color: #000;
+  /* background-color: #000; */
   font-size: 12px;
   font-weight: 400;
   text-rendering: unset;
   color: #bfbfbf;
   letter-spacing: 2px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-image: url(../../image/grid-25.png);
+  border-top: 1px solid #ffffff10;
 }
 
 body #UI > ul > li {
@@ -1049,19 +1055,44 @@ body.Active #UI > ul > li {
   padding: 20px;
 }
 
-body.Active #Info ol li a>span { opacity: 0; }
-#Intro li { width: 100%}
-#Intro h1 { margin-top: 23px}
+body.Active #Info ol li a > span {
+  opacity: 0;
+}
+#Intro li {
+  width: 100%;
+}
+#Intro h1 {
+  margin-top: 23px;
+  font-size: 40px;
+  letter-spacing: 2px;
+  text-align: left;
+}
 
 header > aside::before {
-    content: "›› ";
-    /* display: inline-block; */
-    /* opacity: 1; */
-    color: #808080;
-    margin: 0 2px 0 18px;
-    /* padding-left: 8px; */
+  content: "›› ";
+  /* display: inline-block; */
+  /* opacity: 1; */
+  color: #808080;
+  margin: 0 2px 0 18px;
+  /* padding-left: 8px; */
 }
 
 #Info {
-    color: #bfbfbf;
+  color: #bfbfbf;
+}
+
+#Spreads {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+}
+
+#Back,
+#Hero {
+  position: fixed;
+  top: 0;
+}
+#Spreads > #Intro {
+  margin-top: 100vh;
 }
