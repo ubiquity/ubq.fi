@@ -23,7 +23,7 @@ body.Active #bytecode.Active { animation: bytecode-ani 2s; opacity: 1; display: 
 body.Active #UI > ul > li {opacity: 1;/* transition: 0.5s opacity ease-in-out; */}
 body.Active #UI > ul > li:nth-child(1) { opacity: 1; }
 body.Active #UI > ul > li { pointer-events: unset; }
-body.Active #UI > ul > li li:hover { backdrop-filter: blur(8px); }
+/* body.Active #UI > ul > li li:hover { backdrop-filter: blur(8px); } */
 
 
 h1 > span.Active { opacity: 1; }

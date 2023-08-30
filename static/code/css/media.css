@@ -31,7 +31,7 @@
     padding: 10px 8px;
   }
   footer li a {
-    width: calc(50vw);
+    /* width: calc(50vw); */
   }
   #Info {
     text-align: left;
@@ -185,7 +185,7 @@
     min-width: calc(100vw - 48px);
   }
   #Spreads > footer > article div a {
-    padding: 24px;
+    /* padding: 24px; */
   }
   #Overview > article > div > div:nth-child(even),
   #Overview > article > div > div:nth-child(odd) {

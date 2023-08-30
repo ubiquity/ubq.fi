@@ -21,21 +21,21 @@ export function getLogoState() {
 }
 const Logo = document.getElementById("Logo");
 Logo?.addEventListener("click", async () => await logoClick());
-const UI = document.getElementById("UI");
-UI?.addEventListener("click", function () {
-  note(800, { reverb: 1 / 8 });
-  // note(800);
-  location.hash = "";
-  return (document.body.className = "Active");
-});
-let x = UI.children.length;
-while (x--) {
-  const a = UI.children[x];
-  if (a.children[0] && a.children[0].children[0])
-    a.children[0].children[0].addEventListener("click", function (e) {
-      e.stopPropagation();
-    });
-}
+// const UI = document.getElementById("UI");
+// UI?.addEventListener("click", function () {
+//   note(800, { reverb: 1 / 8 });
+//   // note(800);
+//   location.hash = "";
+//   return (document.body.className = "Active");
+// });
+// let x = UI.children.length;
+// while (x--) {
+//   const a = UI.children[x];
+//   if (a.children[0] && a.children[0].children[0])
+//     a.children[0].children[0].addEventListener("click", function (e) {
+//       e.stopPropagation();
+//     });
+// }
 
 import { grid } from "./the-grid";
 // if (!window.location.origin.includes("localhost") && !window.location.origin.includes("127.0.0.1")) {
