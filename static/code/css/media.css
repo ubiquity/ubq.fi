@@ -1,0 +1,198 @@
+@media screen and (orientation: portrait) {
+  #Intro > article > div > div.circle {
+    width: 100%;
+    width: 100%;
+    max-width: 1280px;
+    text-align: center;
+  }
+  #farm-portrait {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+  #UI > ul > li {
+    display: none;
+  }
+  #UI > ul > li:nth-child(1) {
+    display: unset;
+  }
+}
+@media (orientation: portrait) {
+  #headshot {
+    background-size: 250%;
+    background-position: 75% 50%;
+  }
+  video {
+    display: none;
+  }
+}
+@media (max-width: 640px) {
+  #Info > header{
+    padding: 10px 8px;
+  }
+  footer li a {
+    /* width: calc(50vw); */
+  }
+  #Info {
+    text-align: left;
+  }
+  body.Active #Info ol li {
+    display: block;
+    padding: 0 16px;
+  }
+  #extended {
+    display: none;
+  }
+}
+@media (inverted-colors) {
+  background,
+  svg {
+    filter: invert(100%);
+  }
+}
+@keyframes rotation-b {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes rotation-a {
+  from {
+    transform: rotate(0) scale(0.9375, 0.9375);
+  }
+  to {
+    transform: rotate(360deg) scale(0.9375, 0.9375);
+  }
+}
+@keyframes rotation {
+  0% {
+    opacity: 0;
+    width: 240px;
+    transform: rotate(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 380px;
+    transform: rotate(360deg);
+  }
+}
+@keyframes grid-dance {
+  0% {
+    filter: invert(1) drop-shadow(24px 24px 0 rgba(128, 255, 255, 0.75));
+  }
+  25% {
+    filter: invert(1) drop-shadow(12px 12px 0 rgba(128, 255, 255, 0.75));
+  }
+  50% {
+    filter: invert(1) drop-shadow(0 0 0 rgba(128, 255, 255, 0.75));
+  }
+  75% {
+    filter: invert(1) drop-shadow(12px 12px 0 rgba(128, 255, 255, 0.75));
+  }
+  100% {
+    filter: invert(1) drop-shadow(24px 24px 0 rgba(128, 255, 255, 0.75));
+  }
+}
+@font-face {
+  font-family: DIN;
+  src: url(../../fonts/DIN/DINNextLTW04-Regular.eot);
+  src: url(../../fonts/DIN/DINNextLTW04-Regular.eot#iefix) format("embedded-opentype"), url(../../fonts/DIN/DINNextLTW04-Regular.woff) format("woff"),
+    url(../../fonts/DIN/DINNextLTW04-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: DIN;
+  src: url(../../fonts/DIN/DINNextLTW04-Medium.eot);
+  src: url(../../fonts/DIN/DINNextLTW04-Medium.eot#iefix) format("embedded-opentype"), url(../../fonts/DIN/DINNextLTW04-Medium.woff) format("woff"),
+    url(../../fonts/DIN/DINNextLTW04-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: DIN;
+  src: url(../../fonts/DIN/DINNextLTW04-Light.eot);
+  src: url(../../fonts/DIN/DINNextLTW04-Light.eot#iefix) format("embedded-opentype"), url(../../fonts/DIN/DINNextLTW04-Light.woff) format("woff"),
+    url(../../fonts/DIN/DINNextLTW04-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: DIN;
+  src: url(../../fonts/DIN/DINNextLTW04-Italic.eot);
+  src: url(../../fonts/DIN/DINNextLTW04-Italic.eot#iefix) format("embedded-opentype"), url(../../fonts/DIN/DINNextLTW04-Italic.woff) format("woff"),
+    url(../../fonts/DIN/DINNextLTW04-Italic.ttf) format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: DIN;
+  src: url(../../fonts/DIN/DINNextLTW04-Bold.eot);
+  src: url(../../fonts/DIN/DINNextLTW04-Bold.eot#iefix) format("embedded-opentype"), url(../../fonts/DIN/DINNextLTW04-Bold.woff) format("woff"),
+    url(../../fonts/DIN/DINNextLTW04-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@keyframes logo-ani {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.125;
+  }
+}
+@media (orientation: landscape) {
+  #UI > div > div {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+@media screen and (orientation: portrait) {
+  #Info {
+    margin: 0;
+    width: 100vw;
+    overflow: hidden;
+  }
+  #Info > ol {
+    /* background-color: #ffffff10; */
+  }
+}
+@keyframes bytecode-ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media screen and (orientation: landscape) {
+  #Intro > article > div > div {
+    width: 50%;
+    display: table-cell;
+  }
+  #farm-landscape {
+    display: unset;
+    max-width: 1280px;
+  }
+}
+@media (orientation: portrait) {
+  #UI > div {
+    min-width: calc(100vw - 48px);
+  }
+  #Spreads > footer > article div a {
+    /* padding: 24px; */
+  }
+  #Overview > article > div > div:nth-child(even),
+  #Overview > article > div > div:nth-child(odd) {
+    display: block;
+    width: 100%;
+  }
+  #Overview > article > div > div:nth-child(even) {
+    margin: 0 auto 24px;
+  }
+}

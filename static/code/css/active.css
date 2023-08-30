@@ -1,0 +1,33 @@
+body.Active h1 > span { transition: var(--page-init); }
+body.Active foreground > span { transition: var(--page-init); }
+body.Active .spin::after { content: none; }
+body.Active canvas#sine { display: unset; }
+body.Active section#Hero { pointer-events: all; }
+body.Active div#headshot { opacity: 0.0625; }
+body.Active #Info ol li { display: inline-block; height: 48px; text-align: center; display: inline-table; border-radius: 3px; height: auto; padding: 0; opacity: 1; filter: drop-shadow(0 0 16px #fff); color: #fff; }
+body.Active #Info ol a { user-select: none; display: table-cell; height: 100%; vertical-align: middle; padding: 12px 6px; display: block; opacity: 0.66; }
+body.Active #Info ol li a>span.Active { opacity: 1; }
+body.Active #Info ol a:hover { opacity: 1; color: #0ff; }
+body.Active #Info { opacity: 1; }
+body.Active .center > div.logo { opacity: 0.375; padding: 18.75vw; }
+body.Active .center > div { opacity: 1; }
+body.Active #grid-dynamic {/* -webkit-mask-image: radial-gradient(#00000000 0, #00000040 50%, #00000080 100%); */opacity: 1;/* background-color: var(--elu-blu); */}
+body.Active .spin > div.after > div { border-width: 2vw; }
+body.Active .spin > div.after > div { animation: rotation-a 64s linear 0s infinite; }
+body.Active .spin > div.before > div { animation: rotation-b 64s linear 0s infinite; -webkit-mask-image: linear-gradient(to right, transparent, #000, transparent); }
+body.Active .spin > div > div { color: #ffffff40; }
+body.Active .spin #aP { fill: transparent; }
+body.Active .spin { width: 66vh; height: 66vh; }
+body.Active #Logo { animation: logo-ani 0.2s; opacity: 1; }
+body.Active #bytecode.Active { animation: bytecode-ani 2s; opacity: 1; display: table-cell; }
+body.Active #UI > ul > li {opacity: 1;/* transition: 0.5s opacity ease-in-out; */}
+body.Active #UI > ul > li:nth-child(1) { opacity: 1; }
+body.Active #UI > ul > li { pointer-events: unset; }
+/* body.Active #UI > ul > li li:hover { backdrop-filter: blur(8px); } */
+
+
+h1 > span.Active { opacity: 1; }
+#Logo svg.Active { fill-opacity: 0.75; }
+#Info .Active { opacity: 1; transform: translateY(0); filter: blur(0); }
+background > video.Active { opacity: 0.75; transition: 1s opacity ease-in-out; }
+#Spreads > .Active { opacity: 1; }

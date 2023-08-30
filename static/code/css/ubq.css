@@ -1,11 +1,9 @@
 * {
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
-    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 :root {
   --page-init: 8s all cubic-bezier(0, 1, 1, 1);
-  --elu-blu: #06061a;
+  --elu-blu: #06061aff;
   --elu-blu-25: #06061a40;
   --elu-blu-50: #06061a80;
   --elu-blu-75: #06061abf;
@@ -25,7 +23,6 @@ ol {
 li {
   font-family: "Proxima Nova", Avenir, DIN;
   display: inline-block;
-  /* text-align: left; */
 }
 aside,
 h1 {
@@ -43,7 +40,7 @@ body.Active h1 > span {
 }
 h1 {
   text-transform: uppercase;
-  letter-spacing: 4px;
+  /* letter-spacing: 4px; */
   text-rendering: geometricPrecision;
   font-weight: 400;
 }
@@ -77,6 +74,7 @@ div#sine-holder {
   right: 0;
   width: 100%;
   height: 100%;
+  top: 0;
 }
 .spin::after {
   content: "> Press to Start";
@@ -101,14 +99,7 @@ body.Active .spin::after {
 }
 canvas#sine {
   height: 100%;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    #00000000 0,
-    #00000020 25%,
-    #00000000 50%,
-    #00000020 75%,
-    #00000000 100%
-  );
+  -webkit-mask-image: linear-gradient(90deg, #00000000 0, #00000020 25%, #00000000 50%, #00000020 75%, #00000000 100%);
   display: none;
 }
 body.Active canvas#sine {
@@ -131,7 +122,7 @@ body.Active div#headshot {
   height: 100vh;
   width: 100vw;
   width: calc(200vw / 3);
-  margin-right: 0;
+  margin-left: 0;
 }
 body.Active #Info ol li {
   display: inline-block;
@@ -141,11 +132,9 @@ body.Active #Info ol li {
   border-radius: 3px;
   height: auto;
   padding: 0;
-  /* opacity: 0.25; */
   opacity: 1;
   filter: drop-shadow(0 0 16px #fff);
   color: #fff;
-  /* transition: 1s all cubic-bezier(0,1,1,1); */
 }
 body.Active #Info ol a {
   user-select: none;
@@ -189,32 +178,49 @@ body .center > div {
   padding: calc((128px) / 3);
   opacity: 0;
 }
-body background > #cell {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+body #Grid {
+  position: relative;
+  background-color: var(--elu-blu);
+}
+body #Grid > div {
+  position: fixed;
+  left: 0;
+  top: 0;
+  /* width: 100%; */
+  /* height: 100%; */
+  opacity: 1;
+  /* transform: translate(6px, 10px); */
+}
+body #grid-static {
+  display: none;
   width: 100%;
   height: 100%;
-  -webkit-mask-image: radial-gradient(
-    #00000040 0%,
-    #00000080 50%,
-    #000000ff 100%
-  );
-  position: fixed;
+  opacity: 1;
+  position: absolute;
   top: 0;
   left: 0;
-  background-image: url(/image/grid-1.png);
-  background-repeat: repeat;
-  opacity: 0.5;
+  background-image: url(../../image/grid-1.png);
+  transform: translate(12px, 6px);
+  -webkit-mask-image: radial-gradient(#00000040 0, #00000080 50%, #000000ff 100%);
+  opacity: 0.25;
 }
-body.Active background > #cell {
-  -webkit-mask-image: radial-gradient(
-    #00000000 0,
-    #00000020 50%,
-    #00000030 75%,
-    #00000080 100%
-  );
+body #grid-dynamic {
+  /* display: table-cell; */
+  /* vertical-align: middle; */
+  /* text-align: center; */
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: radial-gradient(#00000040 0, #00000080 50%, #000000ff 100%);
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 0; */
+  /* background-repeat: repeat; */
   opacity: 1;
+}
+body.Active #grid-dynamic {
+  /* -webkit-mask-image: radial-gradient(#00000000 0, #00000040 50%, #00000080 100%); */
+  opacity: 1;
+  /* background-color: var(--elu-blu); */
 }
 #UI {
   text-transform: uppercase;
@@ -222,6 +228,14 @@ body.Active background > #cell {
   top: 0;
   position: absolute;
   text-align: center;
+  /* height: auto; */
+  display: inline-block;
+  left: 0;
+  /* background: red; */
+  /* overflow: hidden; */
+  opacity: 1 !important;
+  background: red;
+  height: 0;
 }
 #Spreads > :first-child aside {
   position: relative;
@@ -255,73 +269,76 @@ body.Active background > #cell {
   padding-top: 10px;
 }
 #Info svg {
-  height: 20px;
-  width: 40px;
+  height: 24px;
+  width: 24px;
 }
 #Info ol li span {
   font-size: 12px;
   text-rendering: geometricPrecision;
   vertical-align: MIDDLE;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   display: inline-block;
 }
 #Info a:hover svg {
   fill: #0ff;
 }
 #Info > ol {
-  /* padding: 0; */
-  padding: 0px calc(100% / 12);
+  padding: 0 calc(100% / 12);
   text-transform: uppercase;
 }
 #Info > header > h1 {
-  font-size: 30px;
+  font-size: 48px;
   line-height: 1;
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  /* padding-top: 15px; */
+  /* letter-spacing: 4px; */
   color: #ffffffbf;
+  /* letter-spacing: 0px; */
 }
 #Info > header > aside {
   font-size: 12px;
-  margin: 6px 0 0;
+  /* margin: 0px 0 0; */
   letter-spacing: 0.25px;
   line-height: 1.25;
-}
-#Info > header > aside:last-child {
-  /* margin-top: 0; */
+  /* color: #bfbfbf; */
+  /* margin: 0 2px 0 18px; */
 }
 #Info > header {
   position: relative;
   overflow: hidden;
   padding: 10px calc(100% / 12);
-  /* padding-right: calc(100% / 12); */
+  background-color: #ffffff10;
 }
 #Info > div > aside > span {
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 300;
 }
-#Info > * > .Active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
+#Info span.Active {
+  /* width: 12px; */
+  /* transform: translateY(-100%); */
+  /* filter: blur(8px); */
+  /* display: flex; */
+  /* letter-spacing: -3px; */
 }
-#Info > * > * {
-  vertical-align: middle;
-  opacity: 0;
+#Info * {
+  /* vertical-align: middle; */
+  /* opacity: 0; */
   transition: 2s all cubic-bezier(0, 1, 1, 1);
   transform: translateY(-100%);
   filter: blur(8px);
   text-rendering: geometricPrecision;
   line-height: 1;
-  padding: 2px;
+  /* padding: 2px; */
+  /* letter-spacing: 2px; */
+  /* color: #bfbfbf; */
 }
 #Info > * {
   transition: 1s all cubic-bezier(0, 1, 1, 1);
   will-change: background;
   margin: 2px auto;
-  background-color: #ffffff10;
+  /* background-color: #ffffff10; */
   border-radius: 3px;
   overflow: hidden;
 }
@@ -330,7 +347,7 @@ body.Active background > #cell {
   opacity: 0;
   font-family: "Proxima Nova", Avenir, DIN;
   line-height: 1.5;
-  text-align: right;
+  text-align: left;
   width: 75%;
   left: 0;
 }
@@ -346,133 +363,7 @@ body.Active background > #cell {
   opacity: 0.125;
   filter: grayscale(1);
 }
-@media (orientation: portrait) {
-  #headshot {
-    background-size: 250%;
-    background-position: 75% 50%;
-  }
-  video {
-    display: none;
-  }
-}
-@media (max-width: 640px) {
-  footer li a {
-    width: calc(50vw);
-  }
-  #Info {
-    text-align: left;
-  }
 
-  body.Active #Info ol li {
-    display: block;
-    /* text-align: right; */
-    padding: 0px 16px;
-  }
-
-  #extended {
-    display: none;
-  }
-}
-@media (inverted-colors) {
-  background,
-  svg {
-    filter: invert(100%);
-  }
-}
-@keyframes rotation-b {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-}
-@keyframes rotation-a {
-  from {
-    transform: rotate(0) scale(0.9375, 0.9375);
-  }
-  to {
-    transform: rotate(360deg) scale(0.9375, 0.9375);
-  }
-}
-@keyframes rotation {
-  0% {
-    opacity: 0;
-    width: 240px;
-    transform: rotate(0);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    width: 380px;
-    transform: rotate(360deg);
-  }
-}
-@keyframes grid-dance {
-  0% {
-    filter: invert(1) drop-shadow(24px 24px 0 rgba(128, 255, 255, 0.75));
-  }
-  25% {
-    filter: invert(1) drop-shadow(12px 12px 0 rgba(128, 255, 255, 0.75));
-  }
-  50% {
-    filter: invert(1) drop-shadow(0 0 0 rgba(128, 255, 255, 0.75));
-  }
-  75% {
-    filter: invert(1) drop-shadow(12px 12px 0 rgba(128, 255, 255, 0.75));
-  }
-  100% {
-    filter: invert(1) drop-shadow(24px 24px 0 rgba(128, 255, 255, 0.75));
-  }
-}
-@font-face {
-  font-family: DIN;
-  src: url(/fonts/DIN/DINNextLTW04-Regular.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Regular.eot#iefix)
-      format("embedded-opentype"),
-    url(/fonts/DIN/DINNextLTW04-Regular.woff) format("woff"),
-    url(/fonts/DIN/DINNextLTW04-Regular.ttf) format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: DIN;
-  src: url(/fonts/DIN/DINNextLTW04-Medium.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Medium.eot#iefix) format("embedded-opentype"),
-    url(/fonts/DIN/DINNextLTW04-Medium.woff) format("woff"),
-    url(/fonts/DIN/DINNextLTW04-Medium.ttf) format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: DIN;
-  src: url(/fonts/DIN/DINNextLTW04-Light.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Light.eot#iefix) format("embedded-opentype"),
-    url(/fonts/DIN/DINNextLTW04-Light.woff) format("woff"),
-    url(/fonts/DIN/DINNextLTW04-Light.ttf) format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: DIN;
-  src: url(/fonts/DIN/DINNextLTW04-Italic.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Italic.eot#iefix) format("embedded-opentype"),
-    url(/fonts/DIN/DINNextLTW04-Italic.woff) format("woff"),
-    url(/fonts/DIN/DINNextLTW04-Italic.ttf) format("truetype");
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-  font-family: DIN;
-  src: url(/fonts/DIN/DINNextLTW04-Bold.eot);
-  src: url(/fonts/DIN/DINNextLTW04-Bold.eot#iefix) format("embedded-opentype"),
-    url(/fonts/DIN/DINNextLTW04-Bold.woff) format("woff"),
-    url(/fonts/DIN/DINNextLTW04-Bold.ttf) format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
 .spin:hover {
   opacity: 1;
 }
@@ -540,14 +431,7 @@ body.Active .spin {
   width: 66vh;
   height: 66vh;
 }
-@keyframes logo-ani {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.125;
-  }
-}
+
 body.Active #Logo {
   animation: logo-ani 0.2s;
   opacity: 1;
@@ -564,18 +448,7 @@ body.Active #Logo {
   color: transparent;
   text-shadow: 0 0 calc((4 * 128px)) #80ffff;
 }
-@media screen and (orientation: portrait) {
-  #Info {
-    margin: 0;
-    width: 100%;
-  }
-  #Info > header {
-    /* padding: 15px 0; */
-  }
-  #Info > ol {
-    background-color: #ffffff10;
-  }
-}
+
 #bytecode {
   font-family: monospace;
   color: #80ffff;
@@ -584,11 +457,7 @@ body.Active #Logo {
   text-rendering: optimizeSpeed;
   word-break: break-all;
   line-height: 1;
-  -webkit-mask-image: radial-gradient(
-    #00000000 0,
-    #00000000 50%,
-    #00000010 100%
-  );
+  -webkit-mask-image: radial-gradient(#00000000 0, #00000000 50%, #00000010 100%);
   opacity: 0;
   display: none;
   vertical-align: middle;
@@ -599,14 +468,7 @@ body.Active #bytecode.Active {
   opacity: 1;
   display: table-cell;
 }
-@keyframes bytecode-ani {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+
 background > video.Active {
   opacity: 0.75;
   transition: 1s opacity ease-in-out;
@@ -623,7 +485,7 @@ background > video {
 }
 #UI #logo > div#logo-text {
   font-size: 20px;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
 }
 #Spreads > * {
   opacity: 0.25;
@@ -658,26 +520,24 @@ h2,
 h3 {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
-    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   text-align: left;
   color: #fff;
   line-height: 1;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   font-weight: 500;
   font-size: 23px;
   letter-spacing: 0.3px;
   box-sizing: inherit;
+  margin-top: 23px;
+  line-height: 1.25;
 }
 p {
   color: #bfbfbf;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0.3px;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
-    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   text-align: left;
   box-sizing: inherit;
   margin: 0;
@@ -699,35 +559,7 @@ p {
   height: 100%;
   width: 100%;
 }
-@media screen and (orientation: portrait) {
-  #Intro > article > div > div.circle {
-    width: 100%;
-    width: 100%;
-    max-width: 1280px;
-    text-align: center;
-  }
-  #farm-portrait {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-  }
-  #UI > ul > li {
-    display: none;
-  }
-  #UI > ul > li:nth-child(1) {
-    display: unset;
-  }
-}
-@media screen and (orientation: landscape) {
-  #Intro > article > div > div {
-    width: 50%;
-    display: table-cell;
-  }
-  #farm-landscape {
-    display: unset;
-    max-width: 1280px;
-  }
-}
+
 #Partners {
   height: unset;
   padding: 10% 0;
@@ -749,10 +581,8 @@ p {
 #Partners ul li:hover {
   opacity: 1;
 }
-#Partners ul li div {
-}
-#Partners ul li svg,
-#Partners ul li img {
+#Partners ul li img,
+#Partners ul li svg {
   height: 96px;
   width: 192px;
   max-width: 25vw;
@@ -762,8 +592,9 @@ p {
   line-height: 1;
 }
 #Intro div.circle svg {
-  margin: 16.5%;
+  margin: 19.5% 15.5% 0 16.5%;
   fill: #0ff;
+  /* padding-top: 3px; */
 }
 #Intro > article > div > div.circle > div > div > div > div > div {
   background: #000;
@@ -898,8 +729,6 @@ p {
 }
 #UI ul a {
   display: block;
-  /* border: 1px solid transparent; */
-  /* border-radius: 3px; */
   flex-direction: row;
 }
 #UI ul {
@@ -911,7 +740,9 @@ p {
   max-width: 1280px;
   align-items: top;
   overflow: hidden;
-  /* vertical-align: top; */
+  /* background: linear-gradient(180deg, #000000ff, #000000ff, #000000ff, #00000000); */
+  /* backdrop-filter: blur(12px); */
+  /* -webkit-backdrop-filter: blur(12px); */
 }
 #UI > div {
   max-width: calc(640px + 96px);
@@ -998,14 +829,7 @@ body.social main#Spreads {
   opacity: 0.25;
 }
 #bio {
-  background: linear-gradient(
-    0deg,
-    #00000040,
-    #00000080,
-    #00000080,
-    #00000080,
-    #00000040
-  );
+  background: linear-gradient(0deg, #00000040, #00000080, #00000080, #00000080, #00000040);
 }
 #bio p {
   margin: 8px auto;
@@ -1020,12 +844,6 @@ body.social main#Spreads {
   text-decoration: underline;
 }
 
-@media (orientation: landscape) {
-  #UI > div > div {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-  }
-}
 #UI #logo {
   display: block;
 }
@@ -1041,11 +859,10 @@ body.social main#Spreads {
   margin: 0;
   width: 36px;
   padding: 0;
-  margin-right: 10px;
+  margin-right: 0;
 }
 #UI ul li div {
   letter-spacing: 2px;
-  /* padding: 40px 20px; */
   -ms-flex-pack: justify;
   -ms-flex-align: center;
   line-height: 1.25;
@@ -1068,9 +885,7 @@ body.social main#Spreads {
 #Intro > article > div:nth-child(2) p {
   text-rendering: optimizeLegibility;
   letter-spacing: 0.3px;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
-    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color: #bfbfbf;
   font-size: 20px;
   box-sizing: inherit;
@@ -1082,9 +897,7 @@ body.social main#Spreads {
 }
 #Spreads > footer > article div p {
   text-rendering: optimizeLegibility;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
-    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #fff;
   font-size: 20px;
@@ -1093,16 +906,12 @@ body.social main#Spreads {
   box-sizing: inherit;
 }
 #Spreads > footer > article > div a span {
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
-    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
 #Spreads > footer > article div h4 {
   text-rendering: optimizeLegibility;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui,
-    BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #fff;
   font-weight: 500;
@@ -1114,7 +923,7 @@ body.social main#Spreads {
 }
 #Spreads > footer > article div a {
   display: inline-block;
-  padding: 24px 48px;
+  /* padding: 24px 48px; */
   opacity: 0.5;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -1147,10 +956,16 @@ body.social main#Spreads {
   display: inline-block;
 }
 #Intro {
-  height: 50%;
-  overflow: hidden;
-  background-color: #000;
-  background-image: url(/image/grid-25.png);
+  /* height: 50%; */
+  /* overflow: hidden; */
+  /* background-color: #000; */
+  background-image: url(../../image/grid-25.png);
+  /* background-color: transparent; */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #ffffff10;
+  border-right: 0;
+  border-left: 0;
 }
 #Spreads > section#Overview {
   background: 0 0;
@@ -1164,7 +979,6 @@ body.social main#Spreads {
   margin: 24px auto 0;
 }
 #Earn > article > div > div {
-  /* max-height: 100vh; */
   position: relative;
   width: 75vw;
 }
@@ -1179,29 +993,17 @@ body.social main#Spreads {
 }
 #Spreads > footer {
   height: calc(50% + 1px);
-  background-color: #000;
+  /* background-color: #000; */
   font-size: 12px;
   font-weight: 400;
   text-rendering: unset;
   color: #bfbfbf;
   letter-spacing: 2px;
-}
-
-@media (orientation: portrait) {
-  #UI > div {
-    min-width: calc(100vw - 48px);
-  }
-  #Spreads > footer > article div a {
-    padding: 24px; /* text-align: center; */
-  }
-  #Overview > article > div > div:nth-child(even),
-  #Overview > article > div > div:nth-child(odd) {
-    display: block;
-    width: 100%;
-  }
-  #Overview > article > div > div:nth-child(even) {
-    margin: 0 auto 24px;
-  }
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-image: url(../../image/grid-25.png);
+  border-top: 1px solid #ffffff10;
+  padding: 0 8px;
 }
 
 body #UI > ul > li {
@@ -1214,23 +1016,20 @@ body #UI > ul > li:nth-child(1) {
 }
 body.Active #UI > ul > li {
   opacity: 1;
-  transition: 0.5s opacity ease-in-out;
+  /* transition: 0.5s opacity ease-in-out; */
 }
 body.Active #UI > ul > li:nth-child(1) {
   opacity: 1;
 }
-
 footer ul {
   padding: 0;
 }
 footer #footer-message {
   margin-bottom: 48px;
 }
-
 footer a div {
   text-align: center;
 }
-
 footer a svg {
   height: 24px;
   width: 24px;
@@ -1241,40 +1040,90 @@ footer a {
 }
 footer a:hover {
   opacity: 1;
-  color: #00ffff;
+  color: #0ff;
 }
 footer a:hover span {
-  color: #00ffff;
+  color: #0ff;
 }
 footer a:hover svg {
   fill: #0ff;
 }
-
 body #UI > ul > li {
   pointer-events: none;
   margin-top: 20px;
 }
 body.Active #UI > ul > li {
   pointer-events: unset;
-  /* position: relative; */
-  /* vertical-align: middle; */
-  /* margin-top: 20px; */
 }
-
-/*  */
 #UI > ul > li > ul {
   visibility: hidden;
   display: block;
 }
 #UI > ul > li > ul > li {
   display: block;
-}
-#UI > ul > li:hover {
+  /* backdrop-filter: blur(8px); */
 }
 #UI > ul > li:hover > ul {
   visibility: visible;
 }
-
 #UI > ul > li > ul > li > a {
   padding: 20px;
+}
+
+body.Active #Info ol li a > span {
+  opacity: 0;
+}
+#Intro li {
+  width: 100%;
+}
+#Intro h1 {
+  margin-top: 23px;
+  font-size: 40px;
+  /* letter-spacing: 2px; */
+  text-align: left;
+  line-height: 1.25;
+}
+
+header > aside::before {
+  content: "›› ";
+  /* display: inline-block; */
+  /* opacity: 1; */
+  color: #808080;
+  margin: 0 2px 0 18px;
+  /* padding-left: 8px; */
+}
+
+#Info {
+  color: #bfbfbf;
+}
+
+#Spreads {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+}
+
+#Back,
+#Hero {
+  position: fixed;
+  top: 0;
+}
+#Spreads > #Intro {
+  margin-top: 100vh;
+}
+
+
+#UI > ul > li:nth-child(1){
+  /* background: linear-gradient(0deg, #00000040, #00000080, #00000080, #00000080, #00000040); */
+}
+
+#Info svg {
+  margin-right:4px
+}
+
+footer li {
+    max-width: calc(100vw / 3);
+    /* text-align: center; */
+    padding: 24px;
 }
