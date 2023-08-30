@@ -28,6 +28,6 @@ body.Active #UI > ul > li li:hover { backdrop-filter: blur(8px); }
 
 h1 > span.Active { opacity: 1; }
 #Logo svg.Active { fill-opacity: 0.75; }
-#Info > * > .Active { opacity: 1; transform: translateY(0); filter: blur(0); }
+#Info .Active { opacity: 1; transform: translateY(0); filter: blur(0); }
 background > video.Active { opacity: 0.75; transition: 1s opacity ease-in-out; }
 #Spreads > .Active { opacity: 1; }

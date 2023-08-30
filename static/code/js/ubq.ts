@@ -20,7 +20,7 @@ export function getLogoState() {
   return logo_state;
 }
 const Logo = document.getElementById("Logo");
-Logo?.addEventListener("click", logoClick);
+Logo?.addEventListener("click", async () => await logoClick());
 const UI = document.getElementById("UI");
 UI?.addEventListener("click", function () {
   note(800, { reverb: 1 / 8 });
@@ -38,6 +38,6 @@ while (x--) {
 }
 
 import { grid } from "./the-grid";
-if (!window.location.origin.includes("localhost") && !window.location.origin.includes("127.0.0.1")) {
+// if (!window.location.origin.includes("localhost") && !window.location.origin.includes("127.0.0.1")) {
   grid(document.getElementById("grid-dynamic"));
-}
+// }

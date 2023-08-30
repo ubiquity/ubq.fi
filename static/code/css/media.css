@@ -155,7 +155,7 @@
     width: 100%;
   }
   #Info > ol {
-    background-color: #ffffff10;
+    /* background-color: #ffffff10; */
   }
 }
 @keyframes bytecode-ani {

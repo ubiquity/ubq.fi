@@ -3,7 +3,7 @@ import { forget } from "./forget";
 import { note } from "./note";
 import { getLogoState, logo_state, setLogoState } from "./ubq";
 
-export const logoClick = function () {
+export const logoClick = async function () {
   const Info = document.getElementById("Info");
   if (!Info) return;
   location.hash = "";
@@ -18,7 +18,7 @@ export const logoClick = function () {
   } else {
     note(900);
     document.body.className = "Active";
-    void cascadeClassName(Info);
+    await cascadeClassName(Info);
   }
 
   setLogoState(!getLogoState());

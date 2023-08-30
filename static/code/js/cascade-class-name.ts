@@ -1,5 +1,5 @@
 export async function cascadeClassName(element: Element) {
-  const SPEED = 1000 / 30;
+  const SPEED = 1000 / 60;
   // Add the 'Active' class to the current element
   element.classList.add("Active");
 

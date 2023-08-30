@@ -122,7 +122,7 @@ body.Active div#headshot {
   height: 100vh;
   width: 100vw;
   width: calc(200vw / 3);
-  margin-right: 0;
+  margin-left: 0;
 }
 body.Active #Info ol li {
   display: inline-block;
@@ -283,49 +283,57 @@ body.Active #grid-dynamic {
   text-transform: uppercase;
 }
 #Info > header > h1 {
-  font-size: 30px;
+  font-size: 48px;
   line-height: 1;
   display: inline-block;
   vertical-align: middle;
   margin: 0;
+  letter-spacing: 4px;
   color: #ffffffbf;
 }
 #Info > header > aside {
   font-size: 12px;
   margin: 6px 0 0;
-  letter-spacing: 0.25px;
+  /* letter-spacing: 0.25px; */
   line-height: 1.25;
+  /* color: #bfbfbf; */
+  /* margin: 0 2px 0 18px; */
 }
 #Info > header {
   position: relative;
   overflow: hidden;
   padding: 10px calc(100% / 12);
+  background-color: #ffffff10;
 }
 #Info > div > aside > span {
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 300;
 }
-#Info > * > .Active {
-  opacity: 1;
-  /* transform: translateY(0); */
-  filter: blur(0);
-}
-#Info > * > * {
-  vertical-align: middle;
-  opacity: 0;
-  transition: 2s all cubic-bezier(0, 1, 1, 1);
+#Info span.Active {
+  /* width: 12px; */
   /* transform: translateY(-100%); */
+  /* filter: blur(8px); */
+  /* display: flex; */
+  letter-spacing: -3px;
+}
+#Info * {
+  /* vertical-align: middle; */
+  /* opacity: 0; */
+  transition: 2s all cubic-bezier(0, 1, 1, 1);
+  transform: translateY(-100%);
   filter: blur(8px);
   text-rendering: geometricPrecision;
   line-height: 1;
   padding: 2px;
+  /* letter-spacing: 2px; */
+  /* color: #bfbfbf; */
 }
 #Info > * {
   transition: 1s all cubic-bezier(0, 1, 1, 1);
   will-change: background;
   margin: 2px auto;
-  background-color: #ffffff10;
+  /* background-color: #ffffff10; */
   border-radius: 3px;
   overflow: hidden;
 }
@@ -334,7 +342,7 @@ body.Active #grid-dynamic {
   opacity: 0;
   font-family: "Proxima Nova", Avenir, DIN;
   line-height: 1.5;
-  text-align: right;
+  text-align: left;
   width: 75%;
   left: 0;
 }
@@ -1042,3 +1050,18 @@ body.Active #UI > ul > li {
 }
 
 body.Active #Info ol li a>span { opacity: 0; }
+#Intro li { width: 100%}
+#Intro h1 { margin-top: 23px}
+
+header > aside::before {
+    content: "›› ";
+    /* display: inline-block; */
+    /* opacity: 1; */
+    color: #808080;
+    margin: 0 2px 0 18px;
+    /* padding-left: 8px; */
+}
+
+#Info {
+    color: #bfbfbf;
+}
