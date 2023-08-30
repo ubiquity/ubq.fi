@@ -488,8 +488,8 @@ background > video {
   letter-spacing: 4px;
 }
 #Spreads > * {
-  opacity: 0.25;
-  transition: 0.25s opacity ease;
+  /* opacity: 0.25; */
+  /* transition: 0.25s opacity ease; */
 }
 #Spreads > .Active {
   opacity: 1;
@@ -1113,17 +1113,63 @@ header > aside::before {
   margin-top: 100vh;
 }
 
-
-#UI > ul > li:nth-child(1){
+#UI > ul > li:nth-child(1) {
   /* background: linear-gradient(0deg, #00000040, #00000080, #00000080, #00000080, #00000040); */
 }
 
 #Info svg {
-  margin-right:4px
+  margin-right: 4px;
 }
 
 footer li {
-    max-width: calc(100vw / 3);
-    /* text-align: center; */
-    padding: 24px;
+  max-width: calc(100vw / 3);
+  /* text-align: center; */
+  padding: 24px;
+}
+
+@keyframes down-arrow {
+  0% {
+    transform: translateY(0) rotate(45deg);
+  }
+  100% {
+    transform: translateY(-100%) rotate(45deg);
+  }
+}
+
+div#down-arrow {
+  border: 3px solid #fff;
+  border-top: transparent;
+  border-left: transparent;
+  animation: down-arrow 1s infinite alternate ease-in-out;
+  opacity: 1;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+div#down-arrow::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 16px;
+  transform: rotate(-45deg) translate(5.5px, -8px);
+  border: 1.5px solid;
+}
+
+div#down-arrow-wrapper {
+  opacity: 0;
+  animation: fade-in 2s forwards 2s;
+  height: 16px;
+  width: 16px;
+  margin-right: 0;
+  margin-left: auto;
+  position: absolute;
+  bottom: 48px;
+  right: 48px;
 }
