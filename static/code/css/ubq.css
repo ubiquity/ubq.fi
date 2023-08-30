@@ -495,7 +495,13 @@ background > video {
   opacity: 1;
 }
 #Spreads > :first-child {
+  opacity: 0;
+  transition: 0.5s all ease-in-out;
+  /* filter: blur(4px); */
+}
+#Spreads > .Active:first-child {
   opacity: 1;
+  /* filter: blur(0); */
 }
 #Overview > article > div a {
   color: #0ff;
@@ -735,6 +741,7 @@ p {
   list-style: none;
   padding: 0;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   flex-direction: row;
   display: flex;
   max-width: 1280px;
@@ -1102,6 +1109,7 @@ header > aside::before {
   width: 100vw;
   height: 100vh;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 #Back,
