@@ -2,7 +2,7 @@ name: Continuous Deploy
 
 on:
   workflow_run:
-    workflows: ["Build & Test"]
+    workflows: ["Conventional Commits"]
     types:
       - completed
 
