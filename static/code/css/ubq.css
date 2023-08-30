@@ -7,6 +7,7 @@
   --elu-blu-25: #06061a40;
   --elu-blu-50: #06061a80;
   --elu-blu-75: #06061abf;
+  --qr: 124px
 }
 svg {
   stroke: none;
@@ -234,8 +235,9 @@ body.Active #grid-dynamic {
   /* background: red; */
   /* overflow: hidden; */
   opacity: 1 !important;
-  background: red;
-  height: 0;
+  /* background: red; */
+  /* height: 0; */
+  pointer-events: none;
 }
 #Spreads > :first-child aside {
   position: relative;
@@ -483,9 +485,10 @@ background > video {
   object-fit: cover;
   opacity: 0;
 }
-#UI #logo > div#logo-text {
+#logo > div#logo-text {
   font-size: 20px;
   letter-spacing: 4px;
+  text-transform: uppercase;
 }
 #Spreads > * {
   /* opacity: 0.25; */
@@ -537,6 +540,7 @@ h3 {
   box-sizing: inherit;
   margin-top: 23px;
   line-height: 1.25;
+  /* transform: scale(1.5); */
 }
 p {
   color: #bfbfbf;
@@ -854,13 +858,13 @@ body.social main#Spreads {
 #UI #logo {
   display: block;
 }
-#UI #logo > div {
+#logo > div {
   display: inline-block;
   vertical-align: middle;
   padding: 4px;
   text-rendering: geometricPrecision;
 }
-#UI #logo-icon > svg {
+#logo-icon > svg {
   height: 36px;
   display: block;
   margin: 0;
@@ -875,7 +879,7 @@ body.social main#Spreads {
   line-height: 1.25;
 }
 #UI ul li a {
-  opacity: 0.5;
+  opacity: 1;
   padding: 20px;
 }
 #UI ul li a:hover {
@@ -955,11 +959,11 @@ body.social main#Spreads {
   height: 100%;
 }
 #Intro > article > div {
-  max-width: 1280px;
-  width: 100%;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+  /* max-width: 1280px; */
+  /* width: 100%; */
+  /* display: table-cell; */
+  /* vertical-align: middle; */
+  /* text-align: center; */
   display: inline-block;
 }
 #Intro {
@@ -1086,7 +1090,7 @@ body.Active #Info ol li a > span {
 #Intro h1 {
   margin-top: 23px;
   font-size: 40px;
-  /* letter-spacing: 2px; */
+  letter-spacing: 1px;
   text-align: left;
   line-height: 1.25;
 }
@@ -1118,7 +1122,7 @@ header > aside::before {
   top: 0;
 }
 #Spreads > #Intro {
-  margin-top: 100vh;
+  /* margin-top: 100vh; */
 }
 
 #UI > ul > li:nth-child(1) {
@@ -1180,4 +1184,12 @@ div#down-arrow-wrapper {
   position: absolute;
   bottom: 48px;
   right: 48px;
+}
+
+
+div#qr-wrap {
+    transform: rotate(45deg) scale(0.7071135624);
+    width: var(--qr);
+    height: var(--qr);
+    /* margin: 28px auto; */
 }
