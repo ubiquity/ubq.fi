@@ -121,8 +121,9 @@ body.Active div#headshot {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
-  width: calc(200vw / 3);
+  /* width: calc(200vw / 3); */
   margin-left: 0;
+  text-align: center;
 }
 body.Active #Info ol li {
   display: inline-block;
@@ -1102,6 +1103,7 @@ header > aside::before {
 
 #Info {
   color: #bfbfbf;
+  text-align: center;
 }
 
 #Spreads {
