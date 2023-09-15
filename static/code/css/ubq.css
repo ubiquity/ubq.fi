@@ -1183,3 +1183,11 @@ div#down-arrow-wrapper {
   bottom: 48px;
   right: 48px;
 }
+
+#Back,
+#Logo {
+  pointer-events: none;
+}
+#Logo > .spin {
+  pointer-events: all;
+}

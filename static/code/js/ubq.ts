@@ -39,7 +39,7 @@ const observer = new IntersectionObserver((entries, observer) => {
 const Partners = document.getElementById("Partners");
 observer.observe(Partners);
 
-const Logo = document.getElementById("Logo");
+const Logo = document.getElementById("Logo")?.children[0];
 Logo?.addEventListener("click", async () => {
   observer.unobserve(Partners);
   await logoClick();
