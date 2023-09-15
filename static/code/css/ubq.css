@@ -299,6 +299,7 @@ body.Active #grid-dynamic {
   /* letter-spacing: 0px; */
 }
 #Info > header > aside {
+  text-align: center;
   font-size: 12px;
   /* margin: 0px 0 0; */
   letter-spacing: 0.25px;
