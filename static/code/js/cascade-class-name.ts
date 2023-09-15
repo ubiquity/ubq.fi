@@ -21,7 +21,7 @@ export async function cascadeClassName(element: Element) {
       child.textContent = "";
       for (const char of text.split("")) {
         if (char === " ") {
-          parent.insertAdjacentHTML("beforeend", "&ensp;");
+          parent.insertAdjacentHTML("beforeend", " ");
         } else {
           const span = document.createElement("span");
           span.textContent = char;

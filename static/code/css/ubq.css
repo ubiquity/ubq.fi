@@ -43,6 +43,7 @@ h1 {
   /* letter-spacing: 4px; */
   text-rendering: geometricPrecision;
   font-weight: 400;
+  text-align: center;
 }
 body.Active foreground > span {
   transition: var(--page-init);
@@ -121,8 +122,9 @@ body.Active div#headshot {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
-  width: calc(200vw / 3);
+  /* width: calc(200vw / 3); */
   margin-left: 0;
+  text-align: center;
 }
 body.Active #Info ol li {
   display: inline-block;
@@ -1093,15 +1095,18 @@ body.Active #Info ol li a > span {
 
 header > aside::before {
   content: "›› ";
-  /* display: inline-block; */
-  /* opacity: 1; */
   color: #808080;
   margin: 0 2px 0 18px;
-  /* padding-left: 8px; */
 }
 
+header > aside::after {
+  content: " ‹‹";
+  color: #808080;
+  margin: 0 18px 0 2px;
+}
 #Info {
   color: #bfbfbf;
+  text-align: center;
 }
 
 #Spreads {
@@ -1180,4 +1185,12 @@ div#down-arrow-wrapper {
   position: absolute;
   bottom: 48px;
   right: 48px;
+}
+
+#Back,
+#Logo {
+  pointer-events: none;
+}
+#Logo > .spin {
+  pointer-events: all;
 }
