@@ -1,5 +1,16 @@
 * {
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    "Proxima Nova",
+    FT Base,
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    SF Pro Text,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
 }
 :root {
   --page-init: 8s all cubic-bezier(0, 1, 1, 1);
@@ -529,7 +540,18 @@ h2,
 h3 {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    "Proxima Nova",
+    FT Base,
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    SF Pro Text,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   text-align: left;
   color: #fff;
   line-height: 1;
@@ -546,7 +568,18 @@ p {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0.3px;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    "Proxima Nova",
+    FT Base,
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    SF Pro Text,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   text-align: left;
   box-sizing: inherit;
   margin: 0;
@@ -895,7 +928,18 @@ body.social main#Spreads {
 #Intro > article > div:nth-child(2) p {
   text-rendering: optimizeLegibility;
   letter-spacing: 0.3px;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    "Proxima Nova",
+    FT Base,
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    SF Pro Text,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   color: #bfbfbf;
   font-size: 20px;
   box-sizing: inherit;
@@ -907,7 +951,18 @@ body.social main#Spreads {
 }
 #Spreads > footer > article div p {
   text-rendering: optimizeLegibility;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    "Proxima Nova",
+    FT Base,
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    SF Pro Text,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   text-align: center;
   color: #fff;
   font-size: 20px;
@@ -916,12 +971,34 @@ body.social main#Spreads {
   box-sizing: inherit;
 }
 #Spreads > footer > article > div a span {
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    "Proxima Nova",
+    FT Base,
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    SF Pro Text,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   text-transform: uppercase;
 }
 #Spreads > footer > article div h4 {
   text-rendering: optimizeLegibility;
-  font-family: "Proxima Nova", FT Base, -apple-system, system-ui, BlinkMacSystemFont, SF Pro Text, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    "Proxima Nova",
+    FT Base,
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    SF Pro Text,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   text-align: center;
   color: #fff;
   font-weight: 500;
