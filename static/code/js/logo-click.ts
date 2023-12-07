@@ -1,24 +1,24 @@
 import { cascadeClassName } from "./cascade-class-name";
 import { forget } from "./forget";
 import { note } from "./note";
-import { getLogoState, logo_state, setLogoState } from "./ubq";
+import { getLogoState, isDeactivated, setLogoState } from "./ubq";
 
-export const logoClick = async function () {
-  const Info = document.getElementById("Info");
-  if (!Info) return;
+export async function logoClick() {
+  const info = document.getElementById("Info");
+  if (!info) return;
   location.hash = "";
   // click_sound();
-  if (logo_state) {
+  if (isDeactivated) {
     note(800);
     document.body.className = "";
     history.replaceState({}, document.title, "."); // replace / with . to keep url
-    forget(Info);
-    forget(Info.children);
-    forget(Info.getElementsByTagName("h1")[0]);
+    forget(info);
+    forget(info.children);
+    forget(info.getElementsByTagName("h1")[0]);
   } else {
     note(900);
     document.body.className = "Active";
-    await cascadeClassName(Info);
+    await cascadeClassName(info);
   }
 
   setLogoState(!getLogoState());
@@ -35,4 +35,4 @@ export const logoClick = async function () {
       });
     }
   }
-};
+}

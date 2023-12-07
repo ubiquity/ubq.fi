@@ -3,6 +3,7 @@ import { note } from "./note";
 
 window.onhashchange = function change() {
   const hash = location.hash.split("#").pop();
+  if (!hash) return;
 
   document.body.className = "Active";
   document.body.className = [document.body.className, " ", hash].join("");
@@ -11,17 +12,17 @@ window.onhashchange = function change() {
   }
 };
 
-export let logo_state = false;
+export let isDeactivated = false;
 
 export function setLogoState(newState: boolean) {
-  logo_state = newState;
+  isDeactivated = newState;
 }
 export function getLogoState() {
-  return logo_state;
+  return isDeactivated;
 }
 
 // Create a new IntersectionObserver
-const observer = new IntersectionObserver((entries, observer) => {
+const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     // If the entry (section#Partners) is in the viewport
     if (entry.isIntersecting) {
@@ -36,12 +37,13 @@ const observer = new IntersectionObserver((entries, observer) => {
 });
 
 // Start observing an element (section#Partners)
-const Partners = document.getElementById("Partners");
-observer.observe(Partners);
+const partners = document.getElementById("Partners");
+if (!partners) throw new Error("No partners element");
+observer.observe(partners);
 
-const Logo = document.getElementById("Logo")?.children[0];
-Logo?.addEventListener("click", async () => {
-  observer.unobserve(Partners);
+const logo = document.getElementById("Logo")?.children[0];
+logo?.addEventListener("click", async () => {
+  observer.unobserve(partners);
   await logoClick();
 });
 // const UI = document.getElementById("UI");
@@ -62,7 +64,9 @@ Logo?.addEventListener("click", async () => {
 
 import { grid } from "./the-grid";
 // if (!window.location.origin.includes("localhost") && !window.location.origin.includes("127.0.0.1")) {
-grid(document.getElementById("grid-dynamic"));
+const gridDynamic = document.getElementById("grid-dynamic");
+if (!gridDynamic) throw new Error("No grid dynamic element");
+grid(gridDynamic);
 // }
 
 // window.addEventListener("scroll", function scrollHandler() {

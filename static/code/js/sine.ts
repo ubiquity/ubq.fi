@@ -9,7 +9,7 @@
     ctx.lineTo(width, height / 2);
     ctx.stroke();
   }
-  function plotSine(ctx, xOffset, yOffset) {
+  function plotSine(ctx, xOffset) {
     const width = ctx.canvas.width;
     const height = ctx.canvas.height;
     ctx.beginPath();
