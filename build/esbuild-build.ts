@@ -1,9 +1,12 @@
 import esbuild from "esbuild";
 const typescriptEntries = ["static/code/js/ubq.ts", "static/code/js/sine.ts"];
-const CSSEntries = ["static/code/css/ubq.css", "static/code/css/proxima.css"];
-export const entries = [...typescriptEntries, ...CSSEntries];
+const cssEntries = ["static/code/css/ubq.css", "static/code/css/proxima.css"];
+const entries = [
+  ...typescriptEntries,
+   ...cssEntries
+];
 
-export const esBuildContext = {
+export const esBuildContext: esbuild.BuildOptions = {
   sourcemap: true,
   entryPoints: entries,
   bundle: true,
@@ -16,5 +19,7 @@ export const esBuildContext = {
     ".ttf": "dataurl",
     ".svg": "dataurl",
   },
-  outdir: "static/out",
-} as esbuild.BuildOptions;
+  outdir: "static/dist",
+};
+
+void esbuild.build(esBuildContext);

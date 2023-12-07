@@ -1,19 +1,20 @@
 {
   "name": "ubq.fi",
   "version": "1.0.0",
-  "description": "Ubiquity DAO index.",
-  "main": "index.ts",
+  "description": "Ubiquity DAO home page.",
+  "main": "build/index.ts",
   "author": "Ubiquity DAO",
   "license": "MIT",
   "engines": {
-    "node": ">=v20.3.0"
+    "node": ">=20.10.0"
   },
   "scripts": {
-    "start": "tsx server.ts",
-    "build": "tsx esbuild.ts",
+    "start": "tsx build/esbuild-server.ts",
+    "build": "tsx build/esbuild-build.ts",
     "format": "run-s format:prettier format:lint",
     "format:lint": "eslint --fix .",
-    "format:prettier": "prettier --write ."
+    "format:prettier": "prettier --write .",
+    "prepare": "husky install"
   },
   "keywords": [
     "typescript",
@@ -23,20 +24,35 @@
     "open-source"
   ],
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "node-static": "^0.7.11"
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.6",
-    "@commitlint/config-conventional": "^17.6.6",
-    "@types/node": "^20.3.2",
-    "@typescript-eslint/eslint-plugin": "^5.60.1",
-    "@typescript-eslint/parser": "^5.60.1",
-    "eslint": "^8.43.0",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "esbuild": "^0.19.8",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "husky": "^8.0.3",
+    "knip": "^3.3.0",
+    "lint-staged": "^15.1.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.8",
-    "tsx": "^3.12.7",
-    "typescript": "^5.1.0"
+    "prettier": "^3.1.0",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.2"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "yarn format:prettier --write",
+      "yarn format:lint --fix"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
