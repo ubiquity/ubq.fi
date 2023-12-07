@@ -47,7 +47,7 @@
   "lint-staged": {
     "*.ts": [
       "yarn prettier --write",
-      "yarn lint --fix"
+      "yarn eslint --fix"
     ]
   },
   "commitlint": {
