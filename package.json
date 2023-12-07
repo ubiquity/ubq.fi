@@ -1,7 +1,7 @@
 {
-  "name": "ts-template",
+  "name": "ubq.fi",
   "version": "1.0.0",
-  "description": "Template repository with TypeScript support.",
+  "description": "Ubiquity DAO home page.",
   "main": "build/index.ts",
   "author": "Ubiquity DAO",
   "license": "MIT",

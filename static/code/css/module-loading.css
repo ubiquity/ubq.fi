@@ -1,0 +1,103 @@
+#UI #Event {
+  color: #fff;
+  padding: 12px;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  background-repeat: no-repeat;
+}
+
+#UI #Event.Success {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-opacity=".25" fill="#0f0" d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>');
+  animation: success 1s ease 0s 1;
+}
+
+#UI #Event.Error {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-opacity=".5" fill="#f00" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>');
+  animation: error 1s cubic-bezier(0, 1, 1, 1) 0s 1;
+}
+
+#UI #Event.Downloading {
+  background-image: url('data:image/svg+xml;utf8,<svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 13"><path fill-opacity=".5" fill="#fff" d="M14 6h-4V0H4v6H0l7 7 7-7z"/></svg>');
+  transition: 1s opacity cubic-bezier(1, 0, 1, 1);
+  opacity: 0.5;
+  animation: downloading 2s cubic-bezier(0, 1, 1, 1) 0s infinite;
+}
+
+#UI #Event.Uploading {
+  background-image: url('data:image/svg+xml;utf8,<svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 13"><path fill-opacity=".5" fill="#fff" d="M0 7h4v6h6V7h4L7 0 0 7z"/></svg>');
+  transition: 1s opacity cubic-bezier(1, 0, 1, 1);
+  opacity: 0.5;
+  animation: uploading 2s cubic-bezier(0, 1, 1, 1) 0s infinite;
+}
+
+@media (orientation: portrait) {
+  #UI #Event.Success,
+  #UI #Event.Downloading,
+  #UI #Event.Uploading,
+  #UI #Event.Error {
+    background-size: 50vw;
+  }
+}
+
+@media (orientation: landscape) {
+  #UI #Event.Success,
+  #UI #Event.Downloading,
+  #UI #Event.Uploading,
+  #UI #Event.Error {
+    background-size: 50vh;
+  }
+}
+
+@keyframes error {
+  0% {
+    opacity: 1;
+    background-position: 50% 200%;
+  }
+  50% {
+    opacity: 1;
+    background-position: 50% 50%;
+    transform: rotate(0) scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    background-position: 50% 50%;
+    transform: rotate(22.5deg) scale(1.5, 1.5);
+  }
+}
+
+@keyframes success {
+  0% {
+    opacity: 1;
+    background-position: 50% 200%;
+  }
+  75% {
+    opacity: 1;
+    background-position: 50% 50%;
+  }
+  100% {
+    opacity: 0;
+    background-position: 50% 55%;
+  }
+}
+
+@keyframes uploading {
+  0% {
+    background-position: 100% 200%;
+  }
+  100% {
+    background-position: 100% -200%;
+  }
+}
+
+@keyframes downloading {
+  0% {
+    background-position: 100% -200%;
+  }
+  100% {
+    background-position: 100% 200%;
+  }
+}
