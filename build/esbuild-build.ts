@@ -1,5 +1,5 @@
 import esbuild from "esbuild";
-const typescriptEntries = ["static/main.ts", "static/code/js/ubq.ts", "static/code/js/sine.ts"];
+const typescriptEntries = ["static/code/js/ubq.ts", "static/code/js/sine.ts"];
 const cssEntries = ["static/code/css/ubq.css", "static/code/css/proxima.css"];
 const entries = [...typescriptEntries, ...cssEntries];
 export const esBuildContext: esbuild.BuildOptions = {
