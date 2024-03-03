@@ -1,3 +1,4 @@
+import { devPoolSpread } from "./devpool-directory-spread/devpool-directory-spread";
 import { logoClick } from "./logo-click";
 import { note } from "./note";
 import { sine } from "./sine";
@@ -51,20 +52,4 @@ grid(gridDynamic);
 
 sine();
 
-async function fetchTotalRewards() {
-  const response = await fetch("https://raw.githubusercontent.com/ubiquity/devpool-directory/development/total-rewards.txt");
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  return await response.text();
-}
-
-fetchTotalRewards()
-  .then((totalRewards) => {
-    const totalRewardsElement = document.getElementById("fetch-total-rewards-target");
-    if (!totalRewardsElement) throw new Error("No total rewards element");
-    totalRewardsElement.innerText = `$${totalRewards} USD in task rewards now.`;
-  })
-  .catch((error) => {
-    console.error("Error fetching total rewards:", error);
-  });
+devPoolSpread();

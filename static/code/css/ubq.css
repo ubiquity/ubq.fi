@@ -53,6 +53,7 @@ h1 {
   text-rendering: geometricPrecision;
   font-weight: 400;
   text-align: center;
+  font-size: 36px;
 }
 body.Active foreground > span {
   transition: var(--page-init);
@@ -1127,16 +1128,56 @@ div#down-arrow-wrapper {
 }
 #DevPool {
   margin-top: 100vh;
-  background: #000;
+  /* background: #000; */
+  position: relative;
+  /* background: red; */
 }
 
 #DevPool div {
-  max-width: 640px;
+  /* max-width: 640px; */
   /* width: 100%; */
   /* text-align: center; */
 }
 
+#DevPool h1 {
+  margin-top: 23px;
+  font-size: 40px;
+  /* text-align: left; */
+  line-height: 1.25;
+}
 #DevPool h2,
 #DevPool h3 {
   text-align: center;
+}
+#DevPool #iframe-wrapper {
+  overflow: hidden;
+  height: calc(100% - 57px);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+#DevPool iframe {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5) 50%, transparent);
+  width: 100%;
+  height: calc(100% + 57px);
+  /* max-width: 640px; */
+  /* max-height: 360px; */
+  margin: 0 auto;
+  /* display: block; */
+  /* position: absolute; */
+  margin-top: -57px;
+  pointer-events: none;
+}
+#DevPool #devpool-overlay {
+  position: absolute;
+  width: 100%;
+  /* height: 100%; */
+  /* top: 0; */
+  transform: translateY(-50%);
+  backdrop-filter: blur(12px);
+  border: 1px solid #202020;
+  border-width: 1px 0;
+  padding-bottom: 24px;
+  background-image: url(../../image/grid-25.png);
 }
