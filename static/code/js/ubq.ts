@@ -63,7 +63,7 @@ fetchTotalRewards()
   .then((totalRewards) => {
     const totalRewardsElement = document.getElementById("fetch-total-rewards-target");
     if (!totalRewardsElement) throw new Error("No total rewards element");
-    totalRewardsElement.innerText = totalRewards;
+    totalRewardsElement.innerText = `$${totalRewards} USD in task rewards now.`;
   })
   .catch((error) => {
     console.error("Error fetching total rewards:", error);
