@@ -1,4 +1,4 @@
-(function () {
+export function sine() {
   function showAxes(ctx) {
     const width = ctx.canvas.width;
     const height = ctx.canvas.height;
@@ -36,7 +36,7 @@
     context.clearRect(0, 0, 640, 640);
     showAxes(context);
     context.save();
-    plotSine(context, step, 50);
+    plotSine(context, step);
     context.restore();
     ++step;
     window.requestAnimationFrame(draw);
@@ -46,4 +46,4 @@
   }
   let step = -1;
   init();
-})();
+}

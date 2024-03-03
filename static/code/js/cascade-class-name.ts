@@ -15,7 +15,7 @@ export async function cascadeClassName(element: Element) {
     } else if (child.nodeType === Node.TEXT_NODE && child.nodeValue?.trim()) {
       // If child is a non-empty text node, replace it with a series of span elements
       const text = (child as Text).data;
-      const parent = child.parentNode!;
+      const parent = child.parentNode as Element;
       parent.removeChild(child);
       // Set textContent of child to empty string to hide original text
       child.textContent = "";

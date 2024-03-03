@@ -1,6 +1,5 @@
 import { logoClick } from "./logo-click";
 import { note } from "./note";
-
 window.onhashchange = function change() {
   const hash = location.hash.split("#").pop();
   if (!hash) return;
@@ -78,3 +77,6 @@ grid(gridDynamic);
 //     }
 //   }
 // });
+
+import { sine } from "./sine";
+sine();
