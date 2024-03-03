@@ -31,8 +31,10 @@ export function sine() {
     ctx.restore();
   }
   function draw() {
-    const canvas = document.getElementById("sine");
+    const canvas = document.getElementById("sine") as HTMLCanvasElement;
+    if (!canvas) throw new Error("No canvas");
     const context = canvas.getContext("2d");
+    if (!context) throw new Error("No context");
     context.clearRect(0, 0, 640, 640);
     showAxes(context);
     context.save();
