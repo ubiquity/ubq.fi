@@ -1,5 +1,8 @@
 import { logoClick } from "./logo-click";
 import { note } from "./note";
+import { sine } from "./sine";
+import { grid } from "./the-grid";
+
 window.onhashchange = function change() {
   const hash = location.hash.split("#").pop();
   if (!hash) return;
@@ -16,26 +19,22 @@ export let isDeactivated = false;
 export function setLogoState(newState: boolean) {
   isDeactivated = newState;
 }
+
 export function getLogoState() {
   return isDeactivated;
 }
 
-// Create a new IntersectionObserver
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    // If the entry (section#Partners) is in the viewport
+    const backElement = document.getElementById("Back");
     if (entry.isIntersecting) {
-      // Hide the background element
-      document.getElementById("Back")?.classList.remove("Active");
-      // Stop observing the entry
+      backElement?.classList.remove("Active");
     } else {
-      // Show the background element
-      document.getElementById("Back")?.classList.add("Active");
+      backElement?.classList.add("Active");
     }
   });
 });
 
-// Start observing an element (section#Partners)
 const partners = document.getElementById("Partners");
 if (!partners) throw new Error("No partners element");
 observer.observe(partners);
@@ -45,38 +44,27 @@ logo?.addEventListener("click", async () => {
   observer.unobserve(partners);
   await logoClick();
 });
-// const UI = document.getElementById("UI");
-// UI?.addEventListener("click", function () {
-//   note(800, { reverb: 1 / 8 });
-//   // note(800);
-//   location.hash = "";
-//   return (document.body.className = "Active");
-// });
-// let x = UI.children.length;
-// while (x--) {
-//   const a = UI.children[x];
-//   if (a.children[0] && a.children[0].children[0])
-//     a.children[0].children[0].addEventListener("click", function (e) {
-//       e.stopPropagation();
-//     });
-// }
 
-import { grid } from "./the-grid";
-// if (!window.location.origin.includes("localhost") && !window.location.origin.includes("127.0.0.1")) {
 const gridDynamic = document.getElementById("grid-dynamic");
 if (!gridDynamic) throw new Error("No grid dynamic element");
 grid(gridDynamic);
-// }
 
-// window.addEventListener("scroll", function scrollHandler() {
-//   const scrollDistance = window.scrollY;
-//   if (scrollDistance >= 300 * window.innerHeight) {
-//     const logo = document.getElementById("Logo");
-//     if (logo) {
-//       logo.style.opacity = "0";
-//     }
-//   }
-// });
-
-import { sine } from "./sine";
 sine();
+
+async function fetchTotalRewards() {
+  const response = await fetch("https://raw.githubusercontent.com/ubiquity/devpool-directory/development/total-rewards.txt");
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.text();
+}
+
+fetchTotalRewards()
+  .then((totalRewards) => {
+    const totalRewardsElement = document.getElementById("fetch-total-rewards-target");
+    if (!totalRewardsElement) throw new Error("No total rewards element");
+    totalRewardsElement.innerText = totalRewards;
+  })
+  .catch((error) => {
+    console.error("Error fetching total rewards:", error);
+  });
