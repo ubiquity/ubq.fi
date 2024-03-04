@@ -1182,3 +1182,12 @@ div#down-arrow-wrapper {
   padding-bottom: 24px;
   background-image: url(../../image/grid-25.png);
 }
+
+input[type="button"] {
+  font-weight: 600;
+  background: #00ffff40;
+  padding: 16px 32px;
+}
+input[type="button"]:hover{
+  background: #00ffff80;
+}
