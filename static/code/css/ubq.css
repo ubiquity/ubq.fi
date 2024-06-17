@@ -22,7 +22,7 @@ svg {
   stroke: none;
 }
 section#Hero {
-  /* position: absolute; */
+  position: absolute;
   top: 0;
   pointer-events: none;
 }
@@ -1035,11 +1035,13 @@ body.Active #Info ol li a > span {
 #Intro li {
   width: 100%;
 }
-#Intro h1 {
-  margin-top: 23px;
+h2 {
+  margin-top: 24px;
   font-size: 40px;
   text-align: left;
   line-height: 1.25;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 header > aside::before {
   content: "›› ";
@@ -1064,7 +1066,7 @@ header > aside::after {
 }
 #Back,
 #Hero {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
 }
 #Spreads > #Intro {
@@ -1127,9 +1129,9 @@ div#down-arrow-wrapper {
   pointer-events: all;
 }
 #DevPool {
-  margin-top: 100vh;
+  /* margin-top: 100vh; */
   /* background: #000; */
-  position: relative;
+  /* position: relative; */
   /* background: red; */
 }
 
@@ -1188,6 +1190,18 @@ input[type="button"] {
   background: #00ffff40;
   padding: 16px 32px;
 }
-input[type="button"]:hover{
+input[type="button"]:hover {
   background: #00ffff80;
+}
+th {
+  font-weight: normal;
+  font-size: 16px;
+}
+td {
+  padding: 4px 8px;
+  font-size: 16px;
+}
+#analytics {
+  margin-top: 24px;
+  opacity: 0.75;
 }
