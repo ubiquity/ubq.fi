@@ -576,6 +576,10 @@ p {
   max-width: 640px;
   max-height: 640px;
   width: calc(100% / 3);
+  position: absolute;
+  filter: blur(5px);
+  z-index: -1;
+  right: 0;
 }
 #Intro .circle div {
   border-radius: 50%;
@@ -846,6 +850,7 @@ body.social main#Spreads {
 #Intro > article > div > div {
   vertical-align: middle;
   padding: 24px;
+  /* z-index: 24; */
 }
 #Intro > article > div:nth-child(1) img {
   object-position: center;
@@ -1151,7 +1156,7 @@ div#down-arrow-wrapper {
 #DevPool h3 {
   text-align: center;
 }
-#DevPool #iframe-wrapper {
+#DevPool #frame-wrapper {
   overflow: hidden;
   height: calc(100% - 57px);
   position: absolute;
@@ -1159,9 +1164,9 @@ div#down-arrow-wrapper {
   width: 100%;
   height: 100%;
 }
-#DevPool iframe {
+#DevPool #frame-wrapper > img {
   -webkit-mask-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5) 50%, transparent);
-  width: 100%;
+  /* width: 100%; */
   height: calc(100% + 57px);
   /* max-width: 640px; */
   /* max-height: 360px; */
@@ -1182,7 +1187,9 @@ div#down-arrow-wrapper {
   border: 1px solid #202020;
   border-width: 1px 0;
   padding-bottom: 24px;
-  background-image: url(../../image/grid-25.png);
+  /* background-image: url(../../image/grid-25.png); */
+  /* background-image: url(../../image/work.jpg); */
+  /* background-size: cover; */
 }
 
 input[type="button"] {

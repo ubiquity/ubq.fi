@@ -182,7 +182,7 @@
 }
 @media screen and (orientation: landscape) {
   #Intro > article > div > div {
-    width: 50%;
+    /* width: 50%; */
     display: table-cell;
   }
   #farm-landscape {

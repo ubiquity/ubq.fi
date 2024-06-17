@@ -9,6 +9,7 @@ export const esBuildContext: esbuild.BuildOptions = {
   minify: false,
   loader: {
     ".png": "dataurl",
+    ".jpg": "dataurl",
     ".woff": "dataurl",
     ".woff2": "dataurl",
     ".eot": "dataurl",
