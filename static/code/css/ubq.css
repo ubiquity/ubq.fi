@@ -207,7 +207,7 @@ body #grid-static {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(../../image/grid-1.png);
+  background-image: url("../../image/grid-1.png");
   transform: translate(12px, 6px);
   -webkit-mask-image: radial-gradient(#00000040 0, #00000080 50%, #000000ff 100%);
   opacity: 0.25;
@@ -850,7 +850,6 @@ body.social main#Spreads {
 #Intro > article > div > div {
   vertical-align: middle;
   padding: 24px;
-  /* z-index: 24; */
 }
 #Intro > article > div:nth-child(1) img {
   object-position: center;
@@ -929,7 +928,7 @@ body.social main#Spreads {
   display: inline-block;
 }
 #Intro {
-  background-image: url(../../image/grid-25.png);
+  background-image: url(image/grid-25.png);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid #ffffff10;
@@ -969,7 +968,7 @@ body.social main#Spreads {
   letter-spacing: 2px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background-image: url(../../image/grid-25.png);
+  background-image: url(image/grid-25.png);
   border-top: 1px solid #ffffff10;
   padding: 0 8px;
 }
@@ -1071,11 +1070,7 @@ header > aside::after {
 }
 #Back,
 #Hero {
-  /* position: absolute; */
   top: 0;
-}
-#Spreads > #Intro {
-  /* margin-top: 200vh; */
 }
 #Info svg {
   margin-right: 4px;
@@ -1133,23 +1128,9 @@ div#down-arrow-wrapper {
 #Logo > .spin {
   pointer-events: all;
 }
-#DevPool {
-  /* margin-top: 100vh; */
-  /* background: #000; */
-  /* position: relative; */
-  /* background: red; */
-}
-
-#DevPool div {
-  /* max-width: 640px; */
-  /* width: 100%; */
-  /* text-align: center; */
-}
-
 #DevPool h1 {
   margin-top: 23px;
   font-size: 40px;
-  /* text-align: left; */
   line-height: 1.25;
 }
 #DevPool h2,
@@ -1157,41 +1138,32 @@ div#down-arrow-wrapper {
   text-align: center;
 }
 #DevPool #frame-wrapper {
-  overflow: hidden;
-  height: calc(100% - 57px);
   position: absolute;
   top: 0;
-  width: 100%;
   height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 #DevPool #frame-wrapper > img {
   -webkit-mask-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5) 50%, transparent);
-  /* width: 100%; */
-  height: calc(100% + 57px);
-  /* max-width: 640px; */
-  /* max-height: 360px; */
   margin: 0 auto;
-  /* display: block; */
-  /* position: absolute; */
-  margin-top: -57px;
   pointer-events: none;
+  height: 100%;
+  width: auto;
 }
 #DevPool #devpool-overlay {
   position: absolute;
   width: 100%;
-  /* height: 100%; */
-  /* top: 0; */
   transform: translateY(-50%);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border: 1px solid #202020;
   border-width: 1px 0;
   padding-bottom: 24px;
-  /* background-image: url(../../image/grid-25.png); */
-  /* background-image: url(../../image/work.jpg); */
-  /* background-size: cover; */
 }
-
 input[type="button"] {
   font-weight: 600;
   background: #00ffff40;
@@ -1201,7 +1173,7 @@ input[type="button"]:hover {
   background: #00ffff80;
 }
 th {
-  font-weight: normal;
+  font-weight: 400;
   font-size: 16px;
 }
 td {

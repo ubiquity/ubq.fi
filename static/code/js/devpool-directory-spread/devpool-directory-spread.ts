@@ -6,7 +6,7 @@ export function devPoolSpread() {
       const totalRewardsElement = document.getElementById("fetch-total-rewards-target");
       if (!totalRewardsElement) throw new Error("No total rewards element");
       const htmlBuffer = [
-        `<h3>${totalRewards.rewards.total} USD in rewards across ${totalRewards.tasks.total} projects.</h3>`,
+        `<h3>${totalRewards.rewards.total} USD in rewards across ${totalRewards.tasks.total} projects</h3>`,
         `
         <table id="analytics">
           <thead>
