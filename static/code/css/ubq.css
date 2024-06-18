@@ -505,6 +505,7 @@ h3 {
   box-sizing: inherit;
   margin-top: 23px;
   line-height: 1.25;
+  max-width: calc(100vw - 16px);
 }
 p {
   color: #bfbfbf;
@@ -519,6 +520,8 @@ p {
   font-size: 20px;
   line-height: 31px;
   margin-top: 17px;
+  max-width: calc(100vw - 16px);
+  margin: 17px 8px 0;
 }
 #Overview > article > div > div:nth-child(odd) {
   padding: 5% 0 5% 10%;
@@ -925,7 +928,7 @@ body.social main#Spreads {
   /* vertical-align: middle; */
   text-align: center;
   /* display: inline-block; */
-  padding: 32px;
+  /* padding: 32px; */
 }
 #Intro {
   background-image: url("../../image/grid-25.png");
