@@ -1122,6 +1122,7 @@ div#down-arrow-wrapper {
   position: absolute;
   bottom: 48px;
   right: 48px;
+  overflow: unset;
 }
 #Back,
 #Logo {
