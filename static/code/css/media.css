@@ -16,8 +16,6 @@
   #UI > ul > li:nth-child(1) {
     display: unset;
   }
-}
-@media (orientation: portrait) {
   #headshot {
     background-size: 250%;
     background-position: 75% 50%;
@@ -25,13 +23,41 @@
   video {
     display: none;
   }
+  #Info {
+    margin: 0;
+    width: 100vw;
+    overflow: hidden;
+  }
+  #UI > div {
+    min-width: calc(100vw - 48px);
+  }
+  #Overview > article > div > div:nth-child(even),
+  #Overview > article > div > div:nth-child(odd) {
+    display: block;
+    width: 100%;
+  }
+  #Overview > article > div > div:nth-child(even) {
+    margin: 0 auto 24px;
+  }
 }
+@media (orientation: landscape) {
+  #UI > div > div {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  #Intro > article > div > div {
+    display: table-cell;
+  }
+  #farm-landscape {
+    display: unset;
+    max-width: 1280px;
+  }
+}
+
 @media (max-width: 640px) {
   #Info > header {
     padding: 10px 8px;
-  }
-  footer li a {
-    /* width: calc(50vw); */
   }
   #Info {
     text-align: left;
@@ -42,6 +68,12 @@
   }
   #extended {
     display: none;
+  }
+  ul {
+    padding: 0;
+  }
+  #Partners ul li {
+    margin: 12px;
   }
 }
 @media (inverted-colors) {
@@ -154,55 +186,5 @@
   }
   100% {
     opacity: 0.125;
-  }
-}
-@media (orientation: landscape) {
-  #UI > div > div {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-  }
-}
-@media screen and (orientation: portrait) {
-  #Info {
-    margin: 0;
-    width: 100vw;
-    overflow: hidden;
-  }
-  #Info > ol {
-    /* background-color: #ffffff10; */
-  }
-}
-@keyframes bytecode-ani {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@media screen and (orientation: landscape) {
-  #Intro > article > div > div {
-    /* width: 50%; */
-    display: table-cell;
-  }
-  #farm-landscape {
-    display: unset;
-    max-width: 1280px;
-  }
-}
-@media (orientation: portrait) {
-  #UI > div {
-    min-width: calc(100vw - 48px);
-  }
-  #Spreads > footer > article div a {
-    /* padding: 24px; */
-  }
-  #Overview > article > div > div:nth-child(even),
-  #Overview > article > div > div:nth-child(odd) {
-    display: block;
-    width: 100%;
-  }
-  #Overview > article > div > div:nth-child(even) {
-    margin: 0 auto 24px;
   }
 }

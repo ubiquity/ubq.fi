@@ -849,7 +849,6 @@ body.social main#Spreads {
 }
 #Intro > article > div > div {
   vertical-align: middle;
-  padding: 24px;
 }
 #Intro > article > div:nth-child(1) img {
   object-position: center;
@@ -921,14 +920,15 @@ body.social main#Spreads {
 }
 #Intro > article > div {
   max-width: 1280px;
-  width: 100%;
-  display: table-cell;
-  vertical-align: middle;
+  /* width: 100%; */
+  /* display: table-cell; */
+  /* vertical-align: middle; */
   text-align: center;
-  display: inline-block;
+  /* display: inline-block; */
+  padding: 32px;
 }
 #Intro {
-  background-image: url(image/grid-25.png);
+  background-image: url("../../image/grid-25.png");
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid #ffffff10;
@@ -968,9 +968,9 @@ body.social main#Spreads {
   letter-spacing: 2px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background-image: url(image/grid-25.png);
+  background-image: url("../../image/grid-25.png");
   border-top: 1px solid #ffffff10;
-  padding: 0 8px;
+  padding: 0 12px;
 }
 body #UI > ul > li {
   opacity: 0;
@@ -1043,7 +1043,7 @@ h2 {
   margin-top: 24px;
   font-size: 40px;
   text-align: left;
-  line-height: 1.25;
+  line-height: 1;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -1078,6 +1078,8 @@ header > aside::after {
 footer li {
   max-width: calc(100vw / 3);
   padding: 24px;
+  vertical-align: middle;
+  text-wrap: nowrap;
 }
 @keyframes down-arrow {
   0% {
@@ -1183,4 +1185,12 @@ td {
 #analytics {
   margin-top: 24px;
   opacity: 0.75;
+}
+#fetch-total-rewards-target {
+  padding: 0 16px;
+}
+
+#Spreads > * {
+  overflow: hidden;
+  width: 100vw;
 }
