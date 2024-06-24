@@ -4,6 +4,7 @@
     width: 100%;
     max-width: 1280px;
     text-align: center;
+    opacity: 0.25;
   }
   #farm-portrait {
     display: inline-block;

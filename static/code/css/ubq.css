@@ -191,7 +191,6 @@ body .center > div {
 }
 body #Grid {
   position: relative;
-  /* background-color: var(--elu-blu); */
 }
 body #Grid > div {
   position: fixed;
@@ -404,10 +403,6 @@ body.Active .spin #aP {
   height: 160px;
   text-align: center;
   cursor: pointer;
-}
-body.Active .spin {
-  width: 66vh;
-  height: 66vh;
 }
 body.Active #Logo {
   animation: logo-ani 0.2s;
@@ -923,12 +918,7 @@ body.social main#Spreads {
 }
 #Intro > article > div {
   max-width: 1280px;
-  /* width: 100%; */
-  /* display: table-cell; */
-  /* vertical-align: middle; */
   text-align: center;
-  /* display: inline-block; */
-  /* padding: 32px; */
 }
 #Intro {
   background-image: url("../../image/grid-25.png");
@@ -1193,24 +1183,18 @@ td {
 #fetch-total-rewards-target {
   padding: 0 16px;
 }
-
 #Spreads > * {
   overflow: hidden;
   width: 100vw;
 }
-
 background .gradient {
-  background-image: radial-gradient(#00bfff00 0%, #00bfffff 15%, #00bfff00 34%, #00bfffff 58%, #00bfff00 75%, #00bfffff 100%);
+  background-image: radial-gradient(#00bfff00 0, #00bfffff 15%, #00bfff00 34%, #00bfffff 58%, #00bfff00 75%, #00bfffff 100%);
   animation: background-gradients-fade-in 2s ease-in-out forwards;
-  /* height: 100vh; */
-  /* position: fixed; */
   top: 0;
   left: 0;
-  /* width: 100vw; */
   width: 200vw;
   height: 200vh;
   position: absolute;
-  /* opacity: 0; */
 }
 background > :nth-child(1) {
   transform: translateY(-100vh);
@@ -1218,42 +1202,32 @@ background > :nth-child(1) {
 background > :nth-child(2) {
   transform: translateY(-50vh);
 }
-
 background {
   position: unset;
   display: unset;
-  /* width: unset; */
-  /* height: unset; */
-  /* height: unset; */
   background-size: unset;
   background-position: unset;
   text-align: unset;
-  /* left: unset; */
-  /* top: unset; */
 }
-
 background,
 background #grid {
   position: fixed;
   top: 0;
   left: 0;
 }
-html,
-background {
+background,
+html {
   background-color: #000410;
 }
-
 background #grid {
   pointer-events: none;
 }
-
 background #grid canvas {
   width: 100%;
   height: 100%;
   opacity: 0;
   animation: background-grid-fade-in 2s ease-in-out forwards;
 }
-
 background .gradient {
   width: 200vw;
   height: 200vh;
@@ -1261,7 +1235,7 @@ background .gradient {
   opacity: 0;
 }
 .grid-loaded background .gradient {
-  background-image: radial-gradient(#00bfff00 0%, #00bfffff 15%, #00bfff00 34%, #00bfffff 58%, #00bfff00 75%, #00bfffff 100%);
+  background-image: radial-gradient(#00bfff00 0, #00bfffff 15%, #00bfff00 34%, #00bfffff 58%, #00bfff00 75%, #00bfffff 100%);
   animation: background-gradients-fade-in 2s ease-in-out forwards;
 }
 background > :nth-child(1) {
@@ -1270,7 +1244,6 @@ background > :nth-child(1) {
 background > :nth-child(2) {
   transform: translateY(-50vh);
 }
-
 @keyframes background-gradients-fade-in {
   to {
     opacity: 0.125;
