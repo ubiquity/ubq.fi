@@ -110,8 +110,9 @@ h1 > span.Active {
   filter: blur(0);
 }
 background > video.Active {
-  opacity: 0.75;
+  opacity: 0.25;
   transition: 1s opacity ease-in-out;
+  filter: grayscale(0.5);
 }
 #Spreads > .Active {
   opacity: 1;
