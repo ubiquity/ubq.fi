@@ -57,8 +57,11 @@
 }
 
 @media (max-width: 640px) {
+  #Info h1 {
+    padding-bottom: 16px;
+  }
   #Info > header {
-    padding: 10px 8px;
+    padding: 16px 8px;
   }
   #Info {
     text-align: left;

@@ -278,7 +278,6 @@ body.Active #grid-dynamic {
   fill: #0ff;
 }
 #Info > ol {
-  padding: 0 calc(100% / 12);
   text-transform: uppercase;
 }
 #Info > header > h1 {
@@ -290,7 +289,6 @@ body.Active #grid-dynamic {
   color: #ffffffbf;
 }
 #Info > header > aside {
-  text-align: center;
   font-size: 12px;
   letter-spacing: 0.25px;
   line-height: 1.25;
@@ -300,6 +298,7 @@ body.Active #grid-dynamic {
   overflow: hidden;
   padding: 10px calc(100% / 12);
   background-color: #ffffff10;
+  text-align: center;
 }
 #Info > div > aside > span {
   font-size: 12px;
@@ -1040,11 +1039,13 @@ h2 {
   font-weight: 400;
   text-transform: uppercase;
 }
+#pilot-program a > span::before,
 header > aside::before {
   content: "›› ";
   color: grey;
   margin: 0 2px 0 18px;
 }
+#pilot-program a > span::after,
 header > aside::after {
   content: " ‹‹";
   color: grey;
