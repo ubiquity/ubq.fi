@@ -530,11 +530,11 @@ p {
   height: 100%;
   width: 100%;
 }
-#Partners {
+#Partners, #Audits {
   height: unset;
   padding: 10% 0;
 }
-#Partners > article > div:nth-child(1) {
+#Partners > article > div:nth-child(1), #Audits > article > div:nth-child(1) {
   max-width: 1280px;
   margin: 24px auto;
   width: 75%;
@@ -560,6 +560,13 @@ p {
 #Partners ul li p {
   text-align: center;
   line-height: 1;
+}
+#Partners .header-aside, #Audits .header-aside {
+  margin-left: 0;
+}
+#Audits a {
+  color: #0ff;
+  text-decoration: underline;
 }
 #Intro div.circle svg {
   margin: 19.5% 15.5% 0 16.5%;
