@@ -1,7 +1,11 @@
 import esbuild from "esbuild";
-const typescriptEntries = ["static/code/js/ubq.ts"];
-const cssEntries = ["static/code/css/ubq.css"];
-const entries = [...typescriptEntries, ...cssEntries];
+const typescriptEntries = ["static/main.ts"];
+// const cssEntries = ["static/style.css"];
+const entries = [
+  ...typescriptEntries,
+  //  ...cssEntries
+];
+
 export const esBuildContext: esbuild.BuildOptions = {
   sourcemap: true,
   entryPoints: entries,
@@ -9,7 +13,6 @@ export const esBuildContext: esbuild.BuildOptions = {
   minify: false,
   loader: {
     ".png": "dataurl",
-    ".jpg": "dataurl",
     ".woff": "dataurl",
     ".woff2": "dataurl",
     ".eot": "dataurl",
@@ -19,4 +22,12 @@ export const esBuildContext: esbuild.BuildOptions = {
   outdir: "static/dist",
 };
 
-void esbuild.build(esBuildContext);
+esbuild
+  .build(esBuildContext)
+  .then(() => {
+    console.log("\tesbuild complete");
+  })
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
