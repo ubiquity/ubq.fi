@@ -1,0 +1,3 @@
+[submodule "ubq-fi-demo"]
+	path = ubq-fi-demo
+	url = git@github.com:nick-dev123/ubq-fi-demo.git

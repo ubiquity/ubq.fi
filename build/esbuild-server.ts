@@ -7,7 +7,7 @@ export async function server() {
   const _context = await esbuild.context(esBuildContext);
   const { port } = await _context.serve({
     servedir: "static",
-    port: 8080,
+    port: 8081,
   });
   console.log(`http://localhost:${port}`);
 }
