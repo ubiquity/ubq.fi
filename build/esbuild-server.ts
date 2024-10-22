@@ -1,7 +1,12 @@
 import esbuild from "esbuild";
 import { esBuildContext } from "./esbuild-build";
 
-void server();
+(async () => {
+  await server();
+})().catch((error) => {
+  console.error("Unhandled error:", error);
+  process.exit(1);
+});
 
 export async function server() {
   const _context = await esbuild.context(esBuildContext);
