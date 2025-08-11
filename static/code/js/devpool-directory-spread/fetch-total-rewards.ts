@@ -1,5 +1,5 @@
 export async function fetchTotalRewards() {
-  const response = await fetch("https://raw.githubusercontent.com/ubiquity/devpool-directory/__STORAGE__/devpool-statistics.json");
+  const response = await fetch("https://raw.githubusercontent.com/devpool-directory/devpool-directory/__STORAGE__/devpool-statistics.json");
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
