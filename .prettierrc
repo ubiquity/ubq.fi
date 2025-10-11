@@ -4,6 +4,7 @@
   "semi": true,
   "singleQuote": false,
   "printWidth": 160,
-  "htmlWhitespaceSensitivity": "ignore",
-  "plugins": []
+  "htmlWhitespaceSensitivity": "strict",
+  "plugins": [],
+  "useTabs": false
 }

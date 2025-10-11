@@ -1,4 +1,4 @@
-(function () {
+export function sine() {
   function showAxes(ctx) {
     const width = ctx.canvas.width;
     const height = ctx.canvas.height;
@@ -9,7 +9,7 @@
     ctx.lineTo(width, height / 2);
     ctx.stroke();
   }
-  function plotSine(ctx, xOffset, yOffset) {
+  function plotSine(ctx, xOffset) {
     const width = ctx.canvas.width;
     const height = ctx.canvas.height;
     ctx.beginPath();
@@ -31,12 +31,14 @@
     ctx.restore();
   }
   function draw() {
-    const canvas = document.getElementById("sine");
+    const canvas = document.getElementById("sine") as HTMLCanvasElement;
+    if (!canvas) throw new Error("No canvas");
     const context = canvas.getContext("2d");
+    if (!context) throw new Error("No context");
     context.clearRect(0, 0, 640, 640);
     showAxes(context);
     context.save();
-    plotSine(context, step, 50);
+    plotSine(context, step);
     context.restore();
     ++step;
     window.requestAnimationFrame(draw);
@@ -46,4 +48,4 @@
   }
   let step = -1;
   init();
-})();
+}

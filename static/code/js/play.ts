@@ -1,8 +1,8 @@
-import { note } from './note';
+import { note } from "./note";
 export function play(notes, speed, meta) {
-  return note(notes.shift(), meta, function () {
+  return note(notes.shift(), meta, () => {
     if (notes.length)
-      setTimeout(function () {
+      setTimeout(() => {
         play(notes, speed, meta);
       }, speed);
   });

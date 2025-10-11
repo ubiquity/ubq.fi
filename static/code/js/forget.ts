@@ -1,4 +1,4 @@
-export const forget = function (inputs: any) {
+export function forget(inputs) {
   const targets = inputs;
   if (targets.length) {
     let x = targets.length;
@@ -12,4 +12,4 @@ export const forget = function (inputs: any) {
       targets.children[x].className = "";
     }
   }
-};
+}
