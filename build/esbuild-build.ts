@@ -1,4 +1,4 @@
-import esbuild from "esbuild";
+import * as esbuild from "esbuild";
 const typescriptEntries = ["static/code/js/ubq.ts"];
 const cssEntries = ["static/code/css/ubq.css"];
 const entries = [...typescriptEntries, ...cssEntries];

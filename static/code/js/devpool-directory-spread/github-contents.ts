@@ -21,7 +21,9 @@ export type FetchResult<T = unknown> = {
   notModified: boolean;
 };
 
-function readCache<T = unknown>(path: string): { etag: string | null; json: T | null } {
+function readCache<T = unknown>(
+  path: string,
+): { etag: string | null; json: T | null } {
   try {
     const etag = localStorage.getItem(etagKey(path));
     const data = localStorage.getItem(dataKey(path));
@@ -63,7 +65,10 @@ function base64ToString(b64: string) {
   }
 }
 
-export async function fetchContentsJSON<T = unknown>(path: string, opts?: { bypassEtag?: boolean }): Promise<FetchResult<T>> {
+export async function fetchContentsJSON<T = unknown>(
+  path: string,
+  opts?: { bypassEtag?: boolean },
+): Promise<FetchResult<T>> {
   const cache = readCache<T>(path);
   const headers: Record<string, string> = {
     Accept: "application/vnd.github+json",
@@ -79,12 +84,17 @@ export async function fetchContentsJSON<T = unknown>(path: string, opts?: { bypa
   }
 
   const etag = resp.headers.get("ETag");
-  const payload = (await resp.json()) as { content?: string; encoding?: string };
+  const payload = (await resp.json()) as {
+    content?: string;
+    encoding?: string;
+  };
   if (!payload.content) {
     // Unexpected shape; return null but keep etag to avoid hot looping.
     return { json: null, etag, notModified: false };
   }
-  const raw = payload.encoding === "base64" ? base64ToString(payload.content) : payload.content;
+  const raw = payload.encoding === "base64"
+    ? base64ToString(payload.content)
+    : payload.content;
   const json = JSON.parse(raw) as T;
   writeCache(path, etag, json);
   return { json, etag, notModified: false };

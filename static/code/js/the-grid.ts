@@ -54,12 +54,19 @@ export function grid(node = document.body) {
 `;
 
   // Define shader creation function
-  function createShader(gl: WebGLRenderingContext, type: number, source: string) {
+  function createShader(
+    gl: WebGLRenderingContext,
+    type: number,
+    source: string,
+  ) {
     const shader = gl.createShader(type);
     gl.shaderSource(shader, source);
     gl.compileShader(shader);
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-      console.error("An error occurred compiling the shaders: " + gl.getShaderInfoLog(shader));
+      console.error(
+        "An error occurred compiling the shaders: " +
+          gl.getShaderInfoLog(shader),
+      );
       gl.deleteShader(shader);
       return null;
     }
@@ -68,7 +75,11 @@ export function grid(node = document.body) {
 
   // Create vertex and fragment shaders
   const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
-  const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
+  const fragmentShader = createShader(
+    gl,
+    gl.FRAGMENT_SHADER,
+    fragmentShaderSource,
+  );
 
   // Create program, attach shaders, and link
   const program = gl.createProgram();
@@ -78,7 +89,10 @@ export function grid(node = document.body) {
 
   // Verify program link status
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-    console.error("Unable to initialize the shader program: " + gl.getProgramInfoLog(program));
+    console.error(
+      "Unable to initialize the shader program: " +
+        gl.getProgramInfoLog(program),
+    );
     return;
   }
 
@@ -87,12 +101,19 @@ export function grid(node = document.body) {
 
   // Get location of time and resolution uniforms
   const timeUniformLocation = gl.getUniformLocation(program, "u_time");
-  const resolutionUniformLocation = gl.getUniformLocation(program, "u_resolution");
+  const resolutionUniformLocation = gl.getUniformLocation(
+    program,
+    "u_resolution",
+  );
 
   // Bind the position buffer and set attribute pointer
   const positionBuffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+  gl.bufferData(
+    gl.ARRAY_BUFFER,
+    new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]),
+    gl.STATIC_DRAW,
+  );
 
   const positionAttributeLocation = gl.getAttribLocation(program, "a_position");
   gl.enableVertexAttribArray(positionAttributeLocation);

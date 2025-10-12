@@ -16,6 +16,6 @@ export function enterSound() {
       reverb: 0.25,
       type: "sine",
       // sustain: .25
-    }
+    },
   );
 }

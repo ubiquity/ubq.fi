@@ -1,4 +1,8 @@
-import { fetchContentsJSON, getCachedJSON, clearCache } from "./github-contents";
+import {
+  clearCache,
+  fetchContentsJSON,
+  getCachedJSON,
+} from "./github-contents";
 
 const SUMMARY_PATH = "summary.json";
 const STATISTICS_PATH = "statistics.json";
@@ -18,7 +22,9 @@ export async function fetchTotalRewards() {
   let shouldRefetchStats = true;
 
   try {
-    const summaryResult = await fetchContentsJSON(SUMMARY_PATH, { bypassEtag: shouldForceRefresh });
+    const summaryResult = await fetchContentsJSON(SUMMARY_PATH, {
+      bypassEtag: shouldForceRefresh,
+    });
     if (!shouldForceRefresh && summaryResult.notModified && cachedStats) {
       shouldRefetchStats = false;
     }
@@ -31,7 +37,9 @@ export async function fetchTotalRewards() {
     return cachedStats;
   }
 
-  const statsResult = await fetchContentsJSON<TotalRewards>(STATISTICS_PATH, { bypassEtag: shouldForceRefresh });
+  const statsResult = await fetchContentsJSON<TotalRewards>(STATISTICS_PATH, {
+    bypassEtag: shouldForceRefresh,
+  });
   if (!statsResult.json) throw new Error("Empty statistics payload");
   return statsResult.json;
 }

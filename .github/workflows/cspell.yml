@@ -2,23 +2,20 @@ name: Spell Check
 
 on:
   push:
+  pull_request:
 
 jobs:
   spellcheck:
     name: Check for spelling errors
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
         with:
-          node-version: "20.10.0"
+          deno-version: v2.x
 
-      - name: Install cspell
-        run: yarn add cspell
-
-      - name: Run cspell
-        run: yarn format:cspell
+      - name: Run cspell via Deno
+        run: deno task cspell

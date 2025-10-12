@@ -1,1 +1,4 @@
-bun lint-staged
+#!/usr/bin/env sh
+set -e
+deno fmt --check
+deno lint
