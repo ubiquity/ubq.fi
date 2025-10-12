@@ -17,10 +17,7 @@ Deno.serve({ port }, async (req) => {
 
   // Ensure fresh index.html; long-cache immutable assets
   const h = new Headers(res.headers);
-  if (
-    pathname === "/" || pathname === "/index.html" ||
-    pathname.endsWith("/index.html")
-  ) {
+  if (pathname === "/" || pathname === "/index.html" || pathname.endsWith("/index.html")) {
     h.set("Cache-Control", "no-store, must-revalidate");
     const body = await res.arrayBuffer();
     return new Response(body, { status: res.status, headers: h });

@@ -58,13 +58,9 @@ function handleChord(meta, g, context) {
   meta.chord.push(
     (function (g, context, meta) {
       return function () {
-        g.gain.setTargetAtTime(
-          0,
-          context.currentTime + meta.sustain,
-          meta.reverb,
-        );
+        g.gain.setTargetAtTime(0, context.currentTime + meta.sustain, meta.reverb);
       };
-    })(g, context, meta),
+    })(g, context, meta)
   );
 }
 

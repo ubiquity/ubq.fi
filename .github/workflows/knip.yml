@@ -10,10 +10,6 @@ permissions:
 jobs:
   run-knip:
     runs-on: ubuntu-latest
-    # Disabled: knip currently requires a package.json, which was removed
-    # as part of the Deno migration. Re-enable when knip supports
-    # package-less analysis or if we decide to restore a minimal package.json.
-    if: ${{ false }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

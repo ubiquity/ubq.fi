@@ -1,0 +1,7 @@
+{
+  "name": "ubq.fi",
+  "private": true,
+  "type": "module",
+  "description": "Meta file to support Node-based tooling (Knip/ESLint) when executed via Deno's npm: loader.",
+  "license": "UNLICENSED"
+}

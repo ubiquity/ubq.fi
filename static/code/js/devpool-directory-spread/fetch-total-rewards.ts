@@ -1,8 +1,4 @@
-import {
-  clearCache,
-  fetchContentsJSON,
-  getCachedJSON,
-} from "./github-contents";
+import { clearCache, fetchContentsJSON, getCachedJSON } from "./github-contents";
 
 const SUMMARY_PATH = "summary.json";
 const STATISTICS_PATH = "statistics.json";

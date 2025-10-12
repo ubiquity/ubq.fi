@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
 set -e
-deno fmt --check
-deno lint
+
+# Prettier check and ESLint (no Deno linter)
+deno run -A npm:prettier --check "**/*.{ts,tsx,js,jsx,json,css,md}"
+deno run -A npm:eslint@9 .
