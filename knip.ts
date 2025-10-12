@@ -5,11 +5,10 @@ const config: KnipConfig = {
   project: [
     "build/**/*.ts",
     "serve.ts",
-    // Application code lives under static/code/js; most files are bundled
-    // or referenced via HTML, which Knip can't see. Ignore to reduce noise.
-    // Remove this ignore when migrating these modules to explicit TS imports.
+    // Frontend TypeScript modules
+    "static/code/js/**/*.ts",
   ],
-  ignore: ["static/code/js/**", "static/dist/**"],
+  ignore: ["static/dist/**"],
   ignoreExportsUsedInFile: true,
   ignoreDependencies: [
     // Deno import map / std libs are not Node deps
