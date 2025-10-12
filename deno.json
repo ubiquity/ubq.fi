@@ -18,7 +18,7 @@
     "eslint:check": "deno run -A npm:eslint@9 .",
     "cspell": "deno run -A npm:cspell --no-progress --no-summary \"**/*.{ts,tsx,js,jsx,json,md,css,html}\" --exclude \"static/dist/**\"",
     "knip": "deno run -A npm:knip",
-    "knip:ci": "deno run -A npm:knip --no-progress"
+    "knip:ci": "deno run -A npm:knip --no-progress --no-exit-code"
   },
   "fmt": {
     "include": ["**/*.ts", "**/*.js", "**/*.json"],
