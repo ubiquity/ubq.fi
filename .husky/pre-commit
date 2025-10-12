@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+set -e
 
-yarn lint-staged
+# Prettier check and ESLint (no Deno linter)
+deno run -A npm:prettier --check "**/*.{ts,tsx,js,jsx,json,css,md}"
+deno run -A npm:eslint@9 .

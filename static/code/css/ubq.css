@@ -180,13 +180,13 @@ body .center > div.logo {
   width: 100%;
 }
 body .center > div {
-  font-size: calc((2 * 128px) / 3);
+  font-size: calc(2 * 128px / 3);
   font-weight: 100;
   text-rendering: geometricPrecision;
   line-height: 1;
   white-space: pre;
   text-align: left;
-  padding: calc((128px) / 3);
+  padding: calc(128px / 3);
   opacity: 0;
 }
 body #Grid {
@@ -417,7 +417,7 @@ body.Active #Logo {
 .blur {
   position: absolute;
   color: transparent;
-  text-shadow: 0 0 calc((4 * 128px)) #80ffff;
+  text-shadow: 0 0 calc(4 * 128px) #80ffff;
 }
 #bytecode {
   font-family: monospace;

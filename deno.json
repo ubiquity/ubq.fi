@@ -1,0 +1,31 @@
+{
+  "imports": {
+    "@std/http": "jsr:@std/http@^1.0.21",
+    "esbuild": "npm:esbuild@0.20.1"
+  },
+  "tasks": {
+    "start": "deno run --allow-net --allow-env --allow-run --allow-read --allow-write build/esbuild-server.ts",
+    "build": "deno run --allow-net --allow-env --allow-run --allow-read --allow-write build/esbuild-build.ts",
+    "serve": "deno run --allow-net --allow-env --allow-read serve.ts",
+    "format": "deno run -A npm:prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\" && deno run -A npm:eslint@9 . --fix",
+    "format:lint": "deno run -A npm:eslint@9 . --fix",
+    "format:prettier": "deno run -A npm:prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "check": "deno run -A npm:prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\" && deno run -A npm:eslint@9 .",
+    "cache": "deno cache build/esbuild-build.ts build/esbuild-server.ts serve.ts",
+    "prettier": "deno run -A npm:prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "prettier:check": "deno run -A npm:prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "eslint": "deno run -A npm:eslint@9 . --fix",
+    "eslint:check": "deno run -A npm:eslint@9 .",
+    "cspell": "deno run -A npm:cspell --no-progress --no-summary \"**/*.{ts,tsx,js,jsx,json,md,css,html}\" --exclude \"static/dist/**\"",
+    "knip": "deno run -A npm:knip",
+    "knip:ci": "deno run -A npm:knip --no-progress"
+  },
+  "fmt": {
+    "include": ["**/*.ts", "**/*.js", "**/*.json"],
+    "exclude": ["static/code/js/**"]
+  },
+  "lint": {
+    "include": ["**/*.ts", "**/*.js"],
+    "exclude": ["static/code/js/**"]
+  }
+}

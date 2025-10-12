@@ -1,5 +1,5 @@
-!(function (e, a, t, n, c, o, s) {
-  (e.GoogleAnalyticsObject = c),
+(!(function (e, a, t, n, c, o, s) {
+  ((e.GoogleAnalyticsObject = c),
     (e[c] =
       e[c] ||
       function () {
@@ -10,18 +10,18 @@
     (s = a.getElementsByTagName(t)[0]),
     (o.async = 1),
     (o.src = n),
-    s.parentNode.insertBefore(o, s);
+    s.parentNode.insertBefore(o, s));
 })(window, document, "script", "//www.google-analytics.com/analytics.js", "ga"),
   ga("create", "UA-57348409-4", "auto"),
-  ga("send", "pageview");
+  ga("send", "pageview"));
 !(function (e, t, a, n) {
   if (!e.getElementById(a)) {
     var s = e.createElement(t),
       c = e.getElementsByTagName(t)[0];
-    (s.id = a), (s.src = "//js.hs-analytics.net/analytics/" + Math.ceil(new Date() / n) * n + "/1914551.js"), c.parentNode.insertBefore(s, c);
+    ((s.id = a), (s.src = "//js.hs-analytics.net/analytics/" + Math.ceil(new Date() / n) * n + "/1914551.js"), c.parentNode.insertBefore(s, c));
   }
 })(document, "script", "hs-analytics", 3e5);
-if (navigator.appVersion.indexOf("Googlebot") === -1)
+if (navigator.appVersion.indexOf("Googlebot") === -1) {
   window.onerror = function (e, url, lineNumber, column, detail) {
     var xhr = new XMLHttpRequest();
     xhr.open(
@@ -52,3 +52,4 @@ if (navigator.appVersion.indexOf("Googlebot") === -1)
     );
     return !1;
   };
+}

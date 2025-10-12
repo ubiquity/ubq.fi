@@ -1,4 +1,4 @@
-import { serveDir } from "https://deno.land/std@0.224.0/http/file_server.ts";
+import { serveDir } from "@std/http/file-server";
 
 const port = parseInt(Deno.env.get("PORT") ?? "8080");
 

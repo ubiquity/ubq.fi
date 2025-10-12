@@ -1,5 +1,5 @@
-import esbuild from "esbuild";
-import { esBuildContext } from "./esbuild-build";
+import * as esbuild from "esbuild";
+import { esBuildContext } from "./esbuild-build.ts";
 
 void server();
 

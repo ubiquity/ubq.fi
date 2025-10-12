@@ -7,6 +7,15 @@
   "plugins": ["@typescript-eslint", "sonarjs"],
   "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:sonarjs/recommended"],
   "ignorePatterns": ["**/*.js"],
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "plugins": ["html"],
+      "rules": {
+        "html/no-unclosed-tags": "off"
+      }
+    }
+  ],
   "rules": {
     "prefer-arrow-callback": ["warn", { "allowNamedFunctions": true }],
     "func-style": ["warn", "declaration", { "allowArrowFunctions": false }],

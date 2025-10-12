@@ -2,8 +2,10 @@ name: Knip
 
 on:
   pull_request:
+  workflow_dispatch:
 
-permissions: write-all
+permissions:
+  contents: read
 
 jobs:
   run-knip:
@@ -12,19 +14,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
         with:
-          node-version: 20.10.0
+          deno-version: v2.x
 
-      - name: Install toolchain
-        run: yarn install
+      - name: Cache deps
+        run: deno task cache
 
-      - name: Report knip results to pull request
-        uses: Codex-/knip-reporter@v2
-        with:
-          verbose: true
-          comment_id: ${{ github.workflow }}-reporter
-          command_script_name: knip-ci
-          annotations: true
-          ignore_results: false
+      - name: Run knip via Deno
+        run: deno task knip:ci

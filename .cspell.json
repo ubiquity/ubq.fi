@@ -5,7 +5,10 @@
   "useGitignore": true,
   "language": "en",
   "words": [
+    "ANAME",
     "Cascader",
+    "denoland",
+    "deployctl",
     "dataurl",
     "devpool",
     "Devs",
