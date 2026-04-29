@@ -1,37 +1,32 @@
-name: Deploy to Deno Deploy
+name: Deno Deploy
 
 on:
   push:
-    branches:
-      - main
-      - master
-      - development
+    branches-ignore:
+      - dist/**
+    tags-ignore:
+      - "**"
   workflow_dispatch:
-
-permissions:
-  contents: read
-  id-token: write
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Deno
-        uses: denoland/setup-deno@v2
-        with:
-          deno-version: v2.x
-
-      - name: Cache deps
-        run: deno task cache
-
-      - name: Build static assets
-        run: deno task build
-
-      - name: Deploy to Deno Deploy
-        uses: denoland/deployctl@v1
-        with:
-          project: "ubq-fi"
-          entrypoint: "serve.ts"
+    uses: ubiquity/deno-deploy-workflow/.github/workflows/deno-deploy-reusable.yml@main
+    with:
+      project: ubq-fi
+      deploy_platform: deno2
+      entrypoint: serve.ts
+      root: .deploy-root
+      install_command: deno install
+      build_command: |
+        deno task build
+        rm -rf .deploy-root
+        mkdir -p .deploy-root/static
+        cp -R static/. .deploy-root/static/
+        cp serve.ts deno.json .deploy-root/
+        if [ -f deno.lock ]; then
+          cp deno.lock .deploy-root/
+        fi
+      debug_fetch_fail: true
+      required_env: |
+        DENO_DEPLOY_TOKEN
+    secrets: inherit

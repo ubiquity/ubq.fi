@@ -3,6 +3,7 @@
     "@std/http": "jsr:@std/http@^1.0.21",
     "esbuild": "npm:esbuild@0.20.1"
   },
+  "nodeModulesDir": "auto",
   "tasks": {
     "start": "deno run --allow-net --allow-env --allow-run --allow-read --allow-write build/esbuild-server.ts",
     "build": "deno run --allow-net --allow-env --allow-run --allow-read --allow-write build/esbuild-build.ts",
