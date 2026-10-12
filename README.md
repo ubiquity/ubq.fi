@@ -20,3 +20,12 @@ Custom Domain:
 Notes:
 
 - Previous Cloudflare Pages deployment has been replaced by Deno Deploy.
+
+## Hosting (2026-10-12)
+
+The site runs on Cloudflare Workers as the `ubq-fi` worker: `static/` is served
+as assets with `404.html` handling, and the worker preserves `/__health` and the
+same-origin `/rpc/:chainId` proxy. The zone route `ubq.fi/*` points at it;
+Deno Deploy is no longer used (shutdown April 2027).
+
+Build and deploy: `deno task build && npx wrangler deploy` (wrangler.toml).
